@@ -6,31 +6,77 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <Toolbar
+        android:id="@+id/toolbar"
+        style="@style/toolbar_theme">
+
+        <Spinner
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+
+
+          ></Spinner>
+
+
+    </Toolbar>
+
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="#D31212"
-        android:text="Hello mikä meno"
-        android:textSize="50dp"
+        android:id="@+id/first_page_header"
+        android:layout_width="339dp"
+        android:layout_height="28dp"
+        android:text="@string/header_first_page"
+        android:textSize="@dimen/dim_ekasivu_otsikko"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        app:layout_constraintVertical_bias="0.081" />
 
     <Button
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Button"
-        tools:layout_editor_absoluteX="159dp"
-        tools:layout_editor_absoluteY="193dp" />
+        android:id="@+id/button_straight_to_labor"
+        style="@style/button_style"
+        android:layout_marginBottom="60dp"
+        android:onClick="onClickListener_StraightToLabor"
+        android:text="@string/button_straight_to_labor"
+        app:layout_constraintBottom_toTopOf="@+id/button_onTheWay_to_location"
+        app:layout_constraintEnd_toEndOf="@+id/first_page_header"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/first_page_header" />
 
     <Button
-        android:id="@+id/button2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Button"
-        tools:layout_editor_absoluteX="162dp"
-        tools:layout_editor_absoluteY="479dp" />
+        android:id="@+id/button_onTheWay_to_location"
+        style="@style/button_style"
+        android:layout_marginEnd="36dp"
+        android:layout_marginBottom="60dp"
+        android:onClick="onClickListener_to_location"
+        android:text="@string/button_on_the_way"
+        app:layout_constraintBottom_toTopOf="@+id/button_how_to_act"
+        app:layout_constraintEnd_toEndOf="@+id/button_straight_to_labor"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/button_straight_to_labor" />
+
+    <Button
+        android:id="@+id/button_how_to_act"
+        style="@style/button_style"
+        android:layout_marginBottom="60dp"
+        android:onClick="onClickListener_how_to_act"
+        android:text="@string/button_how_to_act"
+        app:layout_constraintBottom_toTopOf="@+id/button_onTheWay_or_in_location"
+        app:layout_constraintEnd_toEndOf="@+id/button_onTheWay_to_location"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/button_onTheWay_to_location" />
+
+    <Button
+        android:id="@+id/button_onTheWay_or_in_location"
+        style="@style/button_style"
+        android:layout_marginBottom="112dp"
+        android:onClick="onClickListener_onTheWay_or_in_location"
+        android:text="@string/button_onTheWay_or_inLocation"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/button_how_to_act"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/button_how_to_act" />
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

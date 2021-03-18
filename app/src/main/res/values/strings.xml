@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">AmpuAppi</string>
+    <string name="toolbar_header">AmpuAppi bitcheees</string>
+    <string name="header_first_page">AmpuAppi ja kaikkea muuta paskaa</string>
+    <string name="button_straight_to_labor">Suoraan Synnytykseen</string>
+    <string name="button_on_the_way">Synnytystehtävälle lähdettäessä</string>
+    <string name="button_how_to_act">Miten Toimitaan</string>
+    <string name="button_onTheWay_or_inLocation">Matkalle vai kohteessa?</string>
 </resources>
