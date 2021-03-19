@@ -8,14 +8,9 @@
 
     <Toolbar
         android:id="@+id/toolbar"
-        style="@style/toolbar_theme">
-
-        <Spinner
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-
-
-          ></Spinner>
+        style="@style/toolbar_theme"
+        android:popupTheme="@style/Theme.AppCompat.Light"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar">
 
 
     </Toolbar>

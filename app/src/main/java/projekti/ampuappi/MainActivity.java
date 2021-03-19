@@ -3,8 +3,11 @@ package projekti.ampuappi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
+import android.widget.Toolbar;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -12,8 +15,31 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        Toolbar toolbar = (Toolbar)findViewById(R.id.toolbar);
+        toolbar.setSubtitle("joutsikako");
+        toolbar.inflateMenu(R.menu.menu);
     }
 
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item){
+        int id = item.getItemId();
+
+        if (id == R.id.first)
+        {
+            Toast.makeText(getApplicationContext(),"eka juttu",Toast.LENGTH_SHORT).show();
+        }
+        else if (id == R.id.second)
+        {
+            Toast.makeText(getApplicationContext(),"Toka juttu",Toast.LENGTH_SHORT).show();
+        }
+        else if (id == R.id.third)
+        {
+            Toast.makeText(getApplicationContext(),"kolmas juttu",Toast.LENGTH_SHORT).show();
+        }
+        return true;
+
+    }
 
 
     public void onClickListener_StraightToLabor(View view)

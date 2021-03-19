@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+        <item
+            android:title="eka juttu"
+            android:id="@+id/first"
+            android:icon="@drawable/ic_baseline_menu_24"
+            android:actionLayout="@layout/activity_main"
+            app:showAsAction="always"/>
+
+        <item
+            android:title="toka juttu"
+            android:id="@+id/second"
+            android:icon="@drawable/ic_baseline_menu_24"
+            android:actionLayout="@layout/activity_main"
+            app:showAsAction="always"/>
+
+        <item
+            android:title="kolmas juttu"
+            android:id="@+id/third"
+            android:icon="@drawable/ic_baseline_menu_24"
+            android:actionLayout="@layout/activity_main"
+            app:showAsAction="always"/>
+</menu>
