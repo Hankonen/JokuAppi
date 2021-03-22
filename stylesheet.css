@@ -15,7 +15,7 @@ body {
 
   border-radius: 18px;
   background: rgb(238, 174, 174);
-  box-shadow: 5px 5px 15px rgba(0, 0, 0, 1);
+  box-shadow: 5px 5px 15px rgb(26, 25, 25);
   text-align: center;
 }
 .kortin-kuva {
