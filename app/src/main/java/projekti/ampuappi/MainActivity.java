@@ -50,41 +50,69 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    public void onClickListener_StraightToLabor(View view)
-    {
-      //  Toast.makeText(getApplicationContext(),"Suoraan synnytykseen",Toast.LENGTH_SHORT).show();
+    public void onClickListener_StraightToLabor(View view) {
+        Toast.makeText(getApplicationContext(), "Suoraan synnytykseen", Toast.LENGTH_SHORT).show();
+    }
 
-            final AlertDialog.Builder renameDialog = new AlertDialog.Builder(MainActivity.this);
-            renameDialog.setTitle("Suoraan Synnytykseen");
-            Context context = renameDialog.getContext();
-            final LinearLayout layout = new LinearLayout(context);
-            layout.setOrientation(LinearLayout.VERTICAL);
-            final TextView kohteessa = new EditText(context);
-            kohteessa.setText("Hoidetaan kohteessa jos:\n •\tSupistuksia on 1-2 minuutin välein säännöllisesti\n •\tSynnyttäjällä on ponnistamisen pakko\n •\tSikiön pää näkyy");
-            layout.addView(kohteessa);
-            renameDialog.setView(layout);
-            final Button Straight_to_labor = new Button(context);
-            final ImageView kuva = new ImageView(context);
-            kuva.setImageResource(R.drawable.ohje);
-            layout.addView(kuva);
-
-            renameDialog.setNegativeButton("Cancel", (dialog, which) -> dialog.cancel());
-
-            renameDialog.show();
-        };
 
 
     public void onClickListener_to_location(View view)
     {
-        Toast.makeText(getApplicationContext(),"matkalla kohteesee",Toast.LENGTH_SHORT).show();
+       //Toast.makeText(getApplicationContext(),"matkalla kohteesee",Toast.LENGTH_SHORT).show();
+        final AlertDialog.Builder renameDialog = new AlertDialog.Builder(MainActivity.this);
+        renameDialog.setTitle(getString(R.string.to_location_HEADER));
+        Context context = renameDialog.getContext();
+        final LinearLayout layout = new LinearLayout(context);
+        layout.setOrientation(LinearLayout.VERTICAL);
+        final TextView to_location = new EditText(context);
+        to_location.setText(getString(R.string.to_location_REST));
+        layout.addView(to_location);
+
+        renameDialog.setView(layout);
+        renameDialog.setNegativeButton("Poistu", (dialog, which) -> dialog.cancel());
+        renameDialog.show();
     }
 
     public void onClickListener_how_to_act(View view)
     {
-        Toast.makeText(getApplicationContext(),"Kuinka Toimia",Toast.LENGTH_SHORT).show();
-    }
+        //Toast.makeText(getApplicationContext(),"Kuinka Toimia",Toast.LENGTH_SHORT).show();
+        final AlertDialog.Builder renameDialog = new AlertDialog.Builder(MainActivity.this);
+        renameDialog.setTitle(getString(R.string.how_to_act_HEADER));
+        Context context = renameDialog.getContext();
+        final LinearLayout layout = new LinearLayout(context);
+        layout.setOrientation(LinearLayout.VERTICAL);
+        final TextView kohteessa1 = new EditText(context);
+        kohteessa1.setText(getString(R.string.how_to_act_REST));
+        layout.addView(kohteessa1);
+
+        renameDialog.setView(layout);
+        final Button Straight_to_labor = new Button(context);
+           /* final ImageView kuva = new ImageView(context);        // Jätetty esimerkiksi tuleville hommille
+            kuva.setImageResource(R.drawable.ohje);
+            layout.addView(kuva);*/
+
+        renameDialog.setNegativeButton("Poistu", (dialog, which) -> dialog.cancel());
+        renameDialog.show();
+    };
+
+
     public void onClickListener_onTheWay_or_in_location(View view)
     {
-        Toast.makeText(getApplicationContext(),"matkalle vai kohteessa",Toast.LENGTH_SHORT).show();
+       // Toast.makeText(getApplicationContext(),"matkalle vai kohteessa",Toast.LENGTH_SHORT).show();
+        final AlertDialog.Builder renameDialog = new AlertDialog.Builder(MainActivity.this);
+        renameDialog.setTitle(getString(R.string.OTW_or_IL_HEADER));
+        Context context = renameDialog.getContext();
+        final LinearLayout layout = new LinearLayout(context);
+        layout.setOrientation(LinearLayout.VERTICAL);
+        final TextView otw_or_il = new EditText(context);
+        otw_or_il.setText(getString(R.string.OTW_or_IL_IL));
+        layout.addView(otw_or_il);
+        final TextView otw_or_il2 = new EditText(context);
+        otw_or_il2.setText(getString(R.string.OTW_or_IL_OTW));
+        layout.addView(otw_or_il2);
+        renameDialog.setView(layout);
+
+        renameDialog.setNegativeButton("Poistu", (dialog, which) -> dialog.cancel());
+        renameDialog.show();
     }
 }

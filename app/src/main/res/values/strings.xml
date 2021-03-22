@@ -7,4 +7,45 @@
     <string name="button_how_to_act">Miten Toimitaan</string>
     <string name="button_onTheWay_or_inLocation">Matkalle vai kohteessa?</string>
 
+    <string name="to_location_HEADER">Synnytystehtävään (791 A-D) tullessa huomioi seuraavat asiat: </string>
+    <string name="to_location_REST">"
+•\tKirjaa ylös synnyttäjän perustiedot (sairaudet, allergiat, monesko raskaus ja synnytys jne.)\n
+•\tRaskausviikot, selvitä miten raskaus on edennyt ja onko sikiö perä- vai raivotarjonnassa\n
+•\tKohteeseen päästyäsi tarkista mikä on synnytyksen tilanne: Onko lapsivesi mennyt?
+   Koska se on mennyt? Lapsiveden väri? Kirkas vai vihreä/kellertävää?
+   Hajuton/pahanhajuista? Onko supistuksia? Milloin ne ovat alkaneet?
+   Kuinka tiheään supistuksia tulee? Onko synnytys oikeasti käynnissä?</string>
+
+    <string name="OTW_or_IL_HEADER">Matkalle vai Kohteessa?</string>
+    <string name="OTW_or_IL_IL">"Hoidetaan kohteessa jos:\n
+•\tSupistuksia on 1-2 minuutin välein\n
+  säännöllisesti\n
+•\tSynnyttäjällä on ponnistamisen pakko\n
+•\tSikiön pää näkyy"</string>
+
+    <string name="OTW_or_IL_OTW">Matkaan jos:\n
+•\tLapsivesi on mennyt, mutta ei ole\n
+  supistuksia\n
+•\tSupistukset tulevat epäsäännöllisesti\n
+•\tSupistukset tulevat\n
+  säännöllisesti 2–15 minuutin välein\n
+•\tSynnyttäjä otetaan kyytiin ja\n
+  lähdetään liikkeelle, tutkimukset\n
+  yms. voi tehdä matkalla\n
+•\tMUISTA ENNAKKOILMOITUS
+</string>
+
+    <string name="how_to_act_HEADER">Miten toimitaan</string>
+    <string name="how_to_act_REST">
+•	Valmistaudu ottamalla synnytyssetit esille\n
+•	Paarien yläosa käännettään toisin päin\n
+•	Synnyttäjä asetetaan vasemmalle kyljelleen\n
+•	Avaa i.v. -yhteys\n
+•	Seuraa supistusten väliä\n
+•	Jos synnyttäjällä tulee paineen tunne\n
+    tai ponnistamisen pakko matkalla, pysäytä auto\n
+•	Lääkkeettömiä kivunlievitys keinoja voi\n
+    kokeilla kuten hierontaa\n
+    tai lämpöpussia kipukohtiin
+</string>
 </resources>
