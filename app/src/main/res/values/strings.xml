@@ -48,4 +48,11 @@
     kokeilla kuten hierontaa\n
     tai lämpöpussia kipukohtiin
 </string>
+
+    <string name="eka_Dia">Ekamatsku</string>
+    <string name="toka_Dia">Tokamatsku</string>
+    <string name="kolmas_Dia">Kolmasmatsku</string>
+    <string name="neljas_Dia">Neljasmatsku</string>
+    <string name="viides_Dia">Viidesmatsku</string>
+
 </resources>
