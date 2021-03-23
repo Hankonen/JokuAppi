@@ -3,6 +3,7 @@ package projekti.ampuappi;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -48,7 +49,9 @@ public class MainActivity extends AppCompatActivity {
 
     public void onClickListener_StraightToLabor(View view)
     {
+        Intent intent = new Intent(this, SliderActivity.class);
 
+        startActivity(intent);
 
         Toast.makeText(getApplicationContext(), "Suoraan synnytykseen", Toast.LENGTH_SHORT).show();
     }
