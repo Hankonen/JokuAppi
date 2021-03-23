@@ -3,6 +3,9 @@ package projekti.ampuappi;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Dialog;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -46,11 +49,14 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
+
     public void onClickListener_StraightToLabor(View view)
     {
+        final AlertDialog.Builder renameDialog = new AlertDialog.Builder(MainActivity.this);
+        renameDialog.setView(R.layout.alertbox_to_location_layout);
 
 
-        Toast.makeText(getApplicationContext(), "Suoraan synnytykseen", Toast.LENGTH_SHORT).show();
+       // Toast.makeText(getApplicationContext(), "Suoraan synnytykseen", Toast.LENGTH_SHORT).show();
     }
 
 
@@ -60,7 +66,6 @@ public class MainActivity extends AppCompatActivity {
         final AlertDialog.Builder renameDialog = new AlertDialog.Builder(MainActivity.this);
         renameDialog.setView(R.layout.alertbox_to_location_layout);
         renameDialog.setNegativeButton("Poistu", (dialog, which) -> dialog.cancel());
-
         renameDialog.show();
 
     }
@@ -71,7 +76,6 @@ public class MainActivity extends AppCompatActivity {
         final AlertDialog.Builder renameDialog = new AlertDialog.Builder(MainActivity.this);
         renameDialog.setView(R.layout.alertbox_how_to_act_layout);
         renameDialog.setNegativeButton("Poistu", (dialog, which) -> dialog.cancel());
-
         renameDialog.show();
 
 

@@ -11,7 +11,6 @@
             style="@style/how_to_act_style"
             android:onClick="onClickListener_how_to_act"
 
-
             ></TextView>
 
 
