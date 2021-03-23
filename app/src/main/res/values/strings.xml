@@ -17,13 +17,13 @@
    Kuinka tiheään supistuksia tulee? Onko synnytys oikeasti käynnissä?</string>
 
     <string name="OTW_or_IL_HEADER">Matkalle vai Kohteessa?</string>
-    <string name="OTW_or_IL_IL">"Hoidetaan kohteessa jos:\n
+    <string name="OTW_or_IL_REST">"Hoidetaan kohteessa jos:\n
 •\tSupistuksia on 1-2 minuutin välein\n
   säännöllisesti\n
 •\tSynnyttäjällä on ponnistamisen pakko\n
-•\tSikiön pää näkyy"</string>
-
-    <string name="OTW_or_IL_OTW">Matkaan jos:\n
+•\tSikiön pää näkyy"\n
+..........................................\n
+  Matkaan jos:\n
 •\tLapsivesi on mennyt, mutta ei ole\n
   supistuksia\n
 •\tSupistukset tulevat epäsäännöllisesti\n

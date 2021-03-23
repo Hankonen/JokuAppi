@@ -1,12 +1,9 @@
 package projekti.ampuappi;
 
-import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
-import android.content.Intent;
-import android.os.Build;
 import android.os.Bundle;
 import android.text.InputType;
 import android.view.Menu;
@@ -22,7 +19,6 @@ import android.widget.Toolbar;
 
 public class MainActivity extends AppCompatActivity {
 
-    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,8 +27,6 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar)findViewById(R.id.toolbar);
         toolbar.setSubtitle("joutsikako");
         toolbar.inflateMenu(R.menu.menu);
-
-        Button button_Labor = findViewById(R.id.button_straight_to_labor);
     }
 
     @Override
@@ -58,11 +52,6 @@ public class MainActivity extends AppCompatActivity {
 
     public void onClickListener_StraightToLabor(View view) {
         Toast.makeText(getApplicationContext(), "Suoraan synnytykseen", Toast.LENGTH_SHORT).show();
-
-        Intent intent = new Intent(this, SliderActivity.class);
-
-        startActivity(intent);
-
     }
 
 

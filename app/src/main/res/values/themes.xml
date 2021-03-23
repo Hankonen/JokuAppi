@@ -35,5 +35,33 @@
         <item name="android:textSize">@dimen/dim_button_text_size</item>
     </style>
 
+    <style name="OTW_or_IL_style">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+
+        <item name="android:background">@color/button_text_color</item>
+        <item name="android:text">@string/OTW_or_IL_REST</item>
+        <item name="android:title"> @string/OTW_or_IL_HEADER</item>
+    </style>
+
+
+    <style name="how_to_act_style">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@color/button_text_color</item>
+        <item name="android:title">@string/how_to_act_HEADER</item>
+        <item name="android:text">@string/how_to_act_REST</item>
+
+    </style>
+
+    <style name="to_location_style">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@color/button_text_color</item>
+        <item name="android:title">@string/to_location_HEADER</item>
+        <item name="android:text">@string/to_location_REST</item>
+
+    </style>
+
 
 </resources>
