@@ -12,6 +12,8 @@ public class SliderActivity extends AppCompatActivity {
     private ViewPager slideViewPager;
     private LinearLayout linearLayout;
 
+    private SliderAdapter sliderAdapter;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -19,5 +21,9 @@ public class SliderActivity extends AppCompatActivity {
 
         slideViewPager = (ViewPager) findViewById(R.id.slideViewPager);
         linearLayout = (LinearLayout) findViewById(R.id.linearLayout);
+
+        sliderAdapter = new SliderAdapter(this);
+
+        slideViewPager.setAdapter(sliderAdapter);
     }
 }
