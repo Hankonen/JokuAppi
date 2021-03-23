@@ -90,22 +90,6 @@ public class MainActivity extends AppCompatActivity {
             kuva.setImageResource(R.drawable.ohje);
             layout.addView(kuva);*/
 
-     /*   // Toast.makeText(getApplicationContext(),"matkalle vai kohteessa",Toast.LENGTH_SHORT).show();
-        final AlertDialog.Builder renameDialog = new AlertDialog.Builder(MainActivity.this);
-        renameDialog.setTitle(getString(R.string.OTW_or_IL_HEADER));
-        Context context = renameDialog.getContext();
-        final LinearLayout layout = new LinearLayout(context);
-        layout.setOrientation(LinearLayout.VERTICAL);
-        final TextView otw_or_il = new EditText(context);
-        otw_or_il.setText(getString(R.string.OTW_or_IL_IL));
-        layout.addView(otw_or_il);
-        final TextView otw_or_il2 = new EditText(context);
-        otw_or_il2.setText(getString(R.string.OTW_or_IL_OTW));
-        layout.addView(otw_or_il2);
-        renameDialog.setView(layout);
-
-        renameDialog.setNegativeButton("Poistu", (dialog, which) -> dialog.cancel());
-        renameDialog.show(); */
     }
 
 }
