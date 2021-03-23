@@ -1,6 +1,10 @@
-$('div').on('keydown', function(event) {
-    $('span').text('Total chars:' + $(this).text().length);
-    if($(this).text().length === 10 && event.keyCode != 8) {
-        event.preventDefault();
-    }
-  });
+function myFunction(){
+/*    var txt = '{"name":"santtu"}';
+    var obj = JSON.parse(txt);
+    document.getElementById("demo").innerHTML = obj.name;
+*/
+    var mydata = JSON.parse(data);
+    //document.getElementById("demo").innerHTML = (mydata[0].name);
+    alert(mydata[0].name);
+    //document.getElementById("demo").innerHTML = mydata.name;
+}
