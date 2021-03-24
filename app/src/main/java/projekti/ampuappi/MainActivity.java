@@ -48,21 +48,22 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    public void onClickListener_peratilan_synnytys(View view)
+    {
+        Intent intent = new Intent(this, SliderActivity.class);
+
+        startActivity(intent);
+    }
+
 
 
     public void onClickListener_StraightToLabor(View view)
     {
-
-
-        Intent intent = new Intent(this, SliderActivity.class);
-
-        startActivity(intent);
-
-
-       // Toast.makeText(getApplicationContext(), "Suoraan synnytykseen", Toast.LENGTH_SHORT).show();
+        final AlertDialog.Builder renameDialog = new AlertDialog.Builder(MainActivity.this);
+        renameDialog.setView(R.layout.straight_to_labor_layout);
+        renameDialog.setNegativeButton("Poistu", (dialog, which) -> dialog.cancel());
+        renameDialog.show();
     }
-
-
 
     public void onClickListener_to_location(View view)
     {
@@ -94,10 +95,10 @@ public class MainActivity extends AppCompatActivity {
 
         renameDialog.show();
 
-         /* final ImageView kuva = new ImageView(context);        // Jätetty esimerkiksi tuleville hommille
+         /* final ImageView kuva = new ImageView(context);                                                   // Jätetty esimerkiksi tuleville hommille
             kuva.setImageResource(R.drawable.ohje);
             layout.addView(kuva);*/
-
+        // Toast.makeText(getApplicationContext(), "Suoraan synnytykseen", Toast.LENGTH_SHORT).show();         // jätetty esimerkiksi
     }
 
 }

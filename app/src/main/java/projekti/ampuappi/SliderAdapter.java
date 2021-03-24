@@ -31,6 +31,7 @@ public class SliderAdapter extends PagerAdapter {
             R.drawable.ohje4,
             R.drawable.ohje5,
             R.drawable.ohje7
+
     };
 
     public String[] slide_header = {
@@ -42,13 +43,13 @@ public class SliderAdapter extends PagerAdapter {
             "Viides"
     };
 
-    public String[] slide_text = {
+    public int[] slide_text = {
 
-            "Eka",
-            "Toka",
-            "Kolmas",
-            "Neljas",
-            "Viides"
+            R.string.eka_Dia,
+            R.string.toka_Dia,
+            R.string.kolmas_Dia,
+            R.string.neljas_Dia,
+            R.string.viides_Dia
     };
 
     // luo automaattisesti tehtäessä kun extendaa PageAdapterin

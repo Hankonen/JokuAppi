@@ -6,6 +6,10 @@
     <string name="button_on_the_way">Synnytystehtävälle lähdettäessä</string>
     <string name="button_how_to_act">Miten Toimitaan</string>
     <string name="button_onTheWay_or_inLocation">Matkalle vai kohteessa?</string>
+    <string name="button_normal_labor">Normaali Synnytys</string>
+    <string name="button_peratilan_labor">Perätilan Synnytys</string>
+    <string name="button_hartiadystokia">Hartiadystokia</string>
+    <string name="button_napanuoran_esiinluiskahdus">Napanuoran Esiinluiskahdus</string>
 
     <string name="to_location_HEADER">Synnytystehtävään (791 A-D) tullessa huomioi seuraavat asiat: </string>
     <string name="to_location_REST">"
