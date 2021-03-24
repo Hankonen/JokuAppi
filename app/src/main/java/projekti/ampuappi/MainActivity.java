@@ -80,6 +80,7 @@ public class MainActivity extends AppCompatActivity {
         renameDialog.setView(R.layout.alertbox_how_to_act_layout);
         renameDialog.setNegativeButton("Poistu", (dialog, which) -> dialog.cancel());
         renameDialog.show();
+        int i;
 
 
     };
