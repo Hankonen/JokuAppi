@@ -52,8 +52,11 @@ public class MainActivity extends AppCompatActivity {
 
     public void onClickListener_StraightToLabor(View view)
     {
-        final AlertDialog.Builder renameDialog = new AlertDialog.Builder(MainActivity.this);
-        renameDialog.setView(R.layout.alertbox_to_location_layout);
+
+
+        Intent intent = new Intent(this, SliderActivity.class);
+
+        startActivity(intent);
 
 
        // Toast.makeText(getApplicationContext(), "Suoraan synnytykseen", Toast.LENGTH_SHORT).show();
