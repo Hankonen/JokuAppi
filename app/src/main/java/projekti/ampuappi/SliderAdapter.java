@@ -35,6 +35,8 @@ public class SliderAdapter extends PagerAdapter {
 
     public String[] slide_header = {
 
+
+
             "Eka",
             "Toka",
             "Kolmas",
@@ -71,12 +73,12 @@ public class SliderAdapter extends PagerAdapter {
         View view = layoutInflater.inflate(R.layout.slide_layout, container, false);
 
         ImageView slideImageView = (ImageView) view.findViewById(R.id.id_ImageView);
-        //TextView slideHeader = (TextView) view.findViewById(R.id.id_);
+        TextView slideHeader = (TextView) view.findViewById(R.id.id_SlideLabel);
         TextView slideText = (TextView) view.findViewById(R.id.id_SlideTextView);
 
 
         slideImageView.setImageResource(slide_images[position]);
-        //slideHeader.setText(slide_header[position]);
+        slideHeader.setText(slide_header[position]);
         slideText.setText(slide_text[position]);
 
         container.addView(view);
