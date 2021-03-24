@@ -19,8 +19,8 @@ public class SliderActivity extends AppCompatActivity {
     private TextView[] pageIndikaattori;
     private SliderAdapter sliderAdapter;
 
-    private Button leftButton;
-    private Button rightButton;
+    private ImageButton leftButton;
+    private ImageButton rightButton;
     private int currentPage;
 
     @Override
@@ -31,7 +31,8 @@ public class SliderActivity extends AppCompatActivity {
         slideViewPager = (ViewPager) findViewById(R.id.slideViewPager);
         linearLayout = (LinearLayout) findViewById(R.id.linearLayout);
 
-
+        leftButton = (ImageButton)findViewById(R.id.id_iButton_Left);
+        rightButton = findViewById(R.id.id_iButton_Right);
 
         sliderAdapter = new SliderAdapter(this);
 
@@ -56,8 +57,6 @@ public class SliderActivity extends AppCompatActivity {
 
     }
 
-
-
     public void addDotsIndikaattori(int pPosition)
     {
         pageIndikaattori = new TextView[5];
@@ -71,9 +70,6 @@ public class SliderActivity extends AppCompatActivity {
             pageIndikaattori[i].setTextColor(getResources().getColor(R.color.white_dots_color));
 
             linearLayout.addView(pageIndikaattori[i]);
-
-
-
         }
 
         if (pageIndikaattori.length > 0)
@@ -95,7 +91,6 @@ public class SliderActivity extends AppCompatActivity {
 
             addDotsIndikaattori(position);
             currentPage = position;
-
         }
 
         @Override
