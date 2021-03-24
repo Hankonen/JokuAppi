@@ -9,10 +9,10 @@ body {
 }
 .pokekortti {
   display: grid;
-  grid-template-columns: 300px;
-  grid-template-rows: 210px 210px 80px;
+  grid-template-columns: 500px;
+  grid-template-rows: 310px 310px 120px;
   grid-template-areas: "kuva" "teksti" "muokkaus";
-
+  min-height: 100px;
   border-radius: 18px;
   background: rgb(238, 174, 174);
   box-shadow: 5px 5px 15px rgb(26, 25, 25);
@@ -30,16 +30,16 @@ body {
   margin: 25px;
 }
 .kortin-teksti .kortin-alue {
-  color: beige;
+  color: rgb(236, 236, 42);
   font-size: 13px;
 }
 .kortin-teksti p {
-  color: aliceblue;
-  font-size: 15px;
+  color: rgb(246, 246, 246);
+  font-size: 20px;
   font-weight: 300;
 }
 .kortin-teksti h2 {
-  margin-top: 0px;
+  margin-top: 10px;
   font-size: 24px;
 }
 .kortin-buttonit {
