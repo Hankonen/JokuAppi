@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.text.Html;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -30,6 +31,8 @@ public class SliderActivity extends AppCompatActivity {
         slideViewPager = (ViewPager) findViewById(R.id.slideViewPager);
         linearLayout = (LinearLayout) findViewById(R.id.linearLayout);
 
+
+
         sliderAdapter = new SliderAdapter(this);
 
         slideViewPager.setAdapter(sliderAdapter);
@@ -37,9 +40,23 @@ public class SliderActivity extends AppCompatActivity {
 
         slideViewPager.addOnPageChangeListener(viewListener);
 
+        leftButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                slideViewPager.setCurrentItem(currentPage - 1);
+            }
+        });
 
+        rightButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                slideViewPager.setCurrentItem(currentPage + 1);
+            }
+        });
 
     }
+
+
 
     public void addDotsIndikaattori(int pPosition)
     {
@@ -78,29 +95,7 @@ public class SliderActivity extends AppCompatActivity {
 
             addDotsIndikaattori(position);
             currentPage = position;
-            /*
-            if (position == 0)
-            {
-                rightButton.setEnabled(true);
-                leftButton.setEnabled(false);
-                //rightButton.setEnabled(true);
-                leftButton.setVisibility(View.INVISIBLE);
-            }
 
-            else if (position == pageIndikaattori.length -1)
-            {
-                rightButton.setEnabled(true);
-                leftButton.setEnabled(true);
-                leftButton.setVisibility(View.VISIBLE);
-                rightButton.setVisibility(View.VISIBLE);
-            }
-            else
-            {
-                rightButton.setEnabled(true);
-                leftButton.setEnabled(true);
-                rightButton.setVisibility(View.VISIBLE);
-                leftButton.setVisibility(View.VISIBLE);
-            }*/
         }
 
         @Override
