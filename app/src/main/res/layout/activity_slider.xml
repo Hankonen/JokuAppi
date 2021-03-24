@@ -8,10 +8,10 @@
 
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/slideViewPager"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="414dp"
+        android:layout_height="622dp"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout"
-        tools:layout_editor_absoluteX="-3dp" />
+        tools:layout_editor_absoluteX="-2dp" />
 
 
     <LinearLayout

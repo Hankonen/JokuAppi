@@ -49,7 +49,7 @@
     tai lämpöpussia kipukohtiin
 </string>
 
-    <string name="eka_Dia">Ekamatsku</string>
+    <string name="eka_Dia">"Ekamatsku"</string>
     <string name="toka_Dia">Tokamatsku</string>
     <string name="kolmas_Dia">Kolmasmatsku</string>
     <string name="neljas_Dia">Neljasmatsku</string>
