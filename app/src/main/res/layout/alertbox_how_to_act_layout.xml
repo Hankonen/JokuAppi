@@ -9,7 +9,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             style="@style/how_to_act_style"
-            android:onClick="onClickListener_how_to_act"
+
 
             ></TextView>
 

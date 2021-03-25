@@ -6,13 +6,20 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.FrameLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.Toolbar;
+
+import com.google.android.material.navigation.NavigationView;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -21,41 +28,38 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
-        Toolbar toolbar = (Toolbar)findViewById(R.id.toolbar);
-        toolbar.setSubtitle("joutsikako");
+        Toolbar toolbar = findViewById(R.id.toolbar);
         toolbar.inflateMenu(R.menu.menu);
+        setActionBar(toolbar);
+
+    }
+
+
+    @Override public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.info_MenuItem:
+                Intent i = new Intent(MainActivity.this,info_Activity.class);
+                startActivity(i);
+                return super.onOptionsItemSelected(item);
+            case R.id.first_MenuItem:
+
+            case R.id.second_MenuItem:
+
+            case R.id.feedback_MenuItem:
+                Intent intent = new Intent(MainActivity.this,feedback_Activity.class);
+                startActivity(intent);
+
+            default:
+                    return super.onOptionsItemSelected(item); }
     }
 
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item){
-        int id = item.getItemId();
-
-        if (id == R.id.first)
-        {
-            Toast.makeText(getApplicationContext(),"eka juttu",Toast.LENGTH_SHORT).show();
-        }
-        else if (id == R.id.second)
-        {
-            Toast.makeText(getApplicationContext(),"Toka juttu",Toast.LENGTH_SHORT).show();
-        }
-        else if (id == R.id.third)
-        {
-            Toast.makeText(getApplicationContext(),"kolmas juttu",Toast.LENGTH_SHORT).show();
-        }
-        return true;
-
-    }
 
     public void onClickListener_peratilan_synnytys(View view)
     {
         Intent intent = new Intent(this, SliderActivity.class);
-
         startActivity(intent);
     }
-
-
 
     public void onClickListener_StraightToLabor(View view)
     {
@@ -71,12 +75,10 @@ public class MainActivity extends AppCompatActivity {
         renameDialog.setView(R.layout.alertbox_to_location_layout);
         renameDialog.setNegativeButton("Poistu", (dialog, which) -> dialog.cancel());
         renameDialog.show();
-
     }
 
     public void onClickListener_how_to_act(View view)
     {
-
         final AlertDialog.Builder renameDialog = new AlertDialog.Builder(MainActivity.this);
         renameDialog.setView(R.layout.alertbox_how_to_act_layout);
         renameDialog.setNegativeButton("Poistu", (dialog, which) -> dialog.cancel());

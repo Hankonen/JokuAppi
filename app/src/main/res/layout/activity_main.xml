@@ -6,14 +6,9 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <Toolbar
+    <include
         android:id="@+id/toolbar"
-        style="@style/toolbar_theme"
-        android:popupTheme="@style/Theme.AppCompat.Light"
-        android:theme="@style/ThemeOverlay.AppCompat.ActionBar">
-
-
-    </Toolbar>
+        layout="@layout/toolbar_layout"/>
 
     <TextView
         android:id="@+id/first_page_header"
