@@ -3,6 +3,7 @@ package projekti.ampuappi;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.ActivityOptions;
 import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -38,16 +39,16 @@ public class MainActivity extends AppCompatActivity {
     @Override public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.info_MenuItem:
-                Intent i = new Intent(MainActivity.this,info_Activity.class);
-                startActivity(i);
+                Intent intent_info = new Intent(MainActivity.this,info_Activity.class);
+                startActivity(intent_info);
                 return super.onOptionsItemSelected(item);
             case R.id.first_MenuItem:
 
             case R.id.second_MenuItem:
 
             case R.id.feedback_MenuItem:
-                Intent intent = new Intent(MainActivity.this,feedback_Activity.class);
-                startActivity(intent);
+                Intent intent_feedback = new Intent(MainActivity.this,feedback_Activity.class);
+                startActivity(intent_feedback);
 
             default:
                     return super.onOptionsItemSelected(item); }
@@ -55,18 +56,19 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-    public void onClickListener_peratilan_synnytys(View view)
-    {
-        Intent intent = new Intent(this, SliderActivity.class);
-        startActivity(intent);
-    }
+
 
     public void onClickListener_StraightToLabor(View view)
     {
-        final AlertDialog.Builder renameDialog = new AlertDialog.Builder(MainActivity.this);
+        Intent intent = new Intent(this, Straight_to_labor_activity.class);
+        startActivity(intent);
+
+
+
+        /*final AlertDialog.Builder renameDialog = new AlertDialog.Builder(MainActivity.this);
         renameDialog.setView(R.layout.straight_to_labor_layout);
         renameDialog.setNegativeButton("Poistu", (dialog, which) -> dialog.cancel());
-        renameDialog.show();
+        renameDialog.show();*/
     }
 
     public void onClickListener_to_location(View view)
@@ -85,9 +87,7 @@ public class MainActivity extends AppCompatActivity {
         renameDialog.show();
         int i;
 
-
     };
-
 
     public void onClickListener_onTheWay_or_in_location(View view) {
 
@@ -96,11 +96,12 @@ public class MainActivity extends AppCompatActivity {
         renameDialog.setNegativeButton("Poistu", (dialog, which) -> dialog.cancel());
 
         renameDialog.show();
-
-         /* final ImageView kuva = new ImageView(context);                                                   // Jätetty esimerkiksi tuleville hommille
-            kuva.setImageResource(R.drawable.ohje);
-            layout.addView(kuva);*/
-        // Toast.makeText(getApplicationContext(), "Suoraan synnytykseen", Toast.LENGTH_SHORT).show();         // jätetty esimerkiksi
     }
 
 }
+
+
+   /* final ImageView kuva = new ImageView(context);                                                   // Jätetty esimerkiksi tuleville hommille
+            kuva.setImageResource(R.drawable.ohje);
+            layout.addView(kuva);*/
+// Toast.makeText(getApplicationContext(), "Suoraan synnytykseen", Toast.LENGTH_SHORT).show();         // jätetty esimerkiksi

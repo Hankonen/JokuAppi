@@ -20,12 +20,12 @@ public class feedback_Activity extends AppCompatActivity {
         EditText feedback = findViewById(R.id.editText_feedback);
         String feed= feedback.toString();
 
-        Intent intent2 = new Intent(Intent.ACTION_SEND);
-        intent2.setType("text/html");
-        intent2.putExtra(Intent.EXTRA_EMAIL, "feedback@ampuappi.com");
-        intent2.putExtra(Intent.EXTRA_SUBJECT, "Feedback");
-        intent2.putExtra(Intent.EXTRA_TEXT, "joo"+feed);
-        startActivity(Intent.createChooser(intent2, "Send Email"));
+        Intent intent_feedback_actions = new Intent(Intent.ACTION_SEND);
+        intent_feedback_actions.setType("text/parse");
+        intent_feedback_actions.putExtra(Intent.EXTRA_EMAIL, "feedback@ampuappi.com");          // TODO mailiosoite ei siirry mukana
+        intent_feedback_actions.putExtra(Intent.EXTRA_SUBJECT, "Palautetta sovellukseta");
+        intent_feedback_actions.putExtra(Intent.EXTRA_TEXT, "joo"+feed);                        // TODO edittexstistä saatu teksti sekoittuu koodiksi
+        startActivity(Intent.createChooser(intent_feedback_actions, "Lähtä sähköposti"));
 
     }
 }
