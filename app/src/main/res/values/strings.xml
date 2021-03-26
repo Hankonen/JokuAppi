@@ -49,7 +49,16 @@
     tai lämpöpussia kipukohtiin
 </string>
 
-    <string name="eka_Dia">"Ekamatsku"</string>
+    <string name="eka_Dia">Valmistaudu ottamalla synnytyssetit esille\n
+•	Paarien yläosa käännettään toisin päin\n
+•	Synnyttäjä asetetaan vasemmalle kyljelleen\n
+•	Avaa i.v. -yhteys\n
+•	Seuraa supistusten väliä\n
+•	Jos synnyttäjällä tulee paineen tunne\n
+    tai ponnistamisen pakko matkalla, pysäytä auto\n
+•	Lääkkeettömiä kivunlievitys keinoja voi\n
+    kokeilla kuten hierontaa\n
+    tai lämpöpussia kipukohtiin</string>
     <string name="toka_Dia">Tokamatsku</string>
     <string name="kolmas_Dia">Kolmasmatsku</string>
     <string name="neljas_Dia">Neljasmatsku</string>
