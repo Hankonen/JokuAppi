@@ -52,6 +52,7 @@ public class SliderActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 slideViewPager.setCurrentItem(currentPage + 1);
+
             }
         });
 
