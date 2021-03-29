@@ -1,48 +1,121 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Straight_to_labor_activity"
-    android:animateLayoutChanges="true">
+    android:animateLayoutChanges="true"
+    tools:context=".Straight_to_labor_activity">
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/floatingActionButton"
-        android:layout_width="106dp"
-        android:layout_height="92dp"
-        android:clickable="true"
+    <Button
+        android:id="@+id/button_normal_labor2"
+        style="@style/button_style"
+        android:layout_width="125dp"
+        android:layout_height="60dp"
+        android:text="@string/button_normal_labor"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/imageButton_kolmas_vaihe_ED"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.944"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageButton_toka_vaihe_ED"
+        app:layout_constraintVertical_bias="0.989" />
+
+    <Button
+        android:id="@+id/button_peratilan_synnytys2"
+        style="@style/button_style"
+        android:layout_width="132dp"
+        android:layout_height="60dp"
+        android:onClick="onClickListener_peratilan_synnytys"
+        android:text="@string/button_peratilan_labor"
+        android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.057"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/button_hartiadystokia2"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/button_hartiadystokia2"
+        style="@style/button_style"
+        android:layout_width="178dp"
+        android:layout_height="60dp"
+        android:text="@string/button_hartiadystokia"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.879"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageButton_toka_vaihe_ED"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/button_napanuoran_esiinluiskahdus2"
+        style="@style/button_style"
+        android:layout_width="189dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="92dp"
+        android:text="@string/button_napanuoran_esiinluiskahdus"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.072"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageButton_toka_vaihe_ED" />
+
+    <ImageButton
+        android:id="@+id/imageButton_kolmas_vaihe_ED"
+        android:layout_width="260dp"
+        android:layout_height="60dp"
+        android:backgroundTint="@color/toolbar_tausta"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toTopOf="@+id/exit_button_STL"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_napanuoran_esiinluiskahdus2"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/kolmasvaihe2" />
+
+    <ImageButton
+        android:id="@+id/imageButton_toka_vaihe_ED"
+        android:layout_width="232dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="264dp"
+        android:backgroundTint="@color/toolbar_tausta"
+        android:scaleType="fitXY"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.111"
-        app:srcCompat="@android:drawable/ic_dialog_info" />
+        app:srcCompat="@drawable/toinenvaihe" />
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/floatingActionButton2"
-        android:layout_width="118dp"
-        android:layout_height="114dp"
-        android:clickable="true"
+    <ImageButton
+        android:id="@+id/imageButton_eka_vaihe_ED"
+        android:layout_width="209dp"
+        android:layout_height="60dp"
+        android:backgroundTint="@color/toolbar_tausta"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toTopOf="@+id/imageButton_toka_vaihe_ED"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.292"
+        app:srcCompat="@drawable/ekavaihe" />
+
+    <ImageButton
+        android:id="@+id/exit_button_STL"
+        android:layout_width="68dp"
+        android:layout_height="57dp"
+        android:layout_marginBottom="56dp"
+        android:background="#FFFFFF"
+        android:onClick="onClick_exit"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/floatingActionButton"
-        app:layout_constraintVertical_bias="0.05"
-        app:srcCompat="@android:drawable/btn_star_big_on" />
+        app:srcCompat="@android:drawable/ic_delete" />
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/floatingActionButton3"
-        android:layout_width="198dp"
-        android:layout_height="152dp"
-        android:clickable="true"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/floatingActionButton2"
-        app:layout_constraintVertical_bias="0.064"
-        tools:srcCompat="@tools:sample/avatars" />
 </androidx.constraintlayout.widget.ConstraintLayout>

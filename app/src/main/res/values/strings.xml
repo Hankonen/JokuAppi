@@ -59,6 +59,9 @@
     <string name="viides_Dia">Viidesmatsku</string>
     <string name="info_text">me emme ole mistään vastuuussta onko seleveä \n\n
     Ja mehän tehtiin tää sovellus eikä kukaan muu</string>
+    <string name="feedback_text">Hellou! \n
+    Jos haluat lähettää meille\n palautetta/parannusehdotuksia, \n/n
+        voit tehdä sen täältä.</string>
 
 
 </resources>
