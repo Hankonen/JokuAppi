@@ -31,11 +31,10 @@ public class SliderAdapter extends PagerAdapter {
             R.drawable.ohje4,
             R.drawable.ohje5,
             R.drawable.ohje7
+
     };
 
     public String[] slide_header = {
-
-
 
             "Eka",
             "Toka",
@@ -51,7 +50,6 @@ public class SliderAdapter extends PagerAdapter {
             R.string.kolmas_Dia,
             R.string.neljas_Dia,
             R.string.viides_Dia
-
     };
 
     // luo automaattisesti tehtäessä kun extendaa PageAdapterin
@@ -74,8 +72,8 @@ public class SliderAdapter extends PagerAdapter {
         View view = layoutInflater.inflate(R.layout.slide_layout, container, false);
 
         ImageView slideImageView = (ImageView) view.findViewById(R.id.id_ImageView);
-        //TextView slideHeader = (TextView) view.findViewById(R.id.id_SlideLabel);
-        TextView slideText = (TextView) view.findViewById(R.id.id_textView);
+        //TextView slideHeader = (TextView) view.findViewById(R.id.id_);
+        TextView slideText = (TextView) view.findViewById(R.id.id_SlideTextView);
 
 
         slideImageView.setImageResource(slide_images[position]);
