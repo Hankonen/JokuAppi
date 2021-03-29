@@ -33,12 +33,25 @@ public class Straight_to_labor_activity extends AppCompatActivity {
             }
         });
 
+
     }
+
+
+    // clicki napeille, viedään putextraan haluttu synnytystapahtuma inttinä
 
     public void onClickListener_peratilan_synnytys(View view)
     {
+        int tila = 2;
         Intent intent = new Intent(this, SliderActivity.class);
+        intent.putExtra("key",tila);
         startActivity(intent);
+    }
 
+    public void onClickListener_normaali_synnytys(View view)
+    {
+        int tila = 1;
+        Intent intent = new Intent(this, SliderActivity.class);
+        intent.putExtra("key",tila);
+        startActivity(intent);
     }
 }

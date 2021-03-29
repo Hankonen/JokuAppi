@@ -3,6 +3,8 @@ package projekti.ampuappi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
 
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.Html;
 import android.view.View;
@@ -10,6 +12,7 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class SliderActivity extends AppCompatActivity {
 
@@ -23,10 +26,15 @@ public class SliderActivity extends AppCompatActivity {
     private ImageButton rightButton;
     private int currentPage;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_slider);
+        Toast.makeText(getApplicationContext(), "Suoraan synnytykseen", Toast.LENGTH_SHORT).show();
+
+        Intent i = getIntent();
+        int arvo = i.getIntExtra("key", 1);
 
         slideViewPager = (ViewPager) findViewById(R.id.slideViewPager);
         linearLayout = (LinearLayout) findViewById(R.id.linearLayout);
@@ -34,7 +42,7 @@ public class SliderActivity extends AppCompatActivity {
         leftButton = (ImageButton)findViewById(R.id.id_iButton_Left);
         rightButton = findViewById(R.id.id_iButton_Right);
 
-        sliderAdapter = new SliderAdapter(this);
+        sliderAdapter = new SliderAdapter(this, arvo);
 
         slideViewPager.setAdapter(sliderAdapter);
         addDotsIndikaattori(0);

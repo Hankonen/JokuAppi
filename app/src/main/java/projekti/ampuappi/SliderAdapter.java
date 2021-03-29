@@ -16,15 +16,18 @@ public class SliderAdapter extends PagerAdapter {
 
     Context context;
     LayoutInflater layoutInflater;
+    public int mikaSynnytys;
 
-    public SliderAdapter(Context context)
+    public SliderAdapter(Context context, int value)
     {
         this.context = context;
+        mikaSynnytys = value;
     }
 
-    // Arrayt slideri tietoihin!!!
+    // Arrayt slideri tietoihin!!! Jokaiselle omalle synnytystapahtumalle omansa
 
     public int[] slide_images = {
+
 
             R.drawable.ohje,
             R.drawable.ohje3,
@@ -33,6 +36,19 @@ public class SliderAdapter extends PagerAdapter {
             R.drawable.ohje7
 
     };
+
+    public int[] slide_images2 = {
+
+
+            R.drawable.ohje7,
+            R.drawable.ohje3,
+            R.drawable.ohje4,
+            R.drawable.ohje5,
+            R.drawable.ohje7
+
+    };
+
+
 
     public String[] slide_header = {
 
@@ -52,6 +68,15 @@ public class SliderAdapter extends PagerAdapter {
             R.string.viides_Dia
     };
 
+    public int[] slide_text2 = {
+
+            R.string.eka_Dia2,
+            R.string.toka_Dia2,
+            R.string.kolmas_Dia2,
+            R.string.neljas_Dia2,
+            R.string.viides_Dia2
+    };
+
     // luo automaattisesti tehtäessä kun extendaa PageAdapterin
     @Override
     public int getCount() {
@@ -68,17 +93,28 @@ public class SliderAdapter extends PagerAdapter {
     @Override
     public Object instantiateItem(@NonNull ViewGroup container, int position) {
 
+
+
         layoutInflater = (LayoutInflater) context.getSystemService(context.LAYOUT_INFLATER_SERVICE);
         View view = layoutInflater.inflate(R.layout.slide_layout, container, false);
 
         ImageView slideImageView = (ImageView) view.findViewById(R.id.id_ImageView);
-        //TextView slideHeader = (TextView) view.findViewById(R.id.id_);
-        TextView slideText = (TextView) view.findViewById(R.id.id_SlideTextView);
+        TextView slideHeader = (TextView) view.findViewById(R.id.id_TextLabel);
+        TextView slideText =   view.findViewById(R.id.id_textView);
 
+        if (mikaSynnytys == 1)
+        {
+            slideImageView.setImageResource(slide_images[position]);
+            slideHeader.setText(slide_header[position]);
+            slideText.setText(slide_text[position]);
+        }
+        if (mikaSynnytys == 2)
+        {
+            slideImageView.setImageResource(slide_images2[position]);
+            slideHeader.setText(slide_header[position]);
+            slideText.setText(slide_text2[position]);
+        }
 
-        slideImageView.setImageResource(slide_images[position]);
-        //slideHeader.setText(slide_header[position]);
-        slideText.setText(slide_text[position]);
 
         container.addView(view);
 
