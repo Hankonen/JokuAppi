@@ -105,10 +105,6 @@ Section 1.10.33 of "de Finibus Bonorum et Malorum", written by Cicero in 45 BC
     <string name="neljas_Dia_Kolmasvaihe">Neljasmatsku</string>
     <string name="viides_Dia_Kolmasvaihe">Viidesmatsku</string>
 
-
-
-
-
     <string name="info_text">me emme ole mistään vastuuussta onko seleveä \n\n
     Ja mehän tehtiin tää sovellus eikä kukaan muu</string>
     <string name="feedback_text"> Hellou! \nJos haluat lähettää meille\npalautetta/parannusehdotuksia,\nvoit tehdä sen täältä. \nPaina e-mail ikonia ja siirryt \nautomaattisesti oletussähköpostisovellukseesi</string>

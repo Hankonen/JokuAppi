@@ -31,12 +31,6 @@ public class feedback_Activity extends AppCompatActivity {
 
     public void onClickListener_to_email(View view)
     {
-      /*Intent intent_feedback_actions = new Intent(Intent.ACTION_SEND);
-        intent_feedback_actions.setType("text/parse");
-        intent_feedback_actions.putExtra(Intent.EXTRA_EMAIL, "feedback@ampuappi.com");
-        intent_feedback_actions.putExtra(Intent.EXTRA_SUBJECT, "Palautetta sovellukseta");
-
-        startActivity(Intent.createChooser(intent_feedback_actions, "Lähtä sähköposti"));*/
 
         Intent intent = new Intent(Intent.ACTION_SENDTO, Uri.fromParts(
                 "mailto", "feedback@ampuappi.com", null));

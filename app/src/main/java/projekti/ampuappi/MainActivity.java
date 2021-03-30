@@ -96,3 +96,10 @@ public class MainActivity extends AppCompatActivity {
         renameDialog.setView(R.layout.straight_to_labor_layout);
         renameDialog.setNegativeButton("Poistu", (dialog, which) -> dialog.cancel());
         renameDialog.show();*/
+
+ /*Intent intent_feedback_actions = new Intent(Intent.ACTION_SEND);                                        // jätetty malliksi
+        intent_feedback_actions.setType("text/parse");
+        intent_feedback_actions.putExtra(Intent.EXTRA_EMAIL, "feedback@ampuappi.com");
+        intent_feedback_actions.putExtra(Intent.EXTRA_SUBJECT, "Palautetta sovellukseta");
+
+        startActivity(Intent.createChooser(intent_feedback_actions, "Lähtä sähköposti"));*/

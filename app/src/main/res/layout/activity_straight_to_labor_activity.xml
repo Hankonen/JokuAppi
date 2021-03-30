@@ -11,8 +11,9 @@
     <Button
         android:id="@+id/button_normal_labor2"
         style="@style/button_style"
-        android:layout_width="125dp"
+        android:layout_width="143dp"
         android:layout_height="60dp"
+        android:onClick="onClickListener_NormalLabor"
         android:text="@string/button_normal_labor"
         android:visibility="invisible"
         app:layout_constraintBottom_toTopOf="@+id/imageButton_kolmas_vaihe_ED"
@@ -20,67 +21,66 @@
         app:layout_constraintHorizontal_bias="0.055"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageButton_toka_vaihe_ED"
-        app:layout_constraintVertical_bias="0.0"
-        android:onClick="onClickListener_NormalLabor"/>
+        app:layout_constraintVertical_bias="0.0" />
 
     <Button
         android:id="@+id/button_peratilan_synnytys2"
         style="@style/button_style"
-        android:layout_width="132dp"
+        android:layout_width="144dp"
         android:layout_height="60dp"
         android:onClick="onClickListener_peratilan_synnytys"
         android:text="@string/button_peratilan_labor"
         android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.899"
+        app:layout_constraintHorizontal_bias="0.942"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/button_hartiadystokia2"
-        app:layout_constraintVertical_bias="0.265" />
+        app:layout_constraintTop_toBottomOf="@+id/button_hartiadystokia2"
+        app:layout_constraintVertical_bias="0.111" />
 
     <Button
         android:id="@+id/button_hartiadystokia2"
         style="@style/button_style"
-        android:layout_width="178dp"
+        android:layout_width="200dp"
         android:layout_height="60dp"
+        android:onClick="onClickListener_hartiaDystokia"
         android:text="@string/button_hartiadystokia"
         android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.879"
+        app:layout_constraintHorizontal_bias="0.931"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageButton_toka_vaihe_ED"
-        app:layout_constraintVertical_bias="0.0"
-        android:onClick="onClickListener_hartiaDystokia"/>
+        app:layout_constraintVertical_bias="0.0" />
 
     <Button
         android:id="@+id/button_napanuoran_esiinluiskahdus2"
         style="@style/button_style"
-        android:layout_width="189dp"
+        android:layout_width="206dp"
         android:layout_height="60dp"
         android:layout_marginTop="92dp"
+        android:onClick="onClickListener_napanuoran_esiinluiskahdus"
         android:text="@string/button_napanuoran_esiinluiskahdus"
         android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.072"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageButton_toka_vaihe_ED"
-        android:onClick="onClickListener_napanuoran_esiinluiskahdus"/>
+        app:layout_constraintTop_toBottomOf="@+id/imageButton_toka_vaihe_ED" />
 
     <ImageButton
         android:id="@+id/imageButton_kolmas_vaihe_ED"
         android:layout_width="260dp"
         android:layout_height="60dp"
         android:backgroundTint="@color/toolbar_tausta"
+        android:onClick="onClickListener_kolmasVaihe"
         android:scaleType="fitXY"
         app:layout_constraintBottom_toTopOf="@+id/exit_button_STL"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button_napanuoran_esiinluiskahdus2"
-        app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/kolmasvaihe2"
-        android:onClick="onClickListener_kolmasVaihe"/>
+        app:layout_constraintVertical_bias="0.219"
+        app:srcCompat="@drawable/kolmasvaihe2" />
 
     <ImageButton
         android:id="@+id/imageButton_toka_vaihe_ED"
