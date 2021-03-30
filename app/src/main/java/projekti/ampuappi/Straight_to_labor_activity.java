@@ -59,24 +59,57 @@ public class Straight_to_labor_activity extends AppCompatActivity {
 
     public void onClickListener_peratilan_synnytys(View view)
     {
+
+        int tila = 2;
         Intent intent = new Intent(this, SliderActivity.class);
+        intent.putExtra("key",tila);
         startActivity(intent);
+
 
     }
 
     public void onClick_exit (View view)
     {
+
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
     }
 
-    public void onClick_exit_2 (View view)
-    {
-        setContentView(R.layout.activity_straight_to_labor_activity);
+    public void onClickListener_NormalLabor(View view) {
+        int tila = 1;
+        Intent intent = new Intent(this, SliderActivity.class);
+        intent.putExtra("key",tila);
+        startActivity(intent);
     }
 
 
+    public void onClickListener_hartiaDystokia(View view) {
+        int tila = 3;
+        Intent intent = new Intent(this, SliderActivity.class);
+        intent.putExtra("key",tila);
+        startActivity(intent);
 
+    }
 
+    public void onClickListener_napanuoran_esiinluiskahdus(View view) {
+        int tila = 4;
+        Intent intent = new Intent(this, SliderActivity.class);
+        intent.putExtra("key",tila);
+        startActivity(intent);
 
+    }
+
+    public void onClickListener_ekaVaihe(View view) {
+        int tila = 5;
+        Intent intent = new Intent(this, SliderActivity.class);
+        intent.putExtra("key",tila);
+        startActivity(intent);
+    }
+
+    public void onClickListener_kolmasVaihe(View view) {
+        int tila = 6;
+        Intent intent = new Intent(this, SliderActivity.class);
+        intent.putExtra("key",tila);
+        startActivity(intent);
+    }
 }

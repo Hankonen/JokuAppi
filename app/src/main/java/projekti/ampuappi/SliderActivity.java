@@ -3,6 +3,7 @@ package projekti.ampuappi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.Html;
 import android.view.View;
@@ -28,13 +29,16 @@ public class SliderActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_slider);
 
+        Intent i = getIntent();
+        int arvo = i.getIntExtra("key", 1);
+
         slideViewPager = (ViewPager) findViewById(R.id.slideViewPager);
         linearLayout = (LinearLayout) findViewById(R.id.linearLayout);
 
         leftButton = (ImageButton)findViewById(R.id.id_iButton_Left);
         rightButton = findViewById(R.id.id_iButton_Right);
 
-        sliderAdapter = new SliderAdapter(this);
+        sliderAdapter = new SliderAdapter(this, arvo);
 
         slideViewPager.setAdapter(sliderAdapter);
         addDotsIndikaattori(0);

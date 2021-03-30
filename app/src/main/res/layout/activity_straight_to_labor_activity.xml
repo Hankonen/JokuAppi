@@ -20,7 +20,8 @@
         app:layout_constraintHorizontal_bias="0.055"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageButton_toka_vaihe_ED"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.0"
+        android:onClick="onClickListener_NormalLabor"/>
 
     <Button
         android:id="@+id/button_peratilan_synnytys2"
@@ -49,7 +50,8 @@
         app:layout_constraintHorizontal_bias="0.879"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageButton_toka_vaihe_ED"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.0"
+        android:onClick="onClickListener_hartiaDystokia"/>
 
     <Button
         android:id="@+id/button_napanuoran_esiinluiskahdus2"
@@ -62,7 +64,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.072"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageButton_toka_vaihe_ED" />
+        app:layout_constraintTop_toBottomOf="@+id/imageButton_toka_vaihe_ED"
+        android:onClick="onClickListener_napanuoran_esiinluiskahdus"/>
 
     <ImageButton
         android:id="@+id/imageButton_kolmas_vaihe_ED"
@@ -76,7 +79,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button_napanuoran_esiinluiskahdus2"
         app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/kolmasvaihe2" />
+        app:srcCompat="@drawable/kolmasvaihe2"
+        android:onClick="onClickListener_kolmasVaihe"/>
 
     <ImageButton
         android:id="@+id/imageButton_toka_vaihe_ED"
@@ -103,7 +107,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.292"
-        app:srcCompat="@drawable/ekavaihe" />
+        app:srcCompat="@drawable/ekavaihe"
+        android:onClick="onClickListener_ekaVaihe"/>
 
     <ImageButton
         android:id="@+id/exit_button_STL"
