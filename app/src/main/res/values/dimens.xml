@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <dimen name="dim_toolbar_height">40dp</dimen>
-    <dimen name="dim_ekasivu_otsikko">20dp</dimen>
-    <dimen name="dim_button_width">342dp</dimen>
-    <dimen name="dim_button_height">57dp</dimen>
-    <dimen name="dim_button_text_size">15dp</dimen>
+    <dimen name="dim_toolbar_height">40sp</dimen>
+    <dimen name="dim_ekasivu_otsikko">20sp</dimen>
+    <dimen name="dim_button_width">342sp</dimen>
+    <dimen name="dim_button_height">57sp</dimen>
+    <dimen name="dim_button_text_size">15sp</dimen>
+    <dimen name="dim_FB_header_TS">20sp</dimen>
+    <dimen name="dim_alertBox_size">20sp</dimen>
     <dimen name="design_fab_image_size" tools:override="true">36dp</dimen>
 </resources>

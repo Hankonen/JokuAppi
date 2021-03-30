@@ -3,7 +3,6 @@ package projekti.ampuappi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
 
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.Html;
@@ -12,7 +11,6 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 public class SliderActivity extends AppCompatActivity {
 
@@ -26,15 +24,16 @@ public class SliderActivity extends AppCompatActivity {
     private ImageButton rightButton;
     private int currentPage;
 
+    public int sivujenMaara;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_slider);
-        Toast.makeText(getApplicationContext(), "Suoraan synnytykseen", Toast.LENGTH_SHORT).show();
 
         Intent i = getIntent();
         int arvo = i.getIntExtra("key", 1);
+        sivujenMaara = i.getIntExtra("sivujenmaara", 1);
 
         slideViewPager = (ViewPager) findViewById(R.id.slideViewPager);
         linearLayout = (LinearLayout) findViewById(R.id.linearLayout);
@@ -42,7 +41,7 @@ public class SliderActivity extends AppCompatActivity {
         leftButton = (ImageButton)findViewById(R.id.id_iButton_Left);
         rightButton = findViewById(R.id.id_iButton_Right);
 
-        sliderAdapter = new SliderAdapter(this, arvo);
+        sliderAdapter = new SliderAdapter(this, arvo, sivujenMaara);
 
         slideViewPager.setAdapter(sliderAdapter);
         addDotsIndikaattori(0);
@@ -70,7 +69,7 @@ public class SliderActivity extends AppCompatActivity {
         pageIndikaattori = new TextView[5];
         linearLayout.removeAllViews();
 
-        for (int i = 0; i < pageIndikaattori.length; i++)
+        for (int i = 0; i < sivujenMaara; i++)
         {
             pageIndikaattori[i] = new TextView(this);
             pageIndikaattori[i].setText(Html.fromHtml("&#8226;"));  //tekee ympyrät
