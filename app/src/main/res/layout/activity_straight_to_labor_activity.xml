@@ -17,10 +17,10 @@
         android:visibility="invisible"
         app:layout_constraintBottom_toTopOf="@+id/imageButton_kolmas_vaihe_ED"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.944"
+        app:layout_constraintHorizontal_bias="0.055"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageButton_toka_vaihe_ED"
-        app:layout_constraintVertical_bias="0.989" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <Button
         android:id="@+id/button_peratilan_synnytys2"
@@ -32,10 +32,10 @@
         android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.057"
+        app:layout_constraintHorizontal_bias="0.899"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/button_hartiadystokia2"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.265" />
 
     <Button
         android:id="@+id/button_hartiadystokia2"

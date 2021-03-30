@@ -42,12 +42,18 @@
     <string name="how_to_act_HEADER">Miten toimitaan</string>
     <string name="how_to_act_REST">
 •	Valmistaudu ottamalla synnytyssetit esille\n
+        .........................\n
 •	Paarien yläosa käännettään toisin päin\n
+         .........................\n
 •	Synnyttäjä asetetaan vasemmalle kyljelleen\n
+         .........................\n
 •	Avaa i.v. -yhteys\n
+         .........................\n
 •	Seuraa supistusten väliä\n
+         .........................\n
 •	Jos synnyttäjällä tulee paineen tunne\n
     tai ponnistamisen pakko matkalla, pysäytä auto\n
+         .........................\n
 •	Lääkkeettömiä kivunlievitys keinoja voi\n
     kokeilla kuten hierontaa\n
     tai lämpöpussia kipukohtiin</string>
@@ -59,9 +65,7 @@
     <string name="viides_Dia">Viidesmatsku</string>
     <string name="info_text">me emme ole mistään vastuuussta onko seleveä \n\n
     Ja mehän tehtiin tää sovellus eikä kukaan muu</string>
-    <string name="feedback_text">Hellou! \n
-    Jos haluat lähettää meille\n palautetta/parannusehdotuksia, \n/n
-        voit tehdä sen täältä.</string>
+    <string name="feedback_text"> Hellou! \nJos haluat lähettää meille\npalautetta/parannusehdotuksia,\nvoit tehdä sen täältä. \nPaina e-mail ikonia ja siirryt \nautomaattisesti oletussähköpostisovellukseesi</string>
 
 
 </resources>

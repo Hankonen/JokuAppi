@@ -41,10 +41,8 @@ public class MainActivity extends AppCompatActivity {
             case R.id.info_MenuItem:
                 Intent intent_info = new Intent(MainActivity.this,info_Activity.class);
                 startActivity(intent_info);
-                return super.onOptionsItemSelected(item);
-            case R.id.first_MenuItem:
 
-            case R.id.second_MenuItem:
+                return super.onOptionsItemSelected(item);
 
             case R.id.feedback_MenuItem:
                 Intent intent_feedback = new Intent(MainActivity.this,feedback_Activity.class);
@@ -54,21 +52,11 @@ public class MainActivity extends AppCompatActivity {
                     return super.onOptionsItemSelected(item); }
     }
 
-
-
-
-
     public void onClickListener_StraightToLabor(View view)
     {
         Intent intent = new Intent(this, Straight_to_labor_activity.class);
         startActivity(intent);
 
-
-
-        /*final AlertDialog.Builder renameDialog = new AlertDialog.Builder(MainActivity.this);
-        renameDialog.setView(R.layout.straight_to_labor_layout);
-        renameDialog.setNegativeButton("Poistu", (dialog, which) -> dialog.cancel());
-        renameDialog.show();*/
     }
 
     public void onClickListener_to_location(View view)
@@ -85,8 +73,6 @@ public class MainActivity extends AppCompatActivity {
         renameDialog.setView(R.layout.alertbox_how_to_act_layout);
         renameDialog.setNegativeButton("Poistu", (dialog, which) -> dialog.cancel());
         renameDialog.show();
-        int i;
-
     };
 
     public void onClickListener_onTheWay_or_in_location(View view) {
@@ -105,3 +91,8 @@ public class MainActivity extends AppCompatActivity {
             kuva.setImageResource(R.drawable.ohje);
             layout.addView(kuva);*/
 // Toast.makeText(getApplicationContext(), "Suoraan synnytykseen", Toast.LENGTH_SHORT).show();         // jätetty esimerkiksi
+
+ /*final AlertDialog.Builder renameDialog = new AlertDialog.Builder(MainActivity.this);                 // Jätetty esimerkiksi talteen
+        renameDialog.setView(R.layout.straight_to_labor_layout);
+        renameDialog.setNegativeButton("Poistu", (dialog, which) -> dialog.cancel());
+        renameDialog.show();*/
