@@ -24,6 +24,8 @@ public class SliderActivity extends AppCompatActivity {
     private ImageButton rightButton;
     private int currentPage;
 
+    public int sivujenMaara;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,6 +33,7 @@ public class SliderActivity extends AppCompatActivity {
 
         Intent i = getIntent();
         int arvo = i.getIntExtra("key", 1);
+        sivujenMaara = i.getIntExtra("sivujenmaara", 1);
 
         slideViewPager = (ViewPager) findViewById(R.id.slideViewPager);
         linearLayout = (LinearLayout) findViewById(R.id.linearLayout);
@@ -38,7 +41,7 @@ public class SliderActivity extends AppCompatActivity {
         leftButton = (ImageButton)findViewById(R.id.id_iButton_Left);
         rightButton = findViewById(R.id.id_iButton_Right);
 
-        sliderAdapter = new SliderAdapter(this, arvo);
+        sliderAdapter = new SliderAdapter(this, arvo, sivujenMaara);
 
         slideViewPager.setAdapter(sliderAdapter);
         addDotsIndikaattori(0);
@@ -66,7 +69,7 @@ public class SliderActivity extends AppCompatActivity {
         pageIndikaattori = new TextView[5];
         linearLayout.removeAllViews();
 
-        for (int i = 0; i < pageIndikaattori.length; i++)
+        for (int i = 0; i < sivujenMaara; i++)
         {
             pageIndikaattori[i] = new TextView(this);
             pageIndikaattori[i].setText(Html.fromHtml("&#8226;"));  //tekee ympyrät

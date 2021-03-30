@@ -17,11 +17,13 @@ public class SliderAdapter extends PagerAdapter {
     Context context;
     LayoutInflater layoutInflater;
     public int mikaSynnytys;
+    public int sivumaara;
 
-    public SliderAdapter(Context context, int arvo)
+    public SliderAdapter(Context context, int arvo, int pSivumaara)
     {
         this.context = context;
         mikaSynnytys = arvo;
+        sivumaara = pSivumaara;
     }
 
     // Arrayt slideri tietoihin!!!
@@ -69,10 +71,6 @@ public class SliderAdapter extends PagerAdapter {
     public int[] ensimmainenvaihe_slides = {
 
             R.drawable.ohje5,
-            R.drawable.ohje5,
-            R.drawable.ohje5,
-            R.drawable.ohje5,
-            R.drawable.ohje5
 
     };
 
@@ -130,10 +128,7 @@ public class SliderAdapter extends PagerAdapter {
 
 
             "Eka",
-            "Toka",
-            "Kolmas",
-            "Neljas",
-            "Viides"
+
     };
 
     public String[] kolmasvaihe_header = {
@@ -167,10 +162,7 @@ public class SliderAdapter extends PagerAdapter {
     public int[] slide_text_ensimmainenvaihe = {
 
             R.string.eka_Dia_Ensimmainenvaihe,
-            R.string.toka_Dia_Ensimmainenvaihe,
-            R.string.kolmas_Dia_Ensimmainenvaihe,
-            R.string.neljas_Dia_Ensimmainenvaihe,
-            R.string.viides_Dia_Ensimmainenvaihe
+
     };
 
     public int[] slide_text_hartiadystokia = {
@@ -203,8 +195,8 @@ public class SliderAdapter extends PagerAdapter {
     // luo automaattisesti tehtäessä kun extendaa PageAdapterin
     @Override
     public int getCount() {
-        return peratila_header.length;
-    }
+        return sivumaara;
+    }   //TODO tee tästä skaalautuva
 
     @Override
     public boolean isViewFromObject(@NonNull View view, @NonNull Object object) {
@@ -225,6 +217,7 @@ public class SliderAdapter extends PagerAdapter {
 
         if (mikaSynnytys == 1)
         {
+
             slideImageView.setImageResource(peratila_slides[position]);
             slideHeader.setText(peratila_header[position]);
             slideText.setText(slide_text_normaali[position]);
@@ -251,6 +244,7 @@ public class SliderAdapter extends PagerAdapter {
         }
         if (mikaSynnytys == 5)
         {
+
             slideImageView.setImageResource(ensimmainenvaihe_slides[position]);
             slideHeader.setText(ensimmainenvaihe_header[position]);
             slideText.setText(slide_text_ensimmainenvaihe[position]);

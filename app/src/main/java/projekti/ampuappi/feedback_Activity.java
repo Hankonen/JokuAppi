@@ -33,7 +33,7 @@ public class feedback_Activity extends AppCompatActivity {
     {
       /*Intent intent_feedback_actions = new Intent(Intent.ACTION_SEND);
         intent_feedback_actions.setType("text/parse");
-        intent_feedback_actions.putExtra(Intent.EXTRA_EMAIL, "feedback@ampuappi.com");          // TODO mailiosoite ei siirry mukana
+        intent_feedback_actions.putExtra(Intent.EXTRA_EMAIL, "feedback@ampuappi.com");
         intent_feedback_actions.putExtra(Intent.EXTRA_SUBJECT, "Palautetta sovellukseta");
 
         startActivity(Intent.createChooser(intent_feedback_actions, "Lähtä sähköposti"));*/

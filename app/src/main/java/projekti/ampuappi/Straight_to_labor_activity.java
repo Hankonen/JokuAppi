@@ -59,47 +59,60 @@ public class Straight_to_labor_activity extends AppCompatActivity {
 
     public void onClickListener_peratilan_synnytys(View view)
     {
-        int tila = 2;
+        int tila = 2;   // tilaa käytetään valitsemaan
+        int diojenMaara = 3;
         Intent intent = new Intent(this, SliderActivity.class);
         intent.putExtra("key",tila);
+        intent.putExtra("sivujenmaara", diojenMaara);
         startActivity(intent);
     }
 
     public void onClickListener_NormalLabor(View view) {
         int tila = 1;
+        int diojenMaara = 5;
         Intent intent = new Intent(this, SliderActivity.class);
         intent.putExtra("key",tila);
+        intent.putExtra("sivujenmaara", diojenMaara);
         startActivity(intent);
     }
 
 
     public void onClickListener_hartiaDystokia(View view) {
         int tila = 3;
+        int diojenMaara = 5;
         Intent intent = new Intent(this, SliderActivity.class);
         intent.putExtra("key",tila);
+        intent.putExtra("sivujenmaara", diojenMaara);
         startActivity(intent);
 
     }
 
     public void onClickListener_napanuoran_esiinluiskahdus(View view) {
         int tila = 4;
+        int diojenMaara = 5;
         Intent intent = new Intent(this, SliderActivity.class);
         intent.putExtra("key",tila);
+        intent.putExtra("sivujenmaara", diojenMaara);
         startActivity(intent);
 
     }
 
     public void onClickListener_ekaVaihe(View view) {
         int tila = 5;
+        int diojenMaara = 1;
         Intent intent = new Intent(this, SliderActivity.class);
         intent.putExtra("key",tila);
+        intent.putExtra("sivujenmaara", diojenMaara);
+
         startActivity(intent);
     }
 
     public void onClickListener_kolmasVaihe(View view) {
         int tila = 6;
+        int diojenMaara = 5;
         Intent intent = new Intent(this, SliderActivity.class);
         intent.putExtra("key",tila);
+        intent.putExtra("sivujenmaara", diojenMaara);
         startActivity(intent);
     }
 
