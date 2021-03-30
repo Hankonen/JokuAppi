@@ -46,7 +46,98 @@ public class SliderAdapter extends PagerAdapter {
 
     };
 
-    public String[] slide_header = {
+    public int[] napanuora_slides = {
+
+            R.drawable.ohje4,
+            R.drawable.ohje4,
+            R.drawable.ohje4,
+            R.drawable.ohje7,
+            R.drawable.ohje7
+
+    };
+
+    public int[] hartiadystokia_slides = {
+
+            R.drawable.ohje7,
+            R.drawable.ohje3,
+            R.drawable.ohje4,
+            R.drawable.ohje5,
+            R.drawable.ohje7
+
+    };
+
+    public int[] ensimmainenvaihe_slides = {
+
+            R.drawable.ohje5,
+            R.drawable.ohje5,
+            R.drawable.ohje5,
+            R.drawable.ohje5,
+            R.drawable.ohje5
+
+    };
+
+    public int[] kolmasvaihe_slides = {
+
+            R.drawable.ohje,
+            R.drawable.ohje,
+            R.drawable.ohje,
+            R.drawable.ohje,
+            R.drawable.ohje
+
+    };
+
+    public String[] peratila_header = {
+
+
+            "Eka",
+            "Toka",
+            "Kolmas",
+            "Neljas",
+            "Viides"
+    };
+
+    public String[] normaalitila_header = {
+
+
+            "Eka",
+            "Toka",
+            "Kolmas",
+            "Neljas",
+            "Viides"
+    };
+
+    public String[] napanuora_header = {
+
+
+            "Napanuora",
+            "Toka",
+            "Kolmas",
+            "Neljas",
+            "Viides"
+    };
+
+    public String[] hartiadystokia_header = {
+
+
+            "Eka",
+            "Toka",
+            "Kolmas",
+            "Neljas",
+            "Viides"
+    };
+
+    public String[] ensimmainenvaihe_header = {
+
+
+            "Eka",
+            "Toka",
+            "Kolmas",
+            "Neljas",
+            "Viides"
+    };
+
+    public String[] kolmasvaihe_header = {
+
 
             "Eka",
             "Toka",
@@ -112,7 +203,7 @@ public class SliderAdapter extends PagerAdapter {
     // luo automaattisesti tehtäessä kun extendaa PageAdapterin
     @Override
     public int getCount() {
-        return slide_header.length;
+        return peratila_header.length;
     }
 
     @Override
@@ -135,40 +226,40 @@ public class SliderAdapter extends PagerAdapter {
         if (mikaSynnytys == 1)
         {
             slideImageView.setImageResource(peratila_slides[position]);
-            slideHeader.setText(slide_header[position]);
+            slideHeader.setText(peratila_header[position]);
             slideText.setText(slide_text_normaali[position]);
         }
 
         if (mikaSynnytys == 2)
         {
             slideImageView.setImageResource(normaalitila_slides[position]);
-            slideHeader.setText(slide_header[position]);
+            slideHeader.setText(normaalitila_header[position]);
             slideText.setText(slide_text_peratila[position]);
         }
         if (mikaSynnytys == 3)
         {
-            slideImageView.setImageResource(peratila_slides[position]);
-            slideHeader.setText(slide_header[position]);
+            slideImageView.setImageResource(hartiadystokia_slides[position]);
+            slideHeader.setText(hartiadystokia_header[position]);
             slideText.setText(slide_text_hartiadystokia[position]);
         }
 
         if (mikaSynnytys == 4)
         {
-            slideImageView.setImageResource(normaalitila_slides[position]);
-            slideHeader.setText(slide_header[position]);
+            slideImageView.setImageResource(napanuora_slides[position]);
+            slideHeader.setText(napanuora_header[position]);
             slideText.setText(slide_text_napanuora[position]);
         }
         if (mikaSynnytys == 5)
         {
-            slideImageView.setImageResource(peratila_slides[position]);
-            slideHeader.setText(slide_header[position]);
+            slideImageView.setImageResource(ensimmainenvaihe_slides[position]);
+            slideHeader.setText(ensimmainenvaihe_header[position]);
             slideText.setText(slide_text_ensimmainenvaihe[position]);
         }
 
         if (mikaSynnytys == 6)
         {
-            slideImageView.setImageResource(normaalitila_slides[position]);
-            slideHeader.setText(slide_header[position]);
+            slideImageView.setImageResource(kolmasvaihe_slides[position]);
+            slideHeader.setText(kolmasvaihe_header[position]);
             slideText.setText(slide_text_kolmasvaihe[position]);
         }
 

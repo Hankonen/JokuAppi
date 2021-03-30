@@ -59,19 +59,9 @@ public class Straight_to_labor_activity extends AppCompatActivity {
 
     public void onClickListener_peratilan_synnytys(View view)
     {
-
         int tila = 2;
         Intent intent = new Intent(this, SliderActivity.class);
         intent.putExtra("key",tila);
-        startActivity(intent);
-
-
-    }
-
-    public void onClick_exit (View view)
-    {
-
-        Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
     }
 
@@ -110,6 +100,13 @@ public class Straight_to_labor_activity extends AppCompatActivity {
         int tila = 6;
         Intent intent = new Intent(this, SliderActivity.class);
         intent.putExtra("key",tila);
+        startActivity(intent);
+    }
+
+    public void onClick_exit (View view)
+    {
+
+        Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
     }
 }
