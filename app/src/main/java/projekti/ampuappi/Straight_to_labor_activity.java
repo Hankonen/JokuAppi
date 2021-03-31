@@ -39,9 +39,9 @@ public class Straight_to_labor_activity extends AppCompatActivity {
         final Button hartiadystokia  = findViewById(R.id.button_hartiadystokia2);
         final Button napanuora  = findViewById(R.id.button_napanuoran_esiinluiskahdus2);
         final Button normaaliSynnytys  = findViewById(R.id.button_normal_labor2);
-        final ImageButton first_phase = findViewById(R.id.imageButton_eka_vaihe_ED);
-        final ImageButton second_phase = findViewById(R.id.imageButton_toka_vaihe_ED);
-        final ImageButton third_phase = findViewById(R.id.imageButton_kolmas_vaihe_ED);
+        final Button first_phase = findViewById(R.id.button_eka_vaihe);
+        final Button second_phase = findViewById(R.id.button_toka_vaihe);
+        final Button third_phase = findViewById(R.id.button_kolmas_vaihe);
 
 
         second_phase.setOnClickListener(new View.OnClickListener() {
@@ -51,6 +51,7 @@ public class Straight_to_labor_activity extends AppCompatActivity {
                 hartiadystokia.setVisibility(View.VISIBLE);
                 napanuora.setVisibility(View.VISIBLE);
                 normaaliSynnytys.setVisibility(View.VISIBLE);
+
                //first_phase.
             }
         });

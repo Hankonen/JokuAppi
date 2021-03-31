@@ -1,31 +1,78 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:animateLayoutChanges="true"
+    android:background="@color/app_background"
     tools:context=".Straight_to_labor_activity">
+
+
+    <Button
+        android:id="@+id/button_eka_vaihe"
+        style="@style/button_style"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="onClickListener_ekaVaihe"
+        android:text="@string/button_eka_vaihe"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.086" />
+
+    <Button
+        android:id="@+id/button_toka_vaihe"
+        style="@style/button_style"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="onClickListener_ekaVaihe"
+        android:text="@string/button_toka_vaihe"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.35" />
+
+    <Button
+        android:id="@+id/button_kolmas_vaihe"
+        style="@style/button_style"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="104dp"
+        android:layout_marginEnd="77dp"
+        android:onClick="onClickListener_kolmasVaihe"
+        android:text="@string/button_kolmas_vaihe"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.629" />
 
     <Button
         android:id="@+id/button_normal_labor2"
-        style="@style/button_style"
+        style="@style/button_second_phase_style"
         android:layout_width="143dp"
         android:layout_height="60dp"
+        android:layout_marginStart="252dp"
+        android:layout_marginEnd="16dp"
         android:onClick="onClickListener_NormalLabor"
         android:text="@string/button_normal_labor"
         android:visibility="invisible"
-        app:layout_constraintBottom_toTopOf="@+id/imageButton_kolmas_vaihe_ED"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.055"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageButton_toka_vaihe_ED"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.452" />
 
     <Button
         android:id="@+id/button_peratilan_synnytys2"
-        style="@style/button_style"
+        style="@style/button_second_phase_style"
         android:layout_width="144dp"
         android:layout_height="60dp"
         android:onClick="onClickListener_peratilan_synnytys"
@@ -33,82 +80,39 @@
         android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.942"
+        app:layout_constraintHorizontal_bias="0.943"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button_hartiadystokia2"
-        app:layout_constraintVertical_bias="0.111" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.54" />
 
     <Button
         android:id="@+id/button_hartiadystokia2"
-        style="@style/button_style"
+        style="@style/button_second_phase_style"
         android:layout_width="200dp"
         android:layout_height="60dp"
+        android:layout_marginEnd="192dp"
         android:onClick="onClickListener_hartiaDystokia"
         android:text="@string/button_hartiadystokia"
         android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.931"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageButton_toka_vaihe_ED"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.453" />
 
     <Button
         android:id="@+id/button_napanuoran_esiinluiskahdus2"
-        style="@style/button_style"
+        style="@style/button_second_phase_style"
         android:layout_width="206dp"
         android:layout_height="60dp"
-        android:layout_marginTop="92dp"
         android:onClick="onClickListener_napanuoran_esiinluiskahdus"
         android:text="@string/button_napanuoran_esiinluiskahdus"
         android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.072"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageButton_toka_vaihe_ED" />
-
-    <ImageButton
-        android:id="@+id/imageButton_kolmas_vaihe_ED"
-        android:layout_width="260dp"
-        android:layout_height="60dp"
-        android:backgroundTint="@color/toolbar_tausta"
-        android:onClick="onClickListener_kolmasVaihe"
-        android:scaleType="fitXY"
-        app:layout_constraintBottom_toTopOf="@+id/exit_button_STL"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button_napanuoran_esiinluiskahdus2"
-        app:layout_constraintVertical_bias="0.219"
-        app:srcCompat="@drawable/kolmasvaihe2" />
-
-    <ImageButton
-        android:id="@+id/imageButton_toka_vaihe_ED"
-        android:layout_width="232dp"
-        android:layout_height="60dp"
-        android:layout_marginTop="264dp"
-        android:backgroundTint="@color/toolbar_tausta"
-        android:scaleType="fitXY"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-
+        app:layout_constraintHorizontal_bias="0.092"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/toinenvaihe" />
-
-    <ImageButton
-        android:id="@+id/imageButton_eka_vaihe_ED"
-        android:layout_width="209dp"
-        android:layout_height="60dp"
-        android:backgroundTint="@color/toolbar_tausta"
-        android:scaleType="fitXY"
-        app:layout_constraintBottom_toTopOf="@+id/imageButton_toka_vaihe_ED"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.292"
-        app:srcCompat="@drawable/ekavaihe"
-        android:onClick="onClickListener_ekaVaihe"/>
+        app:layout_constraintVertical_bias="0.54" />
 
     <ImageButton
         android:id="@+id/exit_button_STL"

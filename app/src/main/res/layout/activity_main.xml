@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/app_background"
     tools:context=".MainActivity">
 
     <include
@@ -12,25 +13,27 @@
 
     <TextView
         android:id="@+id/first_page_header"
-        android:layout_width="339dp"
-        android:layout_height="28dp"
+        android:layout_width="371dp"
+        android:layout_height="185dp"
         android:text="@string/header_first_page"
+        android:textColor="@color/button_text_color"
         android:textSize="@dimen/dim_ekasivu_otsikko"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.125"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar"
-        app:layout_constraintVertical_bias="0.081" />
+        app:layout_constraintVertical_bias="0.058" />
 
     <Button
         android:id="@+id/button_straight_to_labor"
         style="@style/button_style"
-        android:layout_marginBottom="60dp"
+        android:layout_marginBottom="52dp"
         android:onClick="onClickListener_StraightToLabor"
         android:text="@string/button_straight_to_labor"
         app:layout_constraintBottom_toTopOf="@+id/button_onTheWay_to_location"
         app:layout_constraintEnd_toEndOf="@+id/first_page_header"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.61"
         app:layout_constraintStart_toStartOf="@+id/first_page_header" />
 
     <Button
@@ -66,7 +69,6 @@
         app:layout_constraintEnd_toEndOf="@+id/button_how_to_act"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/button_how_to_act" />
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
