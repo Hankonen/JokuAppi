@@ -1,11 +1,14 @@
 <resources>
     <string name="app_name">AmpuAppi</string>
     <string name="toolbar_header">     AmpuAppi bitcheees</string>
-    <string name="header_first_page">AmpuAppi ja kaikkea muuta paskaa</string>
+    <string name="header_first_page">#¤%/(()AmpuAppi </string>
     <string name="button_straight_to_labor">Suoraan Synnytykseen</string>
     <string name="button_on_the_way">Synnytystehtävälle lähdettäessä</string>
     <string name="button_how_to_act">Miten Toimitaan</string>
     <string name="button_onTheWay_or_inLocation">Matkalle vai kohteessa?</string>
+    <string name="button_eka_vaihe">1. Vaihe, Avautumisvaihe</string>
+    <string name="button_toka_vaihe">2. Vaihe, Ponnistusvaihe</string>
+    <string name="button_kolmas_vaihe">3. Vaihe, Jälkeisvaihe</string>
     <string name="button_normal_labor">Normaali Synnytys</string>
     <string name="button_peratilan_labor">Perätilan Synnytys</string>
     <string name="button_hartiadystokia">Hartiadystokia</string>
@@ -15,46 +18,55 @@
     <string name="to_location_REST">"
 •\tKirjaa ylös synnyttäjän perustiedot (sairaudet, allergiat, monesko raskaus ja synnytys jne.)\n
 •\tRaskausviikot, selvitä miten raskaus on edennyt ja onko sikiö perä- vai raivotarjonnassa\n
-•\tKohteeseen päästyäsi tarkista mikä on synnytyksen tilanne: Onko lapsivesi mennyt?
-   Koska se on mennyt? Lapsiveden väri? Kirkas vai vihreä/kellertävää?
-   Hajuton/pahanhajuista? Onko supistuksia? Milloin ne ovat alkaneet?
-   Kuinka tiheään supistuksia tulee? Onko synnytys oikeasti käynnissä?</string>
+•\tKohteeseen päästyäsi tarkista \n
+        mikä on synnytyksen tilanne:\n
+        Onko lapsivesi mennyt?\n
+        Koska se on mennyt?
+        Lapsiveden väri?\n
+        Kirkas vai vihreä/kellertävää?\n
+        Hajuton/pahanhajuista?\n
+        Onko supistuksia?\n
+        Milloin ne ovat alkaneet?\n
+        Kuinka tiheään supistuksia tulee?\n
+        Onko synnytys oikeasti käynnissä?</string>
 
     <string name="OTW_or_IL_HEADER">Matkalle vai Kohteessa?</string>
     <string name="OTW_or_IL_REST">"Hoidetaan kohteessa jos:\n
-•\tSupistuksia on 1-2 minuutin välein\n
-  säännöllisesti\n
-•\tSynnyttäjällä on ponnistamisen pakko\n
-•\tSikiön pää näkyy"\n
+• Supistuksia on 1-2 minuutin välein
+  säännöllisesti
+• Synnyttäjällä on ponnistamisen
+  pakko
+• Sikiön pää näkyy"\n
 ..........................................\n
-  Matkaan jos:\n
-•\tLapsivesi on mennyt, mutta ei ole\n
+  Matkaan jos:\n\n
+• Lapsivesi on mennyt, mutta ei ole
   supistuksia\n
-•\tSupistukset tulevat epäsäännöllisesti\n
-•\tSupistukset tulevat\n
+• Supistukset tulevat epäsäännöllisesti\n
+• Supistukset tulevat
   säännöllisesti 2–15 minuutin välein\n
-•\tSynnyttäjä otetaan kyytiin ja\n
-  lähdetään liikkeelle, tutkimukset\n
+• Synnyttäjä otetaan kyytiin ja
+  lähdetään liikkeelle, tutkimukset
   yms. voi tehdä matkalla\n
-•\tMUISTA ENNAKKOILMOITUS
+• MUISTA ENNAKKOILMOITUS
 </string>
 
     <string name="how_to_act_HEADER">Miten toimitaan</string>
     <string name="how_to_act_REST">
-•	Valmistaudu ottamalla synnytyssetit esille\n
-        .........................\n
-•	Paarien yläosa käännettään toisin päin\n
-         .........................\n
-•	Synnyttäjä asetetaan vasemmalle kyljelleen\n
-         .........................\n
+•	Valmistaudu ottamalla synnytyssetit \n esille\n
+        ............................................\n
+•	Paarien yläosa käännettään toisin \n päin\n
+         ...........................................\n
+•	Synnyttäjä asetetaan vasemmalle \n  kyljelleen\n
+         ............................................\n
 •	Avaa i.v. -yhteys\n
-         .........................\n
+         ............................................\n
 •	Seuraa supistusten väliä\n
-         .........................\n
-•	Jos synnyttäjällä tulee paineen tunne\n
-    tai ponnistamisen pakko matkalla, pysäytä auto\n
-         .........................\n
-•	Lääkkeettömiä kivunlievitys keinoja voi\n
+         ............................................\n
+•	Jos synnyttäjällä tulee paineen \n
+    tunne tai ponnistamisen pakko \n
+        matkalla, pysäytä auto\n
+         ...........................................\n
+•	Lääkkeettömiä kivunlievitys keinoja \n voi
     kokeilla kuten hierontaa\n
     tai lämpöpussia kipukohtiin</string>
 

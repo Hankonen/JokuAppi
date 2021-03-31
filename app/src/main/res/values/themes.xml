@@ -2,8 +2,8 @@
     <!-- Base application theme. -->
     <style name="Theme.AmpuAppi" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/purple_500</item>
-        <item name="colorPrimaryVariant">@color/purple_700</item>
+        <item name="colorPrimary">#69a8bb</item>
+        <item name="colorPrimaryVariant">#69a8bb</item>
         <item name="colorOnPrimary">@color/white</item>
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/teal_200</item>
@@ -27,7 +27,16 @@
 
     <style name="button_style">
         <item name="backgroundTint">@color/button_color</item>
-        <item name="android:textColor">@color/button_text_color</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:background">@drawable/round_corners</item>
+        <item name="android:layout_width">@dimen/dim_button_width</item>
+        <item name="android:layout_height">@dimen/dim_button_height</item>
+        <item name="android:textSize">@dimen/dim_button_text_size</item>
+    </style>
+    <style name="button_second_phase_style">
+        <item name="backgroundTint">@color/toka_vaihe_color</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:background">@drawable/round_corners</item>
         <item name="android:layout_width">@dimen/dim_button_width</item>
         <item name="android:layout_height">@dimen/dim_button_height</item>
         <item name="android:textSize">@dimen/dim_button_text_size</item>
@@ -37,8 +46,9 @@
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
 
-        <item name="android:background">@color/button_text_color</item>
+        <item name="android:background">@color/app_background</item>
         <item name="android:text">@string/OTW_or_IL_REST</item>
+        <item name="android:textSize">@dimen/dim_alertBox_size</item>
         <item name="android:title"> @string/OTW_or_IL_HEADER</item>
     </style>
 
@@ -46,10 +56,11 @@
     <style name="how_to_act_style">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:background">@color/alertbox_background_color</item>
+        <item name="android:background">@color/app_background</item>
         <item name="android:title">@string/how_to_act_HEADER</item>
+        
         <item name="android:text">@string/how_to_act_REST</item>
-        <item name="android:textColor">@color/alertbox_text_color</item>
+        <item name="android:textColor">@color/purple_700</item>
         <item name="android:textSize">@dimen/dim_alertBox_size</item>
 
 
@@ -58,11 +69,15 @@
     <style name="to_location_style">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:background">@color/button_text_color</item>
+        <item name="android:background">@color/app_background</item>
         <item name="android:title">@string/to_location_HEADER</item>
         <item name="android:text">@string/to_location_REST</item>
+        <item name="android:textSize">@dimen/dim_alertBox_size</item>
 
     </style>
+
+
+
 
 
 </resources>

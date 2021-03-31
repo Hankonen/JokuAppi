@@ -56,7 +56,6 @@ public class MainActivity extends AppCompatActivity {
     {
         Intent intent = new Intent(this, Straight_to_labor_activity.class);
         startActivity(intent);
-
     }
 
     public void onClickListener_to_location(View view)
@@ -80,7 +79,6 @@ public class MainActivity extends AppCompatActivity {
         final AlertDialog.Builder renameDialog = new AlertDialog.Builder(MainActivity.this);
         renameDialog.setView(R.layout.alertbox_otw_or_il_layout);
         renameDialog.setNegativeButton("Poistu", (dialog, which) -> dialog.cancel());
-
         renameDialog.show();
     }
 
