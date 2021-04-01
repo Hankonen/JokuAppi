@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class SliderActivity extends AppCompatActivity {
 
@@ -91,6 +92,7 @@ public class SliderActivity extends AppCompatActivity {
         @Override
         public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
 
+
         }
 
         @Override
@@ -98,6 +100,30 @@ public class SliderActivity extends AppCompatActivity {
 
             addDotsIndikaattori(position);
             currentPage = position;
+
+            if (position == 0)
+            {
+                rightButton.setEnabled(true);
+                leftButton.setEnabled(false);
+                leftButton.setVisibility(View.INVISIBLE);
+                leftButton.clearAnimation();
+            }
+            else if (position == sivujenMaara - 1)
+            {
+                rightButton.setEnabled(false);
+                leftButton.setEnabled(true);
+                rightButton.setVisibility(View.INVISIBLE);
+                Toast.makeText(SliderActivity.this, "Viimeinen dia", Toast.LENGTH_SHORT).show();
+
+                // tähän shaibaa mitä haluat tapahtuvan vikalla dialla!!!
+            }
+            else
+            {
+                rightButton.setEnabled(true);
+                leftButton.setEnabled(true);
+                leftButton.setVisibility(View.VISIBLE);
+                rightButton.setVisibility(View.VISIBLE);
+            }
         }
 
         @Override
