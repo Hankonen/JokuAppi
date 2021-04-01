@@ -1,2 +1,11 @@
-LOREM IPSUMIT HAETAAN JSONISTA.
+https://www.geeksforgeeks.org/how-to-send-data-of-html-form-directly-to-json-file/
 
+https://stackoverflow.com/questions/22243600/update-a-json-object-with-input-fields-values
+
+https://medium.com/@mwakatumbula_/code-15ecdb18c2ef
+
+https://stackoverflow.com/questions/34504050/how-to-convert-selected-html-to-json
+
+AJAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAX
+html textbox input -> JAVASCRIPT objet -> Data in JSON
+HTML <- gets data from JS <- JSON
