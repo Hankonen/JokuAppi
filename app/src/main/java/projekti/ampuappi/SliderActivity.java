@@ -92,7 +92,6 @@ public class SliderActivity extends AppCompatActivity {
         @Override
         public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
 
-
         }
 
         @Override
@@ -114,6 +113,8 @@ public class SliderActivity extends AppCompatActivity {
                 leftButton.setEnabled(true);
                 rightButton.setVisibility(View.INVISIBLE);
                 Toast.makeText(SliderActivity.this, "Viimeinen dia", Toast.LENGTH_SHORT).show();
+                Button next_phase = (Button)findViewById(R.id.button_next_phase);
+                next_phase.setVisibility(View.VISIBLE);
 
                 // tähän shaibaa mitä haluat tapahtuvan vikalla dialla!!!
             }
@@ -131,4 +132,9 @@ public class SliderActivity extends AppCompatActivity {
 
         }
     };
+    public void onClickListener_back_button(View view)
+    {
+        Intent intent = new Intent(this, Straight_to_labor_activity.class);
+        startActivity(intent);
+    }
 }

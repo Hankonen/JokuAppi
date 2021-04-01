@@ -71,7 +71,7 @@ public class SliderAdapter extends PagerAdapter {
     public int[] ensimmainenvaihe_slides = {
 
             R.drawable.ohje5,
-
+            R.drawable.ohje5
     };
 
     public int[] kolmasvaihe_slides = {
@@ -81,7 +81,6 @@ public class SliderAdapter extends PagerAdapter {
             R.drawable.ohje,
             R.drawable.ohje,
             R.drawable.ohje
-
     };
 
     public String[] peratila_header = {
@@ -128,6 +127,7 @@ public class SliderAdapter extends PagerAdapter {
 
 
             "Eka",
+            "toka"
 
     };
 
@@ -138,7 +138,8 @@ public class SliderAdapter extends PagerAdapter {
             "Toka",
             "Kolmas",
             "Neljas",
-            "Viides"
+            "Viides",
+
     };
 
     public int[] slide_text_normaali = {
@@ -146,8 +147,9 @@ public class SliderAdapter extends PagerAdapter {
             R.string.eka_Dia_Normaali,
             R.string.toka_Dia_Normaali,
             R.string.kolmas_Dia_Normaali,
-            R.string.neljas_Dia_Normaali,
-            R.string.viides_Dia_Normaali
+            R.string.neljas_Dia_Normaali
+
+
     };
 
     public int[] slide_text_peratila = {
@@ -189,7 +191,8 @@ public class SliderAdapter extends PagerAdapter {
             R.string.toka_Dia_Kolmasvaihe,
             R.string.kolmas_Dia_Kolmasvaihe,
             R.string.neljas_Dia_Kolmasvaihe,
-            R.string.viides_Dia_Kolmasvaihe
+            R.string.viides_Dia_Kolmasvaihe,
+            R.string.viides_Dia_Normaali,
     };
 
     // luo automaattisesti tehtäessä kun extendaa PageAdapterin
@@ -215,9 +218,9 @@ public class SliderAdapter extends PagerAdapter {
         TextView slideHeader = (TextView) view.findViewById(R.id.id_TextLabel);
         TextView slideText = (TextView) view.findViewById(R.id.id_textView);
 
+
         if (mikaSynnytys == 1)
         {
-
             slideImageView.setImageResource(peratila_slides[position]);
             slideHeader.setText(peratila_header[position]);
             slideText.setText(slide_text_normaali[position]);
@@ -256,6 +259,7 @@ public class SliderAdapter extends PagerAdapter {
             slideHeader.setText(kolmasvaihe_header[position]);
             slideText.setText(slide_text_kolmasvaihe[position]);
         }
+
 
         container.addView(view);
 

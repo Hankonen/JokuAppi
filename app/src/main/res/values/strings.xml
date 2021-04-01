@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">AmpuAppi</string>
-    <string name="toolbar_header">     AmpuAppi bitcheees</string>
+    <string name="toolbar_header">     AmpuAppi </string>
     <string name="header_first_page">#¤%/(()AmpuAppi </string>
     <string name="button_straight_to_labor">Suoraan Synnytykseen</string>
     <string name="button_on_the_way">Synnytystehtävälle lähdettäessä</string>
@@ -18,17 +18,17 @@
     <string name="to_location_REST">"
 •\tKirjaa ylös synnyttäjän perustiedot (sairaudet, allergiat, monesko raskaus ja synnytys jne.)\n
 •\tRaskausviikot, selvitä miten raskaus on edennyt ja onko sikiö perä- vai raivotarjonnassa\n
-•\tKohteeseen päästyäsi tarkista \n
-        mikä on synnytyksen tilanne:\n
-        Onko lapsivesi mennyt?\n
-        Koska se on mennyt?
-        Lapsiveden väri?\n
-        Kirkas vai vihreä/kellertävää?\n
-        Hajuton/pahanhajuista?\n
-        Onko supistuksia?\n
-        Milloin ne ovat alkaneet?\n
-        Kuinka tiheään supistuksia tulee?\n
-        Onko synnytys oikeasti käynnissä?</string>
+•\tKohteeseen päästyäsi tarkista
+  mikä on synnytyksen tilanne:\n
+     •   Onko lapsivesi mennyt?
+     •   Koska se on mennyt?
+     •   Lapsiveden väri?
+     •   Kirkas vai vihreä/kellertävää?
+     •   Hajuton/pahanhajuista?
+     •   Onko supistuksia?
+     •   Milloin ne ovat alkaneet?
+     •   Kuinka tiheään supistuksia tulee?
+     •   Onko synnytys oikeasti käynnissä?</string>
 
     <string name="OTW_or_IL_HEADER">Matkalle vai Kohteessa?</string>
     <string name="OTW_or_IL_REST">"Hoidetaan kohteessa jos:\n
@@ -37,37 +37,36 @@
 • Synnyttäjällä on ponnistamisen
   pakko
 • Sikiön pää näkyy"\n
-..........................................\n
+..........................................\n\n
   Matkaan jos:\n\n
-• Lapsivesi on mennyt, mutta ei ole
-  supistuksia\n
-• Supistukset tulevat epäsäännöllisesti\n
-• Supistukset tulevat
-  säännöllisesti 2–15 minuutin välein\n
-• Synnyttäjä otetaan kyytiin ja
-  lähdetään liikkeelle, tutkimukset
-  yms. voi tehdä matkalla\n
-• MUISTA ENNAKKOILMOITUS
+        •   Lapsivesi on mennyt, mutta ei ole
+            supistuksia\n
+        •   Supistukset tulevat epäsäännöllisesti\n
+        •   Supistukset tulevat\n
+            säännöllisesti 2–15 minuutin välein\n
+        •   Synnyttäjä otetaan kyytiin ja
+            lähdetään liikkeelle, tutkimukset
+            yms. voi tehdä matkalla\n\n
+        •   MUISTA ENNAKKOILMOITUS!!!
 </string>
 
-    <string name="how_to_act_HEADER">Miten toimitaan</string>
+    <string name="how_to_act_HEADER">Miten toimitaan:</string>
     <string name="how_to_act_REST">
-•	Valmistaudu ottamalla synnytyssetit \n esille\n
-        ............................................\n
-•	Paarien yläosa käännettään toisin \n päin\n
-         ...........................................\n
-•	Synnyttäjä asetetaan vasemmalle \n  kyljelleen\n
-         ............................................\n
+
+•	Valmistaudu ottamalla synnytyssetit
+    esille\n
+•	Paarien yläosa käännettään toisin
+    päin\n
+•	Synnyttäjä asetetaan vasemmalle
+    kyljelleen\n
 •	Avaa i.v. -yhteys\n
-         ............................................\n
 •	Seuraa supistusten väliä\n
-         ............................................\n
-•	Jos synnyttäjällä tulee paineen \n
-    tunne tai ponnistamisen pakko \n
-        matkalla, pysäytä auto\n
-         ...........................................\n
-•	Lääkkeettömiä kivunlievitys keinoja \n voi
-    kokeilla kuten hierontaa\n
+•	Jos synnyttäjällä tulee paineen
+    tunne tai
+    ponnistamisen pakko
+    matkalla, pysäytä auto\n
+•	Lääkkeettömiä kivunlievitys keinoja
+    voi kokeilla kuten hierontaa
     tai lämpöpussia kipukohtiin</string>
 
     <string name="eka_Dia_Peratila">Ekamatsku</string>

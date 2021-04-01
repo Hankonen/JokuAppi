@@ -9,6 +9,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -60,26 +61,38 @@ public class MainActivity extends AppCompatActivity {
 
     public void onClickListener_to_location(View view)
     {
-        final AlertDialog.Builder renameDialog = new AlertDialog.Builder(MainActivity.this);
-        renameDialog.setView(R.layout.alertbox_to_location_layout);
-        renameDialog.setNegativeButton("Poistu", (dialog, which) -> dialog.cancel());
-        renameDialog.show();
+        final AlertDialog.Builder tl = new AlertDialog.Builder(MainActivity.this);
+        LayoutInflater inflater = getLayoutInflater();
+        view = inflater.inflate(R.layout.toolbar_layout, null);
+        tl.setCustomTitle(view);
+        tl.setMessage(getString(R.string.to_location_HEADER));
+        tl.setView(R.layout.alertbox_to_location_layout);
+        tl.setNegativeButton("Poistu", (dialog, which) -> dialog.cancel());
+        tl.show();
     }
 
     public void onClickListener_how_to_act(View view)
     {
-        final AlertDialog.Builder renameDialog = new AlertDialog.Builder(MainActivity.this);
-        renameDialog.setView(R.layout.alertbox_how_to_act_layout);
-        renameDialog.setNegativeButton("Poistu", (dialog, which) -> dialog.cancel());
-        renameDialog.show();
+        final AlertDialog.Builder htw = new AlertDialog.Builder(MainActivity.this);
+        LayoutInflater inflater = getLayoutInflater();
+        view = inflater.inflate(R.layout.toolbar_layout, null);
+        htw.setCustomTitle(view);
+        htw.setMessage(getString(R.string.how_to_act_HEADER));
+        htw.setView(R.layout.alertbox_how_to_act_layout);
+        htw.setNegativeButton("Poistu", (dialog, which) -> dialog.cancel());
+        htw.show();
     };
 
     public void onClickListener_onTheWay_or_in_location(View view) {
 
-        final AlertDialog.Builder renameDialog = new AlertDialog.Builder(MainActivity.this);
-        renameDialog.setView(R.layout.alertbox_otw_or_il_layout);
-        renameDialog.setNegativeButton("Poistu", (dialog, which) -> dialog.cancel());
-        renameDialog.show();
+        final AlertDialog.Builder otw = new AlertDialog.Builder(MainActivity.this);
+        LayoutInflater inflater = getLayoutInflater();
+        view = inflater.inflate(R.layout.toolbar_layout, null);
+        otw.setCustomTitle(view);
+        otw.setMessage(getString(R.string.OTW_or_IL_HEADER));
+        otw.setView(R.layout.alertbox_otw_or_il_layout);
+        otw.setNegativeButton("Poistu", (dialog, which) -> dialog.cancel());
+        otw.show();
     }
 
 }
