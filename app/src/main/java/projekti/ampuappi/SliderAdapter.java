@@ -134,7 +134,7 @@ public class SliderAdapter extends PagerAdapter {
     public String[] kolmasvaihe_header = {
 
 
-            "Eka",
+            "vaihe 3 sivu 1",
             "Toka",
             "Kolmas",
             "Neljas",
@@ -147,7 +147,8 @@ public class SliderAdapter extends PagerAdapter {
             R.string.eka_Dia_Normaali,
             R.string.toka_Dia_Normaali,
             R.string.kolmas_Dia_Normaali,
-            R.string.neljas_Dia_Normaali
+            R.string.neljas_Dia_Normaali,
+            R.string.viides_Dia_Peratila
 
 
     };

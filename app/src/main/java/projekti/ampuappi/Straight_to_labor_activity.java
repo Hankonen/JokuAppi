@@ -115,6 +115,7 @@ public class Straight_to_labor_activity extends AppCompatActivity {
         intent.putExtra("key",tila);
         intent.putExtra("sivujenmaara", diojenMaara);
         startActivity(intent);
+
     }
 
     public void onClick_exit (View view)
