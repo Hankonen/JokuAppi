@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class SliderActivity extends AppCompatActivity {
 
@@ -98,6 +99,32 @@ public class SliderActivity extends AppCompatActivity {
 
             addDotsIndikaattori(position);
             currentPage = position;
+
+            if (position == 0)
+            {
+                rightButton.setEnabled(true);
+                leftButton.setEnabled(false);
+                leftButton.setVisibility(View.INVISIBLE);
+                leftButton.clearAnimation();
+            }
+            else if (position == sivujenMaara - 1)
+            {
+                rightButton.setEnabled(false);
+                leftButton.setEnabled(true);
+                rightButton.setVisibility(View.INVISIBLE);
+                Toast.makeText(SliderActivity.this, "Viimeinen dia", Toast.LENGTH_SHORT).show();
+                Button next_phase = (Button)findViewById(R.id.button_next_phase);
+                next_phase.setVisibility(View.VISIBLE);
+
+                // tähän shaibaa mitä haluat tapahtuvan vikalla dialla!!!
+            }
+            else
+            {
+                rightButton.setEnabled(true);
+                leftButton.setEnabled(true);
+                leftButton.setVisibility(View.VISIBLE);
+                rightButton.setVisibility(View.VISIBLE);
+            }
         }
 
         @Override
@@ -105,4 +132,9 @@ public class SliderActivity extends AppCompatActivity {
 
         }
     };
+    public void onClickListener_back_button(View view)
+    {
+        Intent intent = new Intent(this, Straight_to_labor_activity.class);
+        startActivity(intent);
+    }
 }

@@ -10,7 +10,7 @@
         android:id="@+id/exit_button_STL3"
         android:layout_width="68dp"
         android:layout_height="57dp"
-        android:background="#FFFFFF"
+        android:background="#00FFFFFF"
         android:onClick="onClick_exit_IB"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
