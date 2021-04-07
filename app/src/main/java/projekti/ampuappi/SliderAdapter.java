@@ -96,7 +96,7 @@ public class SliderAdapter extends PagerAdapter {
     public String[] normaalitila_header = {
 
 
-            "Eka",
+            "Normaalin tilan eka sivu",
             "Toka",
             "Kolmas",
             "Neljas",
@@ -222,15 +222,15 @@ public class SliderAdapter extends PagerAdapter {
 
         if (mikaSynnytys == 1)
         {
-            slideImageView.setImageResource(peratila_slides[position]);
-            slideHeader.setText(peratila_header[position]);
+            slideImageView.setImageResource(normaalitila_slides[position]);
+            slideHeader.setText(normaalitila_header[position]);
             slideText.setText(slide_text_normaali[position]);
         }
 
         if (mikaSynnytys == 2)
         {
-            slideImageView.setImageResource(normaalitila_slides[position]);
-            slideHeader.setText(normaalitila_header[position]);
+            slideImageView.setImageResource(peratila_slides[position]);
+            slideHeader.setText(peratila_header[position]);
             slideText.setText(slide_text_peratila[position]);
         }
         if (mikaSynnytys == 3)

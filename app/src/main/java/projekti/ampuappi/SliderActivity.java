@@ -185,7 +185,7 @@ public class SliderActivity extends AppCompatActivity {
             startActivity(intent);
         }
 
-        if (arvo == 2 || arvo == 3 || arvo == 4 )
+        if (arvo ==1 ||arvo == 2 || arvo == 3 || arvo == 4 )
 
         {
             int tila = 6;
@@ -197,14 +197,21 @@ public class SliderActivity extends AppCompatActivity {
         }
         if (arvo == 6)
         {
-            final AlertDialog.Builder otw = new AlertDialog.Builder(SliderActivity.this);
+
+            Intent intent = new Intent(this, MainActivity.class);
+            startActivity(intent);
+
+
+           /* final AlertDialog.Builder otw = new AlertDialog.Builder(SliderActivity.this);
             LayoutInflater inflater = getLayoutInflater();
             view = inflater.inflate(R.layout.toolbar_layout, null);
             otw.setCustomTitle(view);
             otw.setMessage(getString(R.string.OTW_or_IL_HEADER));
             otw.setView(R.layout.alertbox_otw_or_il_layout);
             otw.setNegativeButton("Poistu", (dialog, which) -> dialog.cancel());
-            otw.show();
+            otw.show():*/
+
+
         }
 
     }
