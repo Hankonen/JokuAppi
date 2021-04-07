@@ -63,6 +63,7 @@
 
     <Button
         android:id="@+id/button_next_phase"
+        style="@style/button_style"
         android:layout_width="159dp"
         android:layout_height="67dp"
         android:layout_marginStart="86dp"

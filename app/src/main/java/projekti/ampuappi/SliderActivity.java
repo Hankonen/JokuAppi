@@ -25,11 +25,14 @@ public class SliderActivity extends AppCompatActivity {
 
     private ImageButton leftButton;
 
+
     private ImageButton rightButton;
     private int currentPage;
     public int arvo;
 
     public int sivujenMaara;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,6 +58,18 @@ public class SliderActivity extends AppCompatActivity {
 
         leftButton.setVisibility(View.GONE);
         leftButton.clearAnimation();
+        Button next_phase = (Button)findViewById(R.id.button_next_phase);
+        if ( arvo == 5)
+        {
+            rightButton.setVisibility(View.GONE);
+            rightButton.clearAnimation();
+            Toast.makeText(SliderActivity.this, "Häpyykö", Toast.LENGTH_SHORT).show();
+            next_phase.setVisibility(View.VISIBLE);
+            next_phase.clearAnimation();
+
+        }
+
+
 
         leftButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -69,6 +84,8 @@ public class SliderActivity extends AppCompatActivity {
                 slideViewPager.setCurrentItem(currentPage + 1);
             }
         });
+
+
 
     }
 
@@ -102,6 +119,7 @@ public class SliderActivity extends AppCompatActivity {
         }
         private volatile boolean jep;
 
+
         @Override
         public void onPageSelected(int position) {  // positio == sivu
 
@@ -109,15 +127,7 @@ public class SliderActivity extends AppCompatActivity {
             currentPage = position;
             Button next_phase = (Button)findViewById(R.id.button_next_phase);
 
-            if (sivujenMaara==1) {
-                next_phase.setVisibility(View.VISIBLE);
-                next_phase.clearAnimation();
-            }
-
-
-            next_phase.setText("seuraava vaihe");
-            next_phase.setEnabled(jep = false);
-            leftButton.clearAnimation();
+            next_phase.setText("Seuraava vaihe");
 
 
             if (position == 0)
@@ -163,8 +173,20 @@ public class SliderActivity extends AppCompatActivity {
     }
 
     public void onClick_next_phase(View view)
+
     {
-        if (arvo == 1 || arvo == 2 || arvo == 3 || arvo == 4 )
+        if (arvo == 5 )
+        {
+            int tila = 1;
+            int diojenMaara = 5;
+            Intent intent = new Intent(this, SliderActivity.class);
+            intent.putExtra("key",tila);
+            intent.putExtra("sivujenmaara", diojenMaara);
+            startActivity(intent);
+        }
+
+        if (arvo == 2 || arvo == 3 || arvo == 4 )
+
         {
             int tila = 6;
             int diojenMaara = 5;
