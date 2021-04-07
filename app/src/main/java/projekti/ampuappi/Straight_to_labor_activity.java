@@ -1,19 +1,12 @@
 package projekti.ampuappi;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.animation.LayoutTransition;
 import android.content.Intent;
 import android.os.Bundle;
-import android.transition.Transition;
-import android.transition.TransitionInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.ImageButton;
-
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class Straight_to_labor_activity extends AppCompatActivity {
 
@@ -36,14 +29,14 @@ public class Straight_to_labor_activity extends AppCompatActivity {
             }
         });*/
         final Button peratila = findViewById(R.id.button_peratilan_synnytys2);
-        final Button hartiadystokia  = findViewById(R.id.button_hartiadystokia2);
+        //final Button hartiadystokia  = findViewById(R.id.button_hartiadystokia2);
         final Button napanuora  = findViewById(R.id.button_napanuoran_esiinluiskahdus2);
         final Button normaaliSynnytys  = findViewById(R.id.button_normal_labor2);
         final Button first_phase = findViewById(R.id.button_eka_vaihe);
-        final Button second_phase = findViewById(R.id.button_toka_vaihe);
-        final Button third_phase = findViewById(R.id.button_kolmas_vaihe);
+        //final Button second_phase = findViewById(R.id.button_toka_vaihe);
+        final Button third_phase = findViewById(R.id.button_erikoisvaiheet);
 
-
+        /*
         second_phase.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -55,6 +48,8 @@ public class Straight_to_labor_activity extends AppCompatActivity {
                //first_phase.
             }
         });
+
+         */
 
     }
 

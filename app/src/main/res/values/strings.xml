@@ -9,10 +9,11 @@
     <string name="button_eka_vaihe">1. Vaihe, Avautumisvaihe</string>
     <string name="button_toka_vaihe">2. Vaihe, Ponnistusvaihe</string>
     <string name="button_kolmas_vaihe">3. Vaihe, Jälkeisvaihe</string>
-    <string name="button_normal_labor">Normaali Synnytys</string>
-    <string name="button_peratilan_labor">Perätilan Synnytys</string>
-    <string name="button_hartiadystokia">Hartiadystokia</string>
-    <string name="button_napanuoran_esiinluiskahdus">Napanuoran Esiinluiskahdus</string>
+    <string name="button_normal_labor">Normaali\nSynnytys</string>
+    <string name="button_peratilan_labor">Perätilan\nSynnytys</string>
+    <string name="button_hartiadystokia">Hartia-\ndystokia</string>
+    <string name="button_napanuoran_esiinluiskahdus">Napanuoran\nEsiinluiskahdus</string>
+    <string name="Erikoistilanteet">Ponnistusvaiheen\nerikoistilanteet</string>
 
     <string name="to_location_HEADER">Synnytystehtävään (791 A-D) tullessa huomioi seuraavat asiat: </string>
     <string name="to_location_REST">"
@@ -134,6 +135,7 @@ Section 1.10.33 of "de Finibus Bonorum et Malorum", written by Cicero in 45 BC
     <string name="kolmas_Dia2">Kolmasmatsku</string>
     <string name="neljas_Dia2">Neljasmatsku</string>
     <string name="viides_Dia2">Viidesmatsku</string>
+
 
 
 </resources>

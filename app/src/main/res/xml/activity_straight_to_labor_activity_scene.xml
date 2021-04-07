@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:motion="http://schemas.android.com/apk/res-auto">
+
+    <Transition
+        motion:constraintSetEnd="@+id/end"
+        motion:constraintSetStart="@id/start"
+        motion:duration="1000">
+       <KeyFrameSet>
+           <KeyAttribute
+               motion:motionTarget="@+id/button_eka_vaihe"
+               motion:framePosition="100"
+               android:alpha="0.5" />
+       </KeyFrameSet>
+        <OnClick motion:targetId="@+id/button_erikoisvaiheet" />
+    </Transition>
+
+    <ConstraintSet android:id="@+id/start"></ConstraintSet>
+
+    <ConstraintSet android:id="@+id/end">
+        <Constraint
+            android:layout_height="wrap_content"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintHorizontal_bias="0.528"
+            motion:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="220dp"
+            android:id="@+id/button_toka_vaihe"
+            motion:layout_constraintTop_toBottomOf="@+id/button_eka_vaihe"
+            motion:layout_constraintVertical_bias="0.031"
+            android:layout_marginTop="2dp" />
+        <Constraint
+            motion:layout_constraintVertical_bias="0.587"
+            android:layout_height="60dp"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintHorizontal_bias="0.497"
+            motion:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="180dp"
+            android:id="@+id/button_normal_labor2" />
+        <Constraint
+            android:layout_height="60dp"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="180dp"
+            android:id="@+id/button_peratilan_synnytys2"
+            motion:layout_constraintTop_toBottomOf="@+id/button_normal_labor2"
+            motion:layout_constraintVertical_bias="0.055"
+            motion:layout_constraintStart_toStartOf="@+id/button_normal_labor2"
+            motion:layout_constraintHorizontal_bias="0.0" />
+        <Constraint
+            android:layout_height="60dp"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="180dp"
+            android:id="@+id/button_napanuoran_esiinluiskahdus2"
+            android:layout_marginBottom="36dp"
+            motion:layout_constraintTop_toBottomOf="@+id/button_peratilan_synnytys2"
+            motion:layout_constraintVertical_bias="0.12"
+            motion:layout_constraintStart_toStartOf="@+id/button_peratilan_synnytys2"
+            motion:layout_constraintHorizontal_bias="0.0" />
+        <Constraint
+            motion:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="220dp"
+            android:layout_height="wrap_content"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintVertical_bias="0.161"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
+            android:id="@+id/button_eka_vaihe"
+            motion:layout_constraintHorizontal_bias="0.513" />
+        <Constraint
+            android:layout_marginEnd="77dp"
+            motion:layout_constraintVertical_bias="0.374"
+            android:layout_height="wrap_content"
+            motion:layout_constraintStart_toStartOf="@+id/button_erikoisvaiheet"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintHorizontal_bias="0.0"
+            motion:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="220dp"
+            android:id="@+id/button_kolmas_vaihe2"
+            android:layout_marginTop="2dp" />
+        <Constraint
+            android:layout_marginEnd="77dp"
+            motion:layout_constraintVertical_bias="0.482"
+            android:layout_height="wrap_content"
+            motion:layout_constraintStart_toStartOf="@+id/button_toka_vaihe"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintHorizontal_bias="0.0"
+            motion:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="220dp"
+            android:id="@+id/button_erikoisvaiheet" />
+        <Constraint
+            motion:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="68dp"
+            android:layout_height="57dp"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="56dp"
+            motion:layout_constraintHorizontal_bias="0.498"
+            motion:layout_constraintStart_toStartOf="parent"
+            android:id="@+id/exit_button_STL"
+            motion:layout_constraintTop_toBottomOf="@+id/button_napanuoran_esiinluiskahdus2" />
+    </ConstraintSet>
+</MotionScene>

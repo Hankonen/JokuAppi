@@ -1,118 +1,116 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.motion.widget.MotionLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:animateLayoutChanges="true"
     android:background="@color/app_background"
+    app:layoutDescription="@xml/activity_straight_to_labor_activity_scene"
     tools:context=".Straight_to_labor_activity">
 
 
     <Button
         android:id="@+id/button_eka_vaihe"
         style="@style/button_style"
-        android:layout_width="wrap_content"
+        android:layout_width="220dp"
         android:layout_height="wrap_content"
         android:onClick="onClickListener_ekaVaihe"
         android:text="@string/button_eka_vaihe"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.086" />
+        app:layout_constraintVertical_bias="0.156" />
 
     <Button
         android:id="@+id/button_toka_vaihe"
         style="@style/button_style"
-        android:layout_width="wrap_content"
+        android:layout_width="220dp"
         android:layout_height="wrap_content"
-        android:onClick="onClickListener_ekaVaihe"
+        android:onClick="onClickListener_NormalLabor"
         android:text="@string/button_toka_vaihe"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/button_eka_vaihe"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.35" />
+        app:layout_constraintVertical_bias="0.255" />
 
     <Button
-        android:id="@+id/button_kolmas_vaihe"
+        android:id="@+id/button_erikoisvaiheet"
         style="@style/button_style"
-        android:layout_width="wrap_content"
+        android:layout_width="220dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="104dp"
+        android:layout_marginEnd="77dp"
+        android:text="@string/Erikoistilanteet"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/button_toka_vaihe"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.499" />
+
+    <Button
+        android:id="@+id/button_kolmas_vaihe2"
+        style="@style/button_style"
+        android:layout_width="220dp"
+        android:layout_height="wrap_content"
         android:layout_marginEnd="77dp"
         android:onClick="onClickListener_kolmasVaihe"
         android:text="@string/button_kolmas_vaihe"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/button_erikoisvaiheet"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.635" />
+        app:layout_constraintVertical_bias="0.355" />
 
     <Button
         android:id="@+id/button_normal_labor2"
         style="@style/button_second_phase_style"
-        android:layout_width="143dp"
-        android:layout_height="60dp"
-        android:layout_marginStart="252dp"
-        android:layout_marginEnd="16dp"
-        android:onClick="onClickListener_NormalLabor"
-        android:text="@string/button_normal_labor"
-        android:visibility="invisible"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.452" />
-
-    <Button
-        android:id="@+id/button_peratilan_synnytys2"
-        style="@style/button_second_phase_style"
-        android:layout_width="144dp"
-        android:layout_height="60dp"
-        android:onClick="onClickListener_peratilan_synnytys"
-        android:text="@string/button_peratilan_labor"
-        android:visibility="invisible"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.943"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.54" />
-
-    <Button
-        android:id="@+id/button_hartiadystokia2"
-        style="@style/button_second_phase_style"
-        android:layout_width="200dp"
-        android:layout_height="60dp"
-        android:layout_marginEnd="192dp"
+        android:layout_width="1dp"
+        android:layout_height="1dp"
         android:onClick="onClickListener_hartiaDystokia"
         android:text="@string/button_hartiadystokia"
         android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.453" />
+        app:layout_constraintVertical_bias="0.464" />
+
+    <Button
+        android:id="@+id/button_peratilan_synnytys2"
+        style="@style/button_second_phase_style"
+        android:layout_width="1dp"
+        android:layout_height="1dp"
+        android:onClick="onClickListener_peratilan_synnytys"
+        android:text="@string/button_peratilan_labor"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.576" />
 
     <Button
         android:id="@+id/button_napanuoran_esiinluiskahdus2"
         style="@style/button_second_phase_style"
-        android:layout_width="206dp"
-        android:layout_height="60dp"
+        android:layout_width="1dp"
+        android:layout_height="1dp"
         android:onClick="onClickListener_napanuoran_esiinluiskahdus"
         android:text="@string/button_napanuoran_esiinluiskahdus"
         android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.092"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.54" />
+        app:layout_constraintVertical_bias="0.679" />
 
     <ImageButton
         android:id="@+id/exit_button_STL"
@@ -127,4 +125,4 @@
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@android:drawable/ic_delete" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.motion.widget.MotionLayout>
