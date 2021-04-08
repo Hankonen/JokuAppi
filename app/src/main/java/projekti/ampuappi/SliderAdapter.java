@@ -35,7 +35,6 @@ public class SliderAdapter extends PagerAdapter {
             R.drawable.ohje4,
             R.drawable.ohje5,
             R.drawable.ohje7
-
     };
 
     public int[] normaalitila_slides = {
@@ -45,7 +44,6 @@ public class SliderAdapter extends PagerAdapter {
             R.drawable.ohje4,
             R.drawable.ohje5,
             R.drawable.ohje7
-
     };
 
     public int[] napanuora_slides = {
@@ -55,7 +53,6 @@ public class SliderAdapter extends PagerAdapter {
             R.drawable.ohje4,
             R.drawable.ohje7,
             R.drawable.ohje7
-
     };
 
     public int[] hartiadystokia_slides = {
@@ -65,7 +62,6 @@ public class SliderAdapter extends PagerAdapter {
             R.drawable.ohje4,
             R.drawable.ohje5,
             R.drawable.ohje7
-
     };
 
     public int[] ensimmainenvaihe_slides = {
@@ -85,7 +81,6 @@ public class SliderAdapter extends PagerAdapter {
 
     public String[] peratila_header = {
 
-
             "Eka",
             "Toka",
             "Kolmas",
@@ -94,7 +89,6 @@ public class SliderAdapter extends PagerAdapter {
     };
 
     public String[] normaalitila_header = {
-
 
             "Normaalin tilan eka sivu",
             "Toka",
@@ -105,7 +99,6 @@ public class SliderAdapter extends PagerAdapter {
 
     public String[] napanuora_header = {
 
-
             "Napanuora",
             "Toka",
             "Kolmas",
@@ -114,7 +107,6 @@ public class SliderAdapter extends PagerAdapter {
     };
 
     public String[] hartiadystokia_header = {
-
 
             "Eka",
             "Toka",
@@ -125,21 +117,17 @@ public class SliderAdapter extends PagerAdapter {
 
     public String[] ensimmainenvaihe_header = {
 
-
             "Eka",
             "toka"
-
     };
 
     public String[] kolmasvaihe_header = {
-
 
             "vaihe 3 sivu 1",
             "Toka",
             "Kolmas",
             "Neljas",
             "Viides",
-
     };
 
     public int[] slide_text_normaali = {
@@ -260,7 +248,6 @@ public class SliderAdapter extends PagerAdapter {
             slideHeader.setText(kolmasvaihe_header[position]);
             slideText.setText(slide_text_kolmasvaihe[position]);
         }
-
 
         container.addView(view);
 

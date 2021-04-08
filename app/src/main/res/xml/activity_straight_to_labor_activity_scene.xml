@@ -69,8 +69,7 @@
             motion:layout_constraintTop_toTopOf="parent"
             motion:layout_constraintStart_toStartOf="parent"
             android:id="@+id/button_eka_vaihe"
-            motion:layout_constraintHorizontal_bias="0.513"
-            android:layout_marginTop="100dp" />
+            android:layout_marginTop="150dp" />
         <Constraint
             android:layout_height="wrap_content"
             motion:layout_constraintBottom_toBottomOf="parent"
