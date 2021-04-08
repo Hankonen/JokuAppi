@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".feedback_Activity">
+    tools:context=".feedback_Activity"
+    android:background="@drawable/ampuapptausta">
 
     <ImageButton
         android:id="@+id/exit_button_STL2"
