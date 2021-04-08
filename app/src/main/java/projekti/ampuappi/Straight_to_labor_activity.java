@@ -13,6 +13,8 @@ import android.widget.Toolbar;
 public class Straight_to_labor_activity extends AppCompatActivity {
 
     private ViewGroup containerView;
+    public int tila;
+    public int diojenMaara;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,49 +25,36 @@ public class Straight_to_labor_activity extends AppCompatActivity {
         toolbar.inflateMenu(R.menu.menu);
         setActionBar(toolbar);
 
-
-       /* final ImageButton ib = (ImageButton) findViewById(R.id.imageButton_toka_vaihe_ED);
-
-        final FloatingActionButton tv = (FloatingActionButton) findViewById(R.id.floatingAc);
-        tv.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                setContentView(R.layout.straight_to_labor_layout);
-
-            }
-        });*/
         final Button peratila = findViewById(R.id.button_peratilan_synnytys2);
         //final Button hartiadystokia  = findViewById(R.id.button_hartiadystokia2);
         final Button napanuora  = findViewById(R.id.button_napanuoran_esiinluiskahdus2);
         final Button normaaliSynnytys  = findViewById(R.id.button_normal_labor2);
         final Button first_phase = findViewById(R.id.button_eka_vaihe);
         //final Button second_phase = findViewById(R.id.button_toka_vaihe);
-        final Button third_phase = findViewById(R.id.button_erikoisvaiheet);
+        //final Button third_phase = findViewById(R.id.button_erikoisvaiheet);
+    }
 
-        /*
-        second_phase.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                peratila.setVisibility(View.VISIBLE);
-                hartiadystokia.setVisibility(View.VISIBLE);
-                napanuora.setVisibility(View.VISIBLE);
-                normaaliSynnytys.setVisibility(View.VISIBLE);
+    @Override public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.info_MenuItem:
+                Intent intent_info = new Intent(Straight_to_labor_activity.this,info_Activity.class);
+                startActivity(intent_info);
 
-               //first_phase.
-            }
-        });
+                return super.onOptionsItemSelected(item);
 
-         */
+            case R.id.feedback_MenuItem:
+                Intent intent_feedback = new Intent(Straight_to_labor_activity.this,feedback_Activity.class);
+                startActivity(intent_feedback);
 
-
-
+            default:
+                return super.onOptionsItemSelected(item); }
     }
 
 
     public void onClickListener_NormalLabor(View view) {
-        int tila = 1;
-        int diojenMaara = 5;
+
+        tila = 1;
+        diojenMaara = 4;
         Intent intent = new Intent(this, SliderActivity.class);
         intent.putExtra("key",tila);
         intent.putExtra("sivujenmaara", diojenMaara);
@@ -125,7 +114,6 @@ public class Straight_to_labor_activity extends AppCompatActivity {
 
     public void onClick_exit (View view)
     {
-
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
     }

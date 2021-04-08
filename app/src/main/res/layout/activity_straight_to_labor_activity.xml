@@ -10,6 +10,21 @@
     tools:context=".Straight_to_labor_activity"
     >
 
+    <Button
+        android:id="@+id/button_takaisin3"
+        style="@style/button_style"
+        android:layout_width="150dp"
+        android:layout_height="60dp"
+        android:layout_marginBottom="16dp"
+        android:onClick="onClick_exit"
+        android:text="@string/TakaisinButton"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/slideViewPager"
+        app:layout_constraintVertical_bias="1.0" />
+
     <include
         android:id="@+id/toolbar"
         layout="@layout/toolbar_layout" />
@@ -52,13 +67,13 @@
         android:layout_marginTop="50dp"
         android:text="@string/Erikoistilanteet"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/button_kolmas_vaihe2"
-        app:layout_constraintStart_toStartOf="@+id/button_kolmas_vaihe2"
-        app:layout_constraintTop_toBottomOf="@+id/button_kolmas_vaihe2"
+        app:layout_constraintEnd_toEndOf="@+id/button_kolmas_vaihe"
+        app:layout_constraintStart_toStartOf="@+id/button_kolmas_vaihe"
+        app:layout_constraintTop_toBottomOf="@+id/button_kolmas_vaihe"
         app:layout_constraintVertical_bias="0.0" />
 
     <Button
-        android:id="@+id/button_kolmas_vaihe2"
+        android:id="@+id/button_kolmas_vaihe"
         style="@style/button_style"
         android:layout_width="220dp"
         android:layout_height="wrap_content"
@@ -124,10 +139,10 @@
         android:onClick="onClick_exit"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.723"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0"
+        app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@android:drawable/ic_delete" />
 
     <TextView
