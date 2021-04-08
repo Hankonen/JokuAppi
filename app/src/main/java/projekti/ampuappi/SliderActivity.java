@@ -1,19 +1,16 @@
 package projekti.ampuappi;
 
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.Html;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 public class SliderActivity extends AppCompatActivity {
 
@@ -28,7 +25,7 @@ public class SliderActivity extends AppCompatActivity {
 
     private ImageButton rightButton;
     private int currentPage;
-    public int arvo;
+    public int mikaSynnytysTapahtuma;
 
     public int sivujenMaara;
 
@@ -39,8 +36,10 @@ public class SliderActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_slider);
 
+        // Haetaan Straight to laborista tuodut tiedot eri esityksiin
+
         Intent i = getIntent();
-        arvo  = i.getIntExtra("key", 1);
+        mikaSynnytysTapahtuma = i.getIntExtra("key", 1);
         sivujenMaara = i.getIntExtra("sivujenmaara", 1);
 
         slideViewPager = (ViewPager) findViewById(R.id.slideViewPager);
@@ -49,7 +48,7 @@ public class SliderActivity extends AppCompatActivity {
         leftButton = (ImageButton)findViewById(R.id.id_iButton_Left);
         rightButton = findViewById(R.id.id_iButton_Right);
 
-        sliderAdapter = new SliderAdapter(this, arvo, sivujenMaara);
+        sliderAdapter = new SliderAdapter(this, mikaSynnytysTapahtuma, sivujenMaara);    // heitetään parametreiksi tänne jotta SliderAdapter class tietää mitkä kuvat näytetään
 
         slideViewPager.setAdapter(sliderAdapter);
         addDotsIndikaattori(0);
@@ -59,7 +58,7 @@ public class SliderActivity extends AppCompatActivity {
         leftButton.setVisibility(View.GONE);
         leftButton.clearAnimation();
         Button next_phase = (Button)findViewById(R.id.button_next_phase);
-        if ( arvo == 5)
+        if ( mikaSynnytysTapahtuma == 5)
         {
             rightButton.setVisibility(View.GONE);
             rightButton.clearAnimation();
@@ -149,7 +148,7 @@ public class SliderActivity extends AppCompatActivity {
                 next_phase.setVisibility(View.VISIBLE);
                 next_phase.setEnabled(jep = true);
 
-                if (arvo == 6)
+                if (mikaSynnytysTapahtuma == 6)
                 {
                     next_phase.setText("Esitys päättyy");
                 }
@@ -157,7 +156,7 @@ public class SliderActivity extends AppCompatActivity {
             }
             else
             {
-                rightButton.setEnabled( jep =true);
+                rightButton.setEnabled( jep = true);
                 leftButton.setEnabled( jep = true);
                 leftButton.setVisibility(View.VISIBLE);
                 rightButton.setVisibility(View.VISIBLE);
@@ -179,7 +178,7 @@ public class SliderActivity extends AppCompatActivity {
     public void onClick_next_phase(View view)
 
     {
-        if (arvo == 5 )
+        if (mikaSynnytysTapahtuma == 5 )
         {
             int tila = 1;
             int diojenMaara = 5;
@@ -189,7 +188,7 @@ public class SliderActivity extends AppCompatActivity {
             startActivity(intent);
         }
 
-        if (arvo ==1 ||arvo == 2 || arvo == 3 || arvo == 4 )
+        if (mikaSynnytysTapahtuma == 1 || mikaSynnytysTapahtuma == 2 || mikaSynnytysTapahtuma == 3 || mikaSynnytysTapahtuma == 4 )
 
         {
             int tila = 6;
@@ -199,7 +198,7 @@ public class SliderActivity extends AppCompatActivity {
             intent.putExtra("sivujenmaara", diojenMaara);
             startActivity(intent);
         }
-        if (arvo == 6)
+        if (mikaSynnytysTapahtuma == 6)
         {
 
             Intent intent = new Intent(this, MainActivity.class);

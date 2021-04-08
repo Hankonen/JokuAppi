@@ -19,27 +19,20 @@ public class SliderAdapter extends PagerAdapter {
     public int mikaSynnytys;
     public int sivumaara;
 
-    public SliderAdapter(Context context, int arvo, int pSivumaara)
+    // Tuodaan parametrinä MainActivitystä saatu tieto mikä synnytystapahtuma ja montako sivua esityksessä on
+
+    public SliderAdapter(Context context, int pArvo, int pSivumaara)
     {
         this.context = context;
-        mikaSynnytys = arvo;
+        mikaSynnytys = pArvo;
         sivumaara = pSivumaara;
     }
 
-    // Arrayt slideri tietoihin!!!
+    // Arrayt slideri tietoihin!!! Näissä tietona mitkä tiedot mihinki esitykseen. Kuvat, otsikot ja teksti. Tämä on buginen paska, eli arrayn pituus ei vastaa tuotua sivumäärää esityksessä niin mahd. kaatuu
 
     public int[] peratila_slides = {
 
             R.drawable.ohje,
-            R.drawable.ohje3,
-            R.drawable.ohje4,
-            R.drawable.ohje5,
-            R.drawable.ohje7
-    };
-
-    public int[] normaalitila_slides = {
-
-            R.drawable.ohje7,
             R.drawable.ohje3,
             R.drawable.ohje4,
             R.drawable.ohje5,
@@ -70,6 +63,15 @@ public class SliderAdapter extends PagerAdapter {
             R.drawable.ohje5
     };
 
+    public int[] normaalitila_slides = {
+
+            R.drawable.ohje7,
+            R.drawable.ohje3,
+            R.drawable.ohje4,
+            R.drawable.ohje5,
+            R.drawable.ohje7
+    };
+
     public int[] kolmasvaihe_slides = {
 
             R.drawable.ohje,
@@ -81,7 +83,7 @@ public class SliderAdapter extends PagerAdapter {
 
     public String[] peratila_header = {
 
-            "Eka",
+            "Eka",  // TODO ÄLÄ KOVAKOODAA
             "Toka",
             "Kolmas",
             "Neljas",
@@ -137,8 +139,6 @@ public class SliderAdapter extends PagerAdapter {
             R.string.kolmas_Dia_Normaali,
             R.string.neljas_Dia_Normaali,
             R.string.viides_Dia_Peratila
-
-
     };
 
     public int[] slide_text_peratila = {
@@ -203,6 +203,8 @@ public class SliderAdapter extends PagerAdapter {
         layoutInflater = (LayoutInflater) context.getSystemService(context.LAYOUT_INFLATER_SERVICE);
         View view = layoutInflater.inflate(R.layout.slide_layout, container, false);
 
+
+        // Asetetaan oikeat tiedot arrayista
         ImageView slideImageView = (ImageView) view.findViewById(R.id.id_ImageView);
         TextView slideHeader = (TextView) view.findViewById(R.id.id_TextLabel);
         TextView slideText = (TextView) view.findViewById(R.id.id_textView);
@@ -236,7 +238,6 @@ public class SliderAdapter extends PagerAdapter {
         }
         if (mikaSynnytys == 5)
         {
-
             slideImageView.setImageResource(ensimmainenvaihe_slides[position]);
             slideHeader.setText(ensimmainenvaihe_header[position]);
             slideText.setText(slide_text_ensimmainenvaihe[position]);

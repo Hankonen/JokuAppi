@@ -7,13 +7,12 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.Toolbar;
 
 public class Straight_to_labor_activity extends AppCompatActivity {
 
     private ViewGroup containerView;
-    public int tila;
+    public int synnytysTapahtuma;
     public int diojenMaara;
 
     @Override
@@ -24,14 +23,6 @@ public class Straight_to_labor_activity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         toolbar.inflateMenu(R.menu.menu);
         setActionBar(toolbar);
-
-        final Button peratila = findViewById(R.id.button_peratilan_synnytys2);
-        //final Button hartiadystokia  = findViewById(R.id.button_hartiadystokia2);
-        final Button napanuora  = findViewById(R.id.button_napanuoran_esiinluiskahdus2);
-        final Button normaaliSynnytys  = findViewById(R.id.button_normal_labor2);
-        final Button first_phase = findViewById(R.id.button_eka_vaihe);
-        //final Button second_phase = findViewById(R.id.button_toka_vaihe);
-        //final Button third_phase = findViewById(R.id.button_erikoisvaiheet);
     }
 
     @Override public boolean onOptionsItemSelected(MenuItem item) {
@@ -50,66 +41,63 @@ public class Straight_to_labor_activity extends AppCompatActivity {
                 return super.onOptionsItemSelected(item); }
     }
 
+    // viedään putextrana tieto mikä synnytystapahtuma valittu karttanäkymässä, lisäksi viedään tieto montako "diaa" tapahtumassa on
 
-    public void onClickListener_NormalLabor(View view) {
-
-        tila = 1;
+    public void onClickListener_NormalLabor(View view)
+    {
+        synnytysTapahtuma = 1;
         diojenMaara = 4;
         Intent intent = new Intent(this, SliderActivity.class);
-        intent.putExtra("key",tila);
+        intent.putExtra("key", synnytysTapahtuma);
         intent.putExtra("sivujenmaara", diojenMaara);
         startActivity(intent);
     }
 
     public void onClickListener_peratilan_synnytys(View view)
     {
-        int tila = 2;   // tilaa käytetään valitsemaan
-        int diojenMaara = 3;
+        synnytysTapahtuma = 2;   // tilaa käytetään valitsemaan
+        diojenMaara = 3;
         Intent intent = new Intent(this, SliderActivity.class);
-        intent.putExtra("key",tila);
+        intent.putExtra("key", synnytysTapahtuma);
         intent.putExtra("sivujenmaara", diojenMaara);
         startActivity(intent);
     }
 
 
     public void onClickListener_hartiaDystokia(View view) {
-        int tila = 3;
-        int diojenMaara = 5;
+        synnytysTapahtuma = 3;
+        diojenMaara = 5;
         Intent intent = new Intent(this, SliderActivity.class);
-        intent.putExtra("key",tila);
+        intent.putExtra("key", synnytysTapahtuma);
         intent.putExtra("sivujenmaara", diojenMaara);
         startActivity(intent);
-
     }
 
     public void onClickListener_napanuoran_esiinluiskahdus(View view) {
-        int tila = 4;
-        int diojenMaara = 5;
+        synnytysTapahtuma = 4;
+        diojenMaara = 5;
         Intent intent = new Intent(this, SliderActivity.class);
-        intent.putExtra("key",tila);
+        intent.putExtra("key", synnytysTapahtuma);
         intent.putExtra("sivujenmaara", diojenMaara);
         startActivity(intent);
-
     }
 
     public void onClickListener_ekaVaihe(View view) {
-        int tila = 5;
-        int diojenMaara = 1;
+        synnytysTapahtuma = 5;
+        diojenMaara = 1;
         Intent intent = new Intent(this, SliderActivity.class);
-        intent.putExtra("key",tila);
+        intent.putExtra("key", synnytysTapahtuma);
         intent.putExtra("sivujenmaara", diojenMaara);
-
         startActivity(intent);
     }
 
     public void onClickListener_kolmasVaihe(View view) {
-        int tila = 6;
-        int diojenMaara = 5;
+        synnytysTapahtuma = 6;
+        diojenMaara = 5;
         Intent intent = new Intent(this, SliderActivity.class);
-        intent.putExtra("key",tila);
+        intent.putExtra("key", synnytysTapahtuma);
         intent.putExtra("sivujenmaara", diojenMaara);
         startActivity(intent);
-
     }
 
     public void onClick_exit (View view)
