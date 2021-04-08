@@ -67,7 +67,11 @@
 
     </style>
 
+    <style name="dia_text_style">
 
+        <item name="android:textSize">@dimen/dia_text_size</item>
+
+    </style>
 
 
 

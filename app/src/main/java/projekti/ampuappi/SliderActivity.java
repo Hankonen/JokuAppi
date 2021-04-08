@@ -63,8 +63,8 @@ public class SliderActivity extends AppCompatActivity {
         {
             rightButton.setVisibility(View.GONE);
             rightButton.clearAnimation();
-            Toast.makeText(SliderActivity.this, "Häpyykö", Toast.LENGTH_SHORT).show();
             next_phase.setVisibility(View.VISIBLE);
+            next_phase.setText("Vaihe 2");
             next_phase.clearAnimation();
 
         }
@@ -127,7 +127,7 @@ public class SliderActivity extends AppCompatActivity {
             currentPage = position;
             Button next_phase = (Button)findViewById(R.id.button_next_phase);
 
-            next_phase.setText("Seuraava vaihe");
+
 
 
             if (position == 0)
@@ -144,11 +144,15 @@ public class SliderActivity extends AppCompatActivity {
                 rightButton.setEnabled(jep=false);
                 leftButton.setEnabled(jep=true);
                 rightButton.setVisibility(View.INVISIBLE);
-                Toast.makeText(SliderActivity.this, "Viimeinen dia", Toast.LENGTH_SHORT).show();
 
+                next_phase.setText("3 Vaihe");
                 next_phase.setVisibility(View.VISIBLE);
                 next_phase.setEnabled(jep = true);
 
+                if (arvo == 6)
+                {
+                    next_phase.setText("Esitys päättyy");
+                }
                 // tähän shaibaa mitä haluat tapahtuvan vikalla dialla!!!
             }
             else

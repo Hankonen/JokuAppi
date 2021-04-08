@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.Toolbar;
 
 public class Straight_to_labor_activity extends AppCompatActivity {
 
@@ -16,6 +17,11 @@ public class Straight_to_labor_activity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_straight_to_labor_activity);
+
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        toolbar.inflateMenu(R.menu.menu);
+        setActionBar(toolbar);
+
 
        /* final ImageButton ib = (ImageButton) findViewById(R.id.imageButton_toka_vaihe_ED);
 
