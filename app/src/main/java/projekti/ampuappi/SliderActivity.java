@@ -63,8 +63,8 @@ public class SliderActivity extends AppCompatActivity {
         {
             rightButton.setVisibility(View.GONE);
             rightButton.clearAnimation();
-            Toast.makeText(SliderActivity.this, "Häpyykö", Toast.LENGTH_SHORT).show();
             next_phase.setVisibility(View.VISIBLE);
+            next_phase.setText("Vaihe 2");
             next_phase.clearAnimation();
 
         }
@@ -129,6 +129,10 @@ public class SliderActivity extends AppCompatActivity {
 
             next_phase.setText("Seuraava vaihe");
 
+            if (arvo == 6)
+            {
+                next_phase.setText("Lopeta Ohjeistus");
+            }
 
             if (position == 0)
             {
@@ -136,8 +140,6 @@ public class SliderActivity extends AppCompatActivity {
                 leftButton.setEnabled(jep = false);
                 leftButton.setVisibility(View.INVISIBLE);
                 leftButton.clearAnimation();
-
-
             }
             else if (position == sivujenMaara - 1)
             {
