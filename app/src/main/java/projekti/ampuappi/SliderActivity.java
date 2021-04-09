@@ -135,8 +135,6 @@ public class SliderActivity extends AppCompatActivity {
                 leftButton.setEnabled(jep = false);
                 leftButton.setVisibility(View.INVISIBLE);
                 leftButton.clearAnimation();
-
-
             }
             else if (position == sivujenMaara - 1)
             {
@@ -200,21 +198,8 @@ public class SliderActivity extends AppCompatActivity {
         }
         if (mikaSynnytysTapahtuma == 6)
         {
-
             Intent intent = new Intent(this, MainActivity.class);
             startActivity(intent);
-
-
-           /* final AlertDialog.Builder otw = new AlertDialog.Builder(SliderActivity.this);
-            LayoutInflater inflater = getLayoutInflater();
-            view = inflater.inflate(R.layout.toolbar_layout, null);
-            otw.setCustomTitle(view);
-            otw.setMessage(getString(R.string.OTW_or_IL_HEADER));
-            otw.setView(R.layout.alertbox_otw_or_il_layout);
-            otw.setNegativeButton("Poistu", (dialog, which) -> dialog.cancel());
-            otw.show():*/
-
-
         }
 
     }

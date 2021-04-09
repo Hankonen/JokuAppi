@@ -83,53 +83,53 @@ public class SliderAdapter extends PagerAdapter {
 
     public String[] peratila_header = {
 
-            "Eka",  // TODO ÄLÄ KOVAKOODAA
-            "Toka",
-            "Kolmas",
-            "Neljas",
-            "Viides"
+            "Perätila",  // TODO ÄLÄ KOVAKOODAA
+            "Perätila",
+            "Perätila",
+            "Perätila",
+            "Perätila"
     };
 
     public String[] normaalitila_header = {
 
-            "Normaalin tilan eka sivu",
-            "Toka",
-            "Kolmas",
-            "Neljas",
-            "Viides"
+            "Ponnistusvaihe, normaalisynnytys",
+            "Ponnistusvaihe, normaalisynnytys",
+            "Ponnistusvaihe, normaalisynnytys",
+            "Ponnistusvaihe, normaalisynnytys",
+            "Ponnistusvaihe, normaalisynnytys"
     };
 
     public String[] napanuora_header = {
 
             "Napanuora",
-            "Toka",
-            "Kolmas",
-            "Neljas",
-            "Viides"
+            "Napanuora",
+            "Napanuora",
+            "Napanuora",
+            "Napanuora"
     };
 
     public String[] hartiadystokia_header = {
 
-            "Eka",
-            "Toka",
-            "Kolmas",
-            "Neljas",
-            "Viides"
+            "Hartiadystokia",
+            "Hartiadystokia",
+            "Hartiadystokia",
+            "Hartiadystokia",
+            "Hartiadystokia"
     };
 
     public String[] ensimmainenvaihe_header = {
 
-            "Eka",
-            "toka"
+            "Avautumisvaihe",
+            "Avautumisvaihe"
     };
 
     public String[] kolmasvaihe_header = {
 
-            "vaihe 3 sivu 1",
-            "Toka",
-            "Kolmas",
-            "Neljas",
-            "Viides",
+            "Jälkeisvaihe",
+            "Jälkeisvaihe",
+            "Jälkeisvaihe",
+            "Jälkeisvaihe",
+            "Jälkeisvaihe",
     };
 
     public int[] slide_text_normaali = {

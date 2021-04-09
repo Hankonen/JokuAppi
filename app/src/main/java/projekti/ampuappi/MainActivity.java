@@ -64,7 +64,11 @@ public class MainActivity extends AppCompatActivity {
         final AlertDialog.Builder tl = new AlertDialog.Builder(MainActivity.this);
         LayoutInflater inflater = getLayoutInflater();
         view = inflater.inflate(R.layout.toolbar_layout, null);
+
+
+
         tl.setCustomTitle(view);
+
         tl.setMessage(getString(R.string.to_location_HEADER));
         tl.setView(R.layout.alertbox_to_location_layout);
         tl.setNegativeButton("Poistu", (dialog, which) -> dialog.cancel());
@@ -76,6 +80,8 @@ public class MainActivity extends AppCompatActivity {
         final AlertDialog.Builder htw = new AlertDialog.Builder(MainActivity.this);
         LayoutInflater inflater = getLayoutInflater();
         view = inflater.inflate(R.layout.toolbar_layout, null);
+        //view.setBackgroundColor(getResources().getColor(R.color.black));
+
         htw.setCustomTitle(view);
         htw.setMessage(getString(R.string.how_to_act_HEADER));
         htw.setView(R.layout.alertbox_how_to_act_layout);
