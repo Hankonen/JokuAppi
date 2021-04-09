@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:animateLayoutChanges="true"
-    android:background="@drawable/amputausta2"
+    android:background="@drawable/uusitausta9000"
     app:layoutDescription="@xml/activity_straight_to_labor_activity_scene"
     tools:context=".Straight_to_labor_activity"
     >
@@ -65,7 +65,7 @@
         android:layout_width="220dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
-        android:text="@string/Erikoistilanteet"
+        android:text="PONNISTUSVAIHEEN ERIKOISTILANTEET"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/button_kolmas_vaihe"
         app:layout_constraintStart_toStartOf="@+id/button_kolmas_vaihe"

@@ -1,13 +1,13 @@
 <resources>
     <string name="app_name">AmpuAppi</string>
     <string name="toolbar_header">     AmpuAppi </string>
-    <string name="button_straight_to_labor">Synnytyksen vaiheet</string>
-    <string name="button_on_the_way">Synnytystehtävälle saapuessa</string>
-    <string name="button_how_to_act">Toimintatavat Kohteessa</string>
-    <string name="button_onTheWay_or_inLocation">Hoidetaanko matkalla \nvai kohteessa?</string>
-    <string name="button_eka_vaihe">1. Vaihe, Avautumisvaihe</string>
-    <string name="button_toka_vaihe">2. Vaihe, Ponnistusvaihe</string>
-    <string name="button_kolmas_vaihe">3. Vaihe, Jälkeisvaihe</string>
+    <string name="button_straight_to_labor">Synnytyksen\n vaiheet</string>
+    <string name="button_on_the_way">Synnytystehtävälle\n saapuessa</string>
+    <string name="button_how_to_act">Toimintatavat\n Kohteessa</string>
+    <string name="button_onTheWay_or_inLocation">Hoidetaanko matkalla \n vai kohteessa?</string>
+    <string name="button_eka_vaihe">1. Vaihe,\n Avautumisvaihe</string>
+    <string name="button_toka_vaihe">2. Vaihe,\n Ponnistusvaihe</string>
+    <string name="button_kolmas_vaihe">3. Vaihe,\n Jälkeisvaihe</string>
     <string name="button_normal_labor">Normaali\nSynnytys</string>
     <string name="button_peratilan_labor">Perätila\nSynnytys</string>
     <string name="button_hartiadystokia">Hartia-\ndystokia</string>

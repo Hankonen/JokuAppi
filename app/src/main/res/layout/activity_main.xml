@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/amputausta2"
+    android:background="@drawable/uusitausta9000"
 
     tools:context=".MainActivity">
 
@@ -13,31 +13,9 @@
         layout="@layout/toolbar_layout" />
 
     <Button
-        android:id="@+id/button_straight_to_labor"
-        style="@style/button_style"
-        android:layout_marginBottom="52dp"
-        android:onClick="onClickListener_StraightToLabor"
-        android:text="@string/button_straight_to_labor"
-        app:layout_constraintBottom_toTopOf="@+id/button_onTheWay_to_location"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <Button
-        android:id="@+id/button_onTheWay_to_location"
-        style="@style/button_style"
-        android:layout_marginEnd="36dp"
-        android:layout_marginBottom="60dp"
-        android:onClick="onClickListener_to_location"
-        android:text="@string/button_on_the_way"
-        app:layout_constraintBottom_toTopOf="@+id/button_how_to_act"
-        app:layout_constraintEnd_toEndOf="@+id/button_straight_to_labor"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/button_straight_to_labor" />
-
-    <Button
         android:id="@+id/button_how_to_act"
         style="@style/button_style"
-        android:layout_marginBottom="60dp"
+        android:layout_marginBottom="30dp"
         android:onClick="onClickListener_how_to_act"
         android:text="@string/button_how_to_act"
         app:layout_constraintBottom_toTopOf="@+id/button_onTheWay_or_in_location"
@@ -46,29 +24,40 @@
         app:layout_constraintStart_toStartOf="@+id/button_onTheWay_to_location" />
 
     <Button
+        android:id="@+id/button_straight_to_labor"
+        style="@style/button_style"
+        android:layout_marginBottom="30dp"
+        android:onClick="onClickListener_StraightToLabor"
+        android:text="@string/button_straight_to_labor"
+        app:layout_constraintBottom_toTopOf="@+id/button_onTheWay_to_location"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <Button
+        android:id="@+id/button_onTheWay_to_location"
+        style="@style/button_style"
+        android:layout_marginEnd="36dp"
+        android:layout_marginBottom="30dp"
+        android:onClick="onClickListener_to_location"
+        android:text="@string/button_on_the_way"
+        app:layout_constraintBottom_toTopOf="@+id/button_how_to_act"
+        app:layout_constraintEnd_toEndOf="@+id/button_straight_to_labor"
+        app:layout_constraintHorizontal_bias="0.027"
+        app:layout_constraintStart_toStartOf="@+id/button_straight_to_labor" />
+
+    <Button
         android:id="@+id/button_onTheWay_or_in_location"
         style="@style/button_style"
-        android:layout_marginBottom="56dp"
+        android:layout_marginBottom="100dp"
         android:onClick="onClickListener_onTheWay_or_in_location"
         android:text="@string/button_onTheWay_or_inLocation"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/button_how_to_act"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/button_how_to_act" />
-
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="232dp"
-        android:layout_height="237dp"
-        android:layout_marginStart="126dp"
-        android:layout_marginTop="9dp"
-        android:layout_marginEnd="127dp"
-        android:layout_marginBottom="23dp"
-        app:layout_constraintBottom_toTopOf="@+id/button_straight_to_labor"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar"
-        app:srcCompat="@drawable/ampulogoperus" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

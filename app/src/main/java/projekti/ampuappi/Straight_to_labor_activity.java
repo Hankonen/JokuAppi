@@ -21,6 +21,7 @@ public class Straight_to_labor_activity extends AppCompatActivity {
         setContentView(R.layout.activity_straight_to_labor_activity);
 
         Toolbar toolbar = findViewById(R.id.toolbar);
+        toolbar.setSubtitle(R.string.button_straight_to_labor);
         toolbar.inflateMenu(R.menu.menu);
         setActionBar(toolbar);
     }
