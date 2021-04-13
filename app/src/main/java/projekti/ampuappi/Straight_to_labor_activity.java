@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
@@ -105,5 +106,18 @@ public class Straight_to_labor_activity extends AppCompatActivity {
     {
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
+    }
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event)  {
+        if (keyCode == KeyEvent.KEYCODE_BACK ) {
+            // do something on back.
+            Intent intent = new Intent(this,MainActivity.class);
+            startActivity(intent);
+
+            return true;
+        }
+
+        return super.onKeyDown(keyCode, event);
     }
 }

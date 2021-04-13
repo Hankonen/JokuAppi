@@ -3,14 +3,18 @@ package projekti.ampuappi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.Html;
+import android.util.Log;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class SliderActivity extends AppCompatActivity {
 
@@ -29,7 +33,20 @@ public class SliderActivity extends AppCompatActivity {
 
     public int sivujenMaara;
 
+    Context context;
 
+    private boolean isLastPageSwiped;
+    private int counterPageScroll;
+
+    public SliderActivity()
+    {
+
+    }
+
+    public SliderActivity(Context context)
+    {
+        this.context = context;
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -115,9 +132,49 @@ public class SliderActivity extends AppCompatActivity {
         @Override
         public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
 
-        }
-        private volatile boolean jep;
 
+
+            if (position == sivujenMaara - 1 && positionOffset == 0 && !isLastPageSwiped){
+                if(counterPageScroll != 0){
+                    isLastPageSwiped=true;
+
+                    // TODO ehtolauseet kaikille synnytystapahtumille missä ollaan ja mikä halutaan avattavan
+
+                    if (mikaSynnytysTapahtuma == 5)
+                    {
+                        int synnytysTapahtuma = 1;
+                        int diojenMaara = 4;
+                        Intent intent = new Intent(getApplicationContext(), SliderActivity.class);
+                        intent.putExtra("key", synnytysTapahtuma);
+                        intent.putExtra("sivujenmaara", diojenMaara);
+                        startActivity(intent);
+                        finish();
+                    }
+                    if (mikaSynnytysTapahtuma == 1 || mikaSynnytysTapahtuma == 2 || mikaSynnytysTapahtuma == 3 || mikaSynnytysTapahtuma == 4)
+                    {
+                        int synnytysTapahtuma = 6;
+                        int diojenMaara = 5;
+                        Intent intent = new Intent(getApplicationContext(), SliderActivity.class);
+                        intent.putExtra("key", synnytysTapahtuma);
+                        intent.putExtra("sivujenmaara", diojenMaara);
+                        startActivity(intent);
+                        finish();
+                    }
+                    if (mikaSynnytysTapahtuma == 6)
+                    {
+                        Intent intent = new Intent(getApplicationContext(), Straight_to_labor_activity.class);
+                        startActivity(intent);
+                        finish();
+                    }
+
+
+                }
+                counterPageScroll++;
+            }else{
+                counterPageScroll=0;
+            }
+
+        }
 
         @Override
         public void onPageSelected(int position) {  // positio == sivu
@@ -131,20 +188,23 @@ public class SliderActivity extends AppCompatActivity {
 
             if (position == 0)
             {
-                rightButton.setEnabled(jep =true);
-                leftButton.setEnabled(jep = false);
+
+                rightButton.setEnabled(true);
+                leftButton.setEnabled(false);
                 leftButton.setVisibility(View.INVISIBLE);
                 leftButton.clearAnimation();
             }
             else if (position == sivujenMaara - 1)
             {
-                rightButton.setEnabled(jep=false);
-                leftButton.setEnabled(jep=true);
+                rightButton.setEnabled(false);
+                leftButton.setEnabled(true);
                 rightButton.setVisibility(View.INVISIBLE);
 
                 next_phase.setText("3 Vaihe");
                 next_phase.setVisibility(View.VISIBLE);
-                next_phase.setEnabled(jep = true);
+                next_phase.setEnabled(true);
+
+
 
                 if (mikaSynnytysTapahtuma == 6)
                 {
@@ -154,8 +214,8 @@ public class SliderActivity extends AppCompatActivity {
             }
             else
             {
-                rightButton.setEnabled( jep = true);
-                leftButton.setEnabled( jep = true);
+                rightButton.setEnabled(true);
+                leftButton.setEnabled(true);
                 leftButton.setVisibility(View.VISIBLE);
                 rightButton.setVisibility(View.VISIBLE);
                 next_phase.setVisibility(View.GONE);
@@ -164,6 +224,8 @@ public class SliderActivity extends AppCompatActivity {
 
         @Override
         public void onPageScrollStateChanged(int state) {
+
+
 
         }
     };
@@ -203,6 +265,22 @@ public class SliderActivity extends AppCompatActivity {
         }
 
     }
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event)  {
+        if (keyCode == KeyEvent.KEYCODE_BACK ) {
+            // do something on back.
+            Toast.makeText(context, "suljettu dia esitys", Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(this,Straight_to_labor_activity.class);
+            startActivity(intent);
+
+            return true;
+        }
+
+        return super.onKeyDown(keyCode, event);
+    }
+
+
 }
 
 

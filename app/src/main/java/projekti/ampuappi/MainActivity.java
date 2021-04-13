@@ -10,6 +10,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -138,6 +139,28 @@ public class MainActivity extends AppCompatActivity {
         otw.setNegativeButton("Poistu", (dialog, which) -> dialog.cancel());
         otw.show();
     }
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event)  {
+        if (keyCode == KeyEvent.KEYCODE_BACK ) {
+            // do something on back.
+            View view;
+
+            final AlertDialog.Builder otw = new AlertDialog.Builder(MainActivity.this);
+            LayoutInflater inflater = getLayoutInflater();
+            view = inflater.inflate(R.layout.toolbar_layout, null);
+            otw.setCustomTitle(view);
+            otw.setMessage(getString(R.string.OTW_or_IL_HEADER));
+            otw.setView(R.layout.alertbox_otw_or_il_layout);
+            otw.setNegativeButton("Poistu", (dialog, which) -> System.exit(0));
+            otw.show();
+
+            return true;
+        }
+
+        return super.onKeyDown(keyCode, event);
+    }
+
 
 }
 

@@ -11,6 +11,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.PagerAdapter;
+import androidx.viewpager.widget.ViewPager;
 
 public class SliderAdapter extends PagerAdapter {
 
@@ -27,6 +28,8 @@ public class SliderAdapter extends PagerAdapter {
         mikaSynnytys = pArvo;
         sivumaara = pSivumaara;
     }
+
+
 
     // Arrayt slideri tietoihin!!! Näissä tietona mitkä tiedot mihinki esitykseen. Kuvat, otsikot ja teksti. Tämä on buginen paska, eli arrayn pituus ei vastaa tuotua sivumäärää esityksessä niin mahd. kaatuu
 
@@ -184,6 +187,8 @@ public class SliderAdapter extends PagerAdapter {
             R.string.viides_Dia_Normaali,
     };
 
+
+
     // luo automaattisesti tehtäessä kun extendaa PageAdapterin
     @Override
     public int getCount() {
@@ -195,13 +200,15 @@ public class SliderAdapter extends PagerAdapter {
         return view == (RelativeLayout) object;
     }
 
-    //
+    // vaaditaan inflantoimaan kaikki tässä adapterissa
     @NonNull
     @Override
     public Object instantiateItem(@NonNull ViewGroup container, int position) {
 
         layoutInflater = (LayoutInflater) context.getSystemService(context.LAYOUT_INFLATER_SERVICE);
         View view = layoutInflater.inflate(R.layout.slide_layout, container, false);
+
+
 
 
         // Asetetaan oikeat tiedot arrayista
@@ -241,6 +248,8 @@ public class SliderAdapter extends PagerAdapter {
             slideImageView.setImageResource(ensimmainenvaihe_slides[position]);
             slideHeader.setText(ensimmainenvaihe_header[position]);
             slideText.setText(slide_text_ensimmainenvaihe[position]);
+
+
         }
 
         if (mikaSynnytys == 6)
@@ -262,4 +271,6 @@ public class SliderAdapter extends PagerAdapter {
 
         container.removeView((RelativeLayout)object);
     }
+
+
 }
