@@ -111,9 +111,10 @@ public class Straight_to_labor_activity extends AppCompatActivity {
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event)  {
         if (keyCode == KeyEvent.KEYCODE_BACK ) {
-            // do something on back.
-            Intent intent = new Intent(this,MainActivity.class);
-            startActivity(intent);
+
+            // finish sulkee current activityn ja palaa edelliseen activityyn stackissä. Käytä mieluummin kuin tekemällä aina uusi activity koska nopeampi ja jos ei tarvetta palata vanhaan activityyn.
+
+            finish();
 
             return true;
         }

@@ -143,16 +143,22 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event)  {
         if (keyCode == KeyEvent.KEYCODE_BACK ) {
-            // do something on back.
-            View view;
 
+            // Tehdään intentti jolla hypätään puhelimen valikkoon, System.exit(0) sulkee vain nykyisen activityn ja hyppää restartin kautta edelliseen activityyn.
+
+            Intent intent = new Intent(Intent.ACTION_MAIN);
+            intent.addCategory(Intent.CATEGORY_HOME);
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+
+            View view;
             final AlertDialog.Builder otw = new AlertDialog.Builder(MainActivity.this);
             LayoutInflater inflater = getLayoutInflater();
             view = inflater.inflate(R.layout.toolbar_layout, null);
-            otw.setCustomTitle(view);
-            otw.setMessage(getString(R.string.OTW_or_IL_HEADER));
-            otw.setView(R.layout.alertbox_otw_or_il_layout);
-            otw.setNegativeButton("Poistu", (dialog, which) -> System.exit(0));
+            otw.setTitle("Lopetus");
+            otw.setMessage("Haluatko varmasti lopettaa");
+
+            otw.setNegativeButton("Poistu", (dialog, which) -> startActivity(intent));
+            otw.setPositiveButton("Jatka", ((dialog, which) -> dialog.dismiss()));
             otw.show();
 
             return true;

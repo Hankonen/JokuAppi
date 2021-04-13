@@ -21,6 +21,8 @@ public class SliderActivity extends AppCompatActivity {
     private ViewPager slideViewPager;
     private LinearLayout linearLayout;
 
+
+
     private TextView[] pageIndikaattori;
     private SliderAdapter sliderAdapter;
 
@@ -70,6 +72,8 @@ public class SliderActivity extends AppCompatActivity {
         slideViewPager.setAdapter(sliderAdapter);
         addDotsIndikaattori(0);
 
+
+
         slideViewPager.addOnPageChangeListener(viewListener);
 
         leftButton.setVisibility(View.GONE);
@@ -82,10 +86,7 @@ public class SliderActivity extends AppCompatActivity {
             next_phase.setVisibility(View.VISIBLE);
             next_phase.setText("Vaihe 2");
             next_phase.clearAnimation();
-
         }
-
-
 
         leftButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -133,10 +134,11 @@ public class SliderActivity extends AppCompatActivity {
         public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
 
 
-
             if (position == sivujenMaara - 1 && positionOffset == 0 && !isLastPageSwiped){
+
                 if(counterPageScroll != 0){
                     isLastPageSwiped=true;
+
 
                     // TODO ehtolauseet kaikille synnytystapahtumille missä ollaan ja mikä halutaan avattavan
 
@@ -166,14 +168,14 @@ public class SliderActivity extends AppCompatActivity {
                         startActivity(intent);
                         finish();
                     }
-
-
                 }
-                counterPageScroll++;
-            }else{
-                counterPageScroll=0;
-            }
 
+                counterPageScroll++;
+            }
+            else
+            {
+                counterPageScroll = 0;
+            }
         }
 
         @Override
@@ -182,9 +184,6 @@ public class SliderActivity extends AppCompatActivity {
             addDotsIndikaattori(position);
             currentPage = position;
             Button next_phase = (Button)findViewById(R.id.button_next_phase);
-
-
-
 
             if (position == 0)
             {
@@ -203,8 +202,6 @@ public class SliderActivity extends AppCompatActivity {
                 next_phase.setText("3 Vaihe");
                 next_phase.setVisibility(View.VISIBLE);
                 next_phase.setEnabled(true);
-
-
 
                 if (mikaSynnytysTapahtuma == 6)
                 {
@@ -231,14 +228,13 @@ public class SliderActivity extends AppCompatActivity {
     };
     public void onClickListener_back_button(View view)
     {
-        Intent intent = new Intent(this, Straight_to_labor_activity.class);
-        startActivity(intent);
+        finish();
     }
 
     public void onClick_next_phase(View view)
 
     {
-        if (mikaSynnytysTapahtuma == 5 )
+        if (mikaSynnytysTapahtuma == 5 )    // Jos synnytystapahtuma 5 eli ensimmäinen vaihe, niin mennään tilaan 1 eli toisen vaiheen normaalitilaan.
         {
             int tila = 1;
             int diojenMaara = 5;
@@ -248,8 +244,7 @@ public class SliderActivity extends AppCompatActivity {
             startActivity(intent);
         }
 
-        if (mikaSynnytysTapahtuma == 1 || mikaSynnytysTapahtuma == 2 || mikaSynnytysTapahtuma == 3 || mikaSynnytysTapahtuma == 4 )
-
+        if (mikaSynnytysTapahtuma == 1 || mikaSynnytysTapahtuma == 2 || mikaSynnytysTapahtuma == 3 || mikaSynnytysTapahtuma == 4 )  // jos synnytystapahtuma on jokin toisen vaiheen tiloista niin siirrytään jälkeisvaiheeseen.
         {
             int tila = 6;
             int diojenMaara = 5;
@@ -258,25 +253,21 @@ public class SliderActivity extends AppCompatActivity {
             intent.putExtra("sivujenmaara", diojenMaara);
             startActivity(intent);
         }
-        if (mikaSynnytysTapahtuma == 6)
+        if (mikaSynnytysTapahtuma == 6)     // jos ollaan jälkeisvaiheessa niin suljetaan activity ja siirrytään straight-to-laboriin
         {
-            Intent intent = new Intent(this, MainActivity.class);
-            startActivity(intent);
+            finish();
         }
-
     }
 
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event)  {
         if (keyCode == KeyEvent.KEYCODE_BACK ) {
-            // do something on back.
-            Toast.makeText(context, "suljettu dia esitys", Toast.LENGTH_SHORT).show();
-            Intent intent = new Intent(this,Straight_to_labor_activity.class);
-            startActivity(intent);
+
+            finish();
 
             return true;
         }
-
+        finish();
         return super.onKeyDown(keyCode, event);
     }
 
