@@ -7,6 +7,7 @@ import android.app.ActivityOptions;
 import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -34,8 +35,45 @@ public class MainActivity extends AppCompatActivity {
         toolbar.inflateMenu(R.menu.menu);
         setActionBar(toolbar);
 
+        SharedPreferences prefs = getSharedPreferences("prefs", MODE_PRIVATE);
+        boolean firstStart = prefs.getBoolean("firstStart", true);
+
+        if (firstStart){
+            showStartDialog();
+        }
     }
 
+    private void showStartDialog()
+    {
+        SharedPreferences prefs = getSharedPreferences("prefs", MODE_PRIVATE);
+        SharedPreferences.Editor editor = prefs.edit();
+
+        new AlertDialog.Builder(this)
+                .setTitle("Vastuuvapauslauseke")
+                .setMessage("Tämä on vain ohjeeksi, emme ota vastuuta kaikista ohjeista")
+                .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        editor.putBoolean("firstStart", false);
+                        editor.apply();
+                        dialog.dismiss();
+                    }
+                })
+                .setNegativeButton("EN Hyväksy", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        editor.putBoolean("firstStart", true);
+                        editor.apply();
+                        finish();
+                        System.exit(0);
+
+
+                    }
+                })
+                .create().show();
+
+
+    }
 
     @Override public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
