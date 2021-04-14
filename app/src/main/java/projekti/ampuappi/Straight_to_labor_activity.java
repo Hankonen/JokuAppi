@@ -104,8 +104,7 @@ public class Straight_to_labor_activity extends AppCompatActivity {
 
     public void onClick_exit (View view)
     {
-        Intent intent = new Intent(this, MainActivity.class);
-        startActivity(intent);
+        finish();
     }
 
     @Override
