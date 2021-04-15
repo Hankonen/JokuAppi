@@ -14,20 +14,8 @@
     <string name="button_napanuoran_esiinluiskahdus">Napanuoran\nEsiinluiskahdus</string>
     <string name="Erikoistilanteet">Ponnistusvaiheen\nerikoistilanteet</string>
 
-    <string name="to_location_HEADER">Synnytystehtävään (791 A-D) tullessa huomioi seuraavat asiat: </string>
-    <string name="to_location_REST">•\tKirjaa ylös synnyttäjän perustiedot (sairaudet, allergiat, monesko raskaus ja synnytys jne.)\n
-•\tRaskausviikot, selvitä miten raskaus on edennyt ja onko sikiö perä- vai raivotarjonnassa\n
-•\tKohteeseen päästyäsi tarkista
-  mikä on synnytyksen tilanne:\n
-     •   Onko lapsivesi mennyt?\n
-     •   Koska se on mennyt?\n
-     •   Lapsiveden väri?\n
-     •   Kirkas vai vihreä/kellertävää?\n
-     •   Hajuton/pahanhajuista?\n
-     •   Onko supistuksia?\n
-     •   Milloin ne ovat alkaneet?\n
-     •   Kuinka tiheään supistuksia tulee?\n
-     •   Onko synnytys oikeasti käynnissä?</string>
+    <string name="to_location_HEADER"></string>
+    <string name="to_location_REST"></string>
 
     <string name="OTW_or_IL_HEADER">Matkalle vai Kohteessa?</string>
     <string name="OTW_or_IL_REST">"Hoidetaan kohteessa jos:\n

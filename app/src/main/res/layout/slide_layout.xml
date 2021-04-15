@@ -70,7 +70,7 @@
                         android:textAlignment="center" />
 
                     <TextView
-                        android:id="@+id/id_textView"
+                        android:id="@+id/id_textViewToLocation"
                         style="@style/dia_text_style"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"

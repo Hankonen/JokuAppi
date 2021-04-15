@@ -10,9 +10,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.PagerAdapter;
-import androidx.viewpager.widget.ViewPager;
 
 import java.util.ArrayList;
 
@@ -28,7 +26,8 @@ public class SliderAdapter extends PagerAdapter {
     // Tuodaan parametrinä MainActivitystä saatu tieto mikä synnytystapahtuma ja montako sivua esityksessä on
 
     // TODO tee kaikille slaideriinfoille sama homma!!!, tsekkaa myös diojen määrät oikeaksi
-    private ArrayList<String> arrayListNormaali, arrayListPonnistusVaiheTitle;
+    private ArrayList<String> arrayListEkavaiheTitle, arrayListEkavaiheTeksti, arrayListPonnistusVaiheTitle, arrayListPonnistusVaiheTeksti, arrayListVikaVaiheTitle, arrayListVikaVaiheTeksti,
+            arrayListPeratilaTitle, arrayListPeratilaTeksti, arrayListNapanuoraTitle, arrayListNapanuoraTeksti, arrayListHartiaTitle, arrayListHartiaTeksti;
 
 
     public SliderAdapter(Context context, int pArvo, int pSivumaara)
@@ -41,8 +40,24 @@ public class SliderAdapter extends PagerAdapter {
 
         json.setKey("pokemon", this.context);
 
-        arrayListNormaali = json.get_json("avautumisvaihe", "title");
+        arrayListEkavaiheTitle = json.get_json("avautumisvaihe", "title");
+        arrayListEkavaiheTeksti = json.get_json("avautumisvaihe", "body");
+
         arrayListPonnistusVaiheTitle = json.get_json("ponnistusvaihe", "title");
+        arrayListPonnistusVaiheTeksti = json.get_json("ponnistusvaihe", "body");
+
+        arrayListVikaVaiheTitle = json.get_json("jälkeisvaihe", "title");
+        arrayListVikaVaiheTeksti = json.get_json("jälkeisvaihe", "body");
+
+        arrayListPeratilaTitle = json.get_json("Perätila", "title");
+        arrayListPeratilaTeksti = json.get_json("Perätila", "body");
+
+        arrayListNapanuoraTitle = json.get_json("Napanuora", "title");
+        arrayListNapanuoraTeksti = json.get_json("Napanuora", "body");
+
+        arrayListHartiaTitle = json.get_json("Hartiadystokia", "title");
+        arrayListHartiaTeksti = json.get_json("Hartiadystokia", "body");
+
 
     }
 
@@ -236,7 +251,7 @@ public class SliderAdapter extends PagerAdapter {
         // Asetetaan oikeat tiedot arrayista
         ImageView slideImageView = (ImageView) view.findViewById(R.id.id_ImageView);
         TextView slideHeader = (TextView) view.findViewById(R.id.id_TextLabel);
-        TextView slideText = (TextView) view.findViewById(R.id.id_textView);
+        TextView slideText = (TextView) view.findViewById(R.id.id_textViewToLocation);
 
         // normaalitila 2 vaihe
         if (mikaSynnytys == 1)
@@ -244,7 +259,7 @@ public class SliderAdapter extends PagerAdapter {
 
             slideImageView.setImageResource(normaalitila_slides[position]);
             slideHeader.setText(arrayListPonnistusVaiheTitle.get(position));
-            slideText.setText(slide_text_normaali[position]);
+            slideText.setText(arrayListPonnistusVaiheTeksti.get(position));
             Log.d("apua",arrayListPonnistusVaiheTitle.toString());
         }
 
@@ -252,27 +267,27 @@ public class SliderAdapter extends PagerAdapter {
         if (mikaSynnytys == 2)
         {
             slideImageView.setImageResource(peratila_slides[position]);
-            slideHeader.setText(hartiadystokia_header[position]);
-            slideText.setText(slide_text_peratila[position]);
+            slideHeader.setText(arrayListPeratilaTitle.get(position));
+            slideText.setText(arrayListPeratilaTeksti.get(position));
         }
         if (mikaSynnytys == 3)
         {
             slideImageView.setImageResource(hartiadystokia_slides[position]);
-            slideHeader.setText(hartiadystokia_header[position]);
-            slideText.setText(slide_text_hartiadystokia[position]);
+            slideHeader.setText(arrayListHartiaTitle.get(position));
+            slideText.setText(arrayListHartiaTeksti.get(position));
         }
 
         if (mikaSynnytys == 4)
         {
             slideImageView.setImageResource(napanuora_slides[position]);
-            slideHeader.setText(napanuora_header[position]);
-            slideText.setText(slide_text_napanuora[position]);
+            slideHeader.setText(arrayListNapanuoraTitle.get(position));
+            slideText.setText(arrayListNapanuoraTeksti.get(position));
         }
         if (mikaSynnytys == 5)
         {
             slideImageView.setImageResource(ensimmainenvaihe_slides[position]);
-            slideHeader.setText(arrayListNormaali.get(position));
-            slideText.setText(slide_text_ensimmainenvaihe[position]);
+            slideHeader.setText(arrayListEkavaiheTitle.get(position));
+            slideText.setText(arrayListEkavaiheTeksti.get(position));
 
 
         }
@@ -280,8 +295,8 @@ public class SliderAdapter extends PagerAdapter {
         if (mikaSynnytys == 6)
         {
             slideImageView.setImageResource(kolmasvaihe_slides[position]);
-            slideHeader.setText(kolmasvaihe_header[position]);
-            slideText.setText(slide_text_kolmasvaihe[position]);
+            slideHeader.setText(arrayListVikaVaiheTitle.get(position));
+            slideText.setText(arrayListVikaVaiheTeksti.get(position));
         }
 
         container.addView(view);

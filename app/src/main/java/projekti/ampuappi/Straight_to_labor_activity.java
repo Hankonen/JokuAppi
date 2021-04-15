@@ -71,7 +71,7 @@ public class Straight_to_labor_activity extends AppCompatActivity {
 
     public void onClickListener_hartiaDystokia(View view) {
         synnytysTapahtuma = 3;
-        diojenMaara = 5;
+        diojenMaara = 4;
         Intent intent = new Intent(this, SliderActivity.class);
         intent.putExtra("key", synnytysTapahtuma);
         intent.putExtra("sivujenmaara", diojenMaara);
@@ -80,7 +80,7 @@ public class Straight_to_labor_activity extends AppCompatActivity {
 
     public void onClickListener_napanuoran_esiinluiskahdus(View view) {
         synnytysTapahtuma = 4;
-        diojenMaara = 5;
+        diojenMaara = 3;
         Intent intent = new Intent(this, SliderActivity.class);
         intent.putExtra("key", synnytysTapahtuma);
         intent.putExtra("sivujenmaara", diojenMaara);

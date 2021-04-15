@@ -10,6 +10,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -25,8 +26,12 @@ import android.widget.Toolbar;
 
 import com.google.android.material.navigation.NavigationView;
 
+import java.util.ArrayList;
+
 public class MainActivity extends AppCompatActivity {
 
+    private JSON json;
+    private ArrayList<String> arrayListSynnytysTehtavaanTullessaTitle, arrayListSynnytysTehtavaanTullessaTeksti;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,6 +47,13 @@ public class MainActivity extends AppCompatActivity {
         if (firstStart){
             showStartDialog();
         }
+
+        json = new JSON("dialogitekstit");
+
+        json.setKey("dialogitekstit", this);
+
+        arrayListSynnytysTehtavaanTullessaTitle = json.get_json("Synnytystehtävään (791 A-D) tullessa huomioi seuraavat asiat:", "title");
+        arrayListSynnytysTehtavaanTullessaTeksti = json.get_json("Synnytystehtävään (791 A-D) tullessa huomioi seuraavat asiat:", "body");
     }
 
     private void showStartDialog()
@@ -101,15 +113,32 @@ public class MainActivity extends AppCompatActivity {
     public void onClickListener_to_location(View view)
     {
         final AlertDialog.Builder tl = new AlertDialog.Builder(MainActivity.this);
+
+        final View view1;
+
+
+
         LayoutInflater inflater = getLayoutInflater();
+
+
+        view1 = inflater.inflate(R.layout.alertbox_to_location_layout, null);
+        TextView textView = (TextView) view1.findViewById(R.id.id_textViewToLocation);
+        textView.setText(arrayListSynnytysTehtavaanTullessaTeksti.toString());
+
         view = inflater.inflate(R.layout.toolbar_layout, null);
-
-
+        Toolbar toolbar = (Toolbar) view.findViewById(R.id.toolbar);
+        toolbar.setTitle(arrayListSynnytysTehtavaanTullessaTitle.toString());
 
         tl.setCustomTitle(view);
 
-        tl.setMessage(getString(R.string.to_location_HEADER));
-        tl.setView(R.layout.alertbox_to_location_layout);
+        tl.setMessage(arrayListSynnytysTehtavaanTullessaTitle.toString());
+        Log.d("Apua", arrayListSynnytysTehtavaanTullessaTitle.toString());
+        Log.d("Apua", arrayListSynnytysTehtavaanTullessaTeksti.toString());
+        //tl.setMessage(arrayListSynnytysTehtavaanTullessaTeksti);
+        tl.setView(view1);
+
+
+
         tl.setNegativeButton("Poistu", (dialog, which) -> dialog.cancel());
         tl.show();
     }
@@ -123,6 +152,8 @@ public class MainActivity extends AppCompatActivity {
 
         htw.setCustomTitle(view);
         htw.setMessage(getString(R.string.how_to_act_HEADER));
+
+
         htw.setView(R.layout.alertbox_how_to_act_layout);
         htw.setNegativeButton("Poistu", (dialog, which) -> dialog.cancel());
         htw.show();

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:animateLayoutChanges="true"
-    android:background="@drawable/uusitausta9000"
+    android:background="@drawable/bgreverse"
     app:layoutDescription="@xml/activity_straight_to_labor_activity_scene"
     tools:context=".Straight_to_labor_activity"
     >

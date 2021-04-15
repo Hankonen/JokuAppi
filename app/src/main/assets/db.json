@@ -8,7 +8,7 @@
 		{
 			"id": 2,
 			"title": "ponnistusvaihe",
-			"body": "• Välilihan repeäminen estetään tukemalla sitä toisen kämmenellä, peukalo ja etusormi kurovat välilihaan joustoa"
+			"body": "• Aleksi laulaa !! Välilihan repeäminen estetään tukemalla sitä toisen kämmenellä, peukalo ja etusormi kurovat välilihaan joustoa"
 		},
 		{
 			"id": 3,
@@ -141,12 +141,11 @@
 			"id": 28
 		}
 	],
-	"polls": [
+	"dialogitekstit": [
 		{
-			"id": 1,
-			"question": "kevyttapainooooo",
-			"answerA": "ronnie",
-			"answerB": "yebodyyy"
+			"title": "Synnytystehtävään (791 A-D) tullessa huomioi seuraavat asiat:",
+			"body": "•Kirjaa ylös synnyttäjän perustiedot (sairaudet, allergiat, monesko raskaus ja synnytys jne.)\n•\tRaskausviikot, selvitä miten raskaus on edennyt ja onko sikiö perä- vai raivotarjonnassa\n•\tKohteeseen päästyäsi tarkista\n  mikä on synnytyksen tilanne:\n     •   Onko lapsivesi mennyt?\n     •   Koska se on mennyt?\n    •   Lapsiveden väri?\n     •   Kirkas vai vihreä/kellertävää?\n     •   Hajuton/pahanhajuista?\n     •   Onko supistuksia?\n     •   Milloin ne ovat alkaneet?\n     •   Kuinka tiheään supistuksia tulee?\n     •   Onko synnytys oikeasti käynnissä?",
+			"id": 1
 		}
 	]
 }
