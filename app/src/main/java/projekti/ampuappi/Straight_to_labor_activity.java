@@ -10,11 +10,14 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toolbar;
 
+import java.io.InputStream;
+
 public class Straight_to_labor_activity extends AppCompatActivity {
 
     private ViewGroup containerView;
     public int synnytysTapahtuma;
     public int diojenMaara;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

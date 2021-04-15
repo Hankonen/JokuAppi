@@ -1,6 +1,7 @@
 package projekti.ampuappi;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,20 +14,36 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.PagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
+import java.util.ArrayList;
+
 public class SliderAdapter extends PagerAdapter {
 
     Context context;
     LayoutInflater layoutInflater;
     public int mikaSynnytys;
     public int sivumaara;
+    JSON json;
 
+    //public
     // Tuodaan parametrinä MainActivitystä saatu tieto mikä synnytystapahtuma ja montako sivua esityksessä on
+
+    // TODO tee kaikille slaideriinfoille sama homma!!!, tsekkaa myös diojen määrät oikeaksi
+    private ArrayList<String> arrayListNormaali, arrayListPonnistusVaiheTitle;
+
 
     public SliderAdapter(Context context, int pArvo, int pSivumaara)
     {
         this.context = context;
         mikaSynnytys = pArvo;
         sivumaara = pSivumaara;
+
+        json = new JSON("pokemon");
+
+        json.setKey("pokemon", this.context);
+
+        arrayListNormaali = json.get_json("avautumisvaihe", "title");
+        arrayListPonnistusVaiheTitle = json.get_json("ponnistusvaihe", "title");
+
     }
 
 
@@ -34,6 +51,7 @@ public class SliderAdapter extends PagerAdapter {
     // Arrayt slideri tietoihin!!! Näissä tietona mitkä tiedot mihinki esitykseen. Kuvat, otsikot ja teksti. Tämä on buginen paska, eli arrayn pituus ei vastaa tuotua sivumäärää esityksessä niin mahd. kaatuu
 
     public int[] peratila_slides = {
+
 
             R.drawable.ohje,
             R.drawable.ohje3,
@@ -86,7 +104,7 @@ public class SliderAdapter extends PagerAdapter {
 
     public String[] peratila_header = {
 
-            "Perätila",  // TODO ÄLÄ KOVAKOODAA
+            "Perätila",//JSONtieto,  // TODO ÄLÄ KOVAKOODAA
             "Perätila",
             "Perätila",
             "Perätila",
@@ -134,6 +152,8 @@ public class SliderAdapter extends PagerAdapter {
             "Jälkeisvaihe",
             "Jälkeisvaihe",
     };
+
+
 
     public int[] slide_text_normaali = {
 
@@ -205,6 +225,8 @@ public class SliderAdapter extends PagerAdapter {
     @Override
     public Object instantiateItem(@NonNull ViewGroup container, int position) {
 
+
+
         layoutInflater = (LayoutInflater) context.getSystemService(context.LAYOUT_INFLATER_SERVICE);
         View view = layoutInflater.inflate(R.layout.slide_layout, container, false);
 
@@ -216,18 +238,21 @@ public class SliderAdapter extends PagerAdapter {
         TextView slideHeader = (TextView) view.findViewById(R.id.id_TextLabel);
         TextView slideText = (TextView) view.findViewById(R.id.id_textView);
 
-
+        // normaalitila 2 vaihe
         if (mikaSynnytys == 1)
         {
+
             slideImageView.setImageResource(normaalitila_slides[position]);
-            slideHeader.setText(normaalitila_header[position]);
+            slideHeader.setText(arrayListPonnistusVaiheTitle.get(position));
             slideText.setText(slide_text_normaali[position]);
+            Log.d("apua",arrayListPonnistusVaiheTitle.toString());
         }
 
+        // perätila
         if (mikaSynnytys == 2)
         {
             slideImageView.setImageResource(peratila_slides[position]);
-            slideHeader.setText(peratila_header[position]);
+            slideHeader.setText(hartiadystokia_header[position]);
             slideText.setText(slide_text_peratila[position]);
         }
         if (mikaSynnytys == 3)
@@ -246,7 +271,7 @@ public class SliderAdapter extends PagerAdapter {
         if (mikaSynnytys == 5)
         {
             slideImageView.setImageResource(ensimmainenvaihe_slides[position]);
-            slideHeader.setText(ensimmainenvaihe_header[position]);
+            slideHeader.setText(arrayListNormaali.get(position));
             slideText.setText(slide_text_ensimmainenvaihe[position]);
 
 

@@ -40,15 +40,7 @@ public class SliderActivity extends AppCompatActivity {
     private boolean isLastPageSwiped;
     private int counterPageScroll;
 
-    public SliderActivity()
-    {
 
-    }
-
-    public SliderActivity(Context context)
-    {
-        this.context = context;
-    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
