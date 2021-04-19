@@ -132,8 +132,6 @@ public class SliderActivity extends AppCompatActivity {
                     isLastPageSwiped=true;
 
 
-                    // TODO ehtolauseet kaikille synnytystapahtumille missä ollaan ja mikä halutaan avattavan
-
                     if (mikaSynnytysTapahtuma == 5)
                     {
                         int synnytysTapahtuma = 1;
