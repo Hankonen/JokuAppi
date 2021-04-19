@@ -3,7 +3,7 @@
     <style name="Theme.AmpuAppi" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
         <item name="colorPrimary">#69a8bb</item>
-        <item name="colorPrimaryVariant">#69a8bb</item>
+        <item name="colorPrimaryVariant">#ACB9E2</item>         <!-- laturibaarin väri-->
         <item name="colorOnPrimary">@color/white</item>
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/teal_200</item>
@@ -67,7 +67,11 @@
 
     </style>
 
+    <style name="dia_text_style">
 
+        <item name="android:textSize">@dimen/dia_text_size</item>
+
+    </style>
 
 
 

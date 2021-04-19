@@ -8,10 +8,12 @@
 
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/slideViewPager"
-        android:layout_width="414dp"
-        android:layout_height="622dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout"
-        tools:layout_editor_absoluteX="-2dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
 
 
     <LinearLayout
@@ -22,7 +24,8 @@
         android:padding="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"></LinearLayout>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/slideViewPager"></LinearLayout>
 
     <ImageButton
         android:id="@+id/id_iButton_Left"
@@ -32,50 +35,50 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.45"
-        app:srcCompat="@drawable/abc_vector_test" />
+        app:srcCompat="@drawable/abc_vector_test"
+        tools:visibility="visible" />
 
     <ImageButton
         android:id="@+id/id_iButton_Right"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:rotationY="-178"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/id_iButton_Left"
-        app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/abc_vector_test" />
-
-    <ImageButton
-        android:id="@+id/imageButton"
-        android:layout_width="47dp"
-        android:layout_height="40dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginEnd="10dp"
-        android:background="#00FFFFFF"
-        android:onClick="onClickListener_back_button"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/linearLayout"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/slideViewPager"
-        app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@android:drawable/ic_delete" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.45"
+        app:srcCompat="@drawable/abc_vector_test"
+        tools:visibility="visible" />
 
     <Button
         android:id="@+id/button_next_phase"
         style="@style/button_style"
-        android:layout_width="159dp"
-        android:layout_height="67dp"
+        android:layout_width="150dp"
+        android:layout_height="60dp"
         android:layout_marginStart="86dp"
         android:layout_marginTop="4dp"
         android:layout_marginEnd="6dp"
+        android:onClick="onClick_next_phase"
         android:text="Button"
         android:visibility="gone"
-        android:onClick="onClick_next_phase"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.893"
         app:layout_constraintStart_toEndOf="@+id/linearLayout"
+        app:layout_constraintTop_toBottomOf="@+id/slideViewPager"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <Button
+        android:id="@+id/button_takaisin"
+        style="@style/button_style"
+        android:layout_width="150dp"
+        android:layout_height="60dp"
+        android:onClick="onClickListener_back_button"
+        android:text="@string/TakaisinButton"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/slideViewPager"
         app:layout_constraintVertical_bias="1.0" />
 

@@ -1,13 +1,14 @@
 package projekti.ampuappi;
 
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.Html;
-import android.view.LayoutInflater;
+import android.util.Log;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
@@ -20,6 +21,8 @@ public class SliderActivity extends AppCompatActivity {
     private ViewPager slideViewPager;
     private LinearLayout linearLayout;
 
+
+
     private TextView[] pageIndikaattori;
     private SliderAdapter sliderAdapter;
 
@@ -28,9 +31,14 @@ public class SliderActivity extends AppCompatActivity {
 
     private ImageButton rightButton;
     private int currentPage;
-    public int arvo;
+    public int mikaSynnytysTapahtuma;
 
     public int sivujenMaara;
+
+    Context context;
+
+    private boolean isLastPageSwiped;
+    private int counterPageScroll;
 
 
 
@@ -39,8 +47,10 @@ public class SliderActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_slider);
 
+        // Haetaan Straight to laborista tuodut tiedot eri esityksiin
+
         Intent i = getIntent();
-        arvo  = i.getIntExtra("key", 1);
+        mikaSynnytysTapahtuma = i.getIntExtra("key", 1);
         sivujenMaara = i.getIntExtra("sivujenmaara", 1);
 
         slideViewPager = (ViewPager) findViewById(R.id.slideViewPager);
@@ -49,27 +59,26 @@ public class SliderActivity extends AppCompatActivity {
         leftButton = (ImageButton)findViewById(R.id.id_iButton_Left);
         rightButton = findViewById(R.id.id_iButton_Right);
 
-        sliderAdapter = new SliderAdapter(this, arvo, sivujenMaara);
+        sliderAdapter = new SliderAdapter(this, mikaSynnytysTapahtuma, sivujenMaara);    // heitetään parametreiksi tänne jotta SliderAdapter class tietää mitkä kuvat näytetään
 
         slideViewPager.setAdapter(sliderAdapter);
         addDotsIndikaattori(0);
+
+
 
         slideViewPager.addOnPageChangeListener(viewListener);
 
         leftButton.setVisibility(View.GONE);
         leftButton.clearAnimation();
         Button next_phase = (Button)findViewById(R.id.button_next_phase);
-        if ( arvo == 5)
+        if ( mikaSynnytysTapahtuma == 5)
         {
             rightButton.setVisibility(View.GONE);
             rightButton.clearAnimation();
             next_phase.setVisibility(View.VISIBLE);
-            next_phase.setText("Vaihe 2");
+            next_phase.setText("2. Diat");
             next_phase.clearAnimation();
-
         }
-
-
 
         leftButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -116,9 +125,50 @@ public class SliderActivity extends AppCompatActivity {
         @Override
         public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
 
-        }
-        private volatile boolean jep;
 
+            if (position == sivujenMaara - 1 && positionOffset == 0 && !isLastPageSwiped){
+
+                if(counterPageScroll != 0){
+                    isLastPageSwiped=true;
+
+
+                    // TODO ehtolauseet kaikille synnytystapahtumille missä ollaan ja mikä halutaan avattavan
+
+                    if (mikaSynnytysTapahtuma == 5)
+                    {
+                        int synnytysTapahtuma = 1;
+                        int diojenMaara = 4;
+                        Intent intent = new Intent(getApplicationContext(), SliderActivity.class);
+                        intent.putExtra("key", synnytysTapahtuma);
+                        intent.putExtra("sivujenmaara", diojenMaara);
+                        startActivity(intent);
+                        finish();
+                    }
+                    if (mikaSynnytysTapahtuma == 1 || mikaSynnytysTapahtuma == 2 || mikaSynnytysTapahtuma == 3 || mikaSynnytysTapahtuma == 4)
+                    {
+                        int synnytysTapahtuma = 6;
+                        int diojenMaara = 5;
+                        Intent intent = new Intent(getApplicationContext(), SliderActivity.class);
+                        intent.putExtra("key", synnytysTapahtuma);
+                        intent.putExtra("sivujenmaara", diojenMaara);
+                        startActivity(intent);
+                        finish();
+                    }
+                    if (mikaSynnytysTapahtuma == 6)
+                    {
+                        Intent intent = new Intent(getApplicationContext(), Straight_to_labor_activity.class);
+                        startActivity(intent);
+                        finish();
+                    }
+                }
+
+                counterPageScroll++;
+            }
+            else
+            {
+                counterPageScroll = 0;
+            }
+        }
 
         @Override
         public void onPageSelected(int position) {  // positio == sivu
@@ -127,36 +177,34 @@ public class SliderActivity extends AppCompatActivity {
             currentPage = position;
             Button next_phase = (Button)findViewById(R.id.button_next_phase);
 
-            next_phase.setText("Seuraava vaihe");
-
-            if (arvo == 6)
-            {
-                next_phase.setText("Lopeta Ohjeistus");
-            }
-
             if (position == 0)
             {
-                rightButton.setEnabled(jep =true);
-                leftButton.setEnabled(jep = false);
+
+                rightButton.setEnabled(true);
+                leftButton.setEnabled(false);
                 leftButton.setVisibility(View.INVISIBLE);
                 leftButton.clearAnimation();
             }
             else if (position == sivujenMaara - 1)
             {
-                rightButton.setEnabled(jep=false);
-                leftButton.setEnabled(jep=true);
+                rightButton.setEnabled(false);
+                leftButton.setEnabled(true);
                 rightButton.setVisibility(View.INVISIBLE);
-                Toast.makeText(SliderActivity.this, "Viimeinen dia", Toast.LENGTH_SHORT).show();
 
+                next_phase.setText("3. diat");
                 next_phase.setVisibility(View.VISIBLE);
-                next_phase.setEnabled(jep = true);
+                next_phase.setEnabled(true);
 
+                if (mikaSynnytysTapahtuma == 6)
+                {
+                    next_phase.setText("Esitys päättyy");
+                }
                 // tähän shaibaa mitä haluat tapahtuvan vikalla dialla!!!
             }
             else
             {
-                rightButton.setEnabled( jep =true);
-                leftButton.setEnabled( jep = true);
+                rightButton.setEnabled(true);
+                leftButton.setEnabled(true);
                 leftButton.setVisibility(View.VISIBLE);
                 rightButton.setVisibility(View.VISIBLE);
                 next_phase.setVisibility(View.GONE);
@@ -166,18 +214,19 @@ public class SliderActivity extends AppCompatActivity {
         @Override
         public void onPageScrollStateChanged(int state) {
 
+
+
         }
     };
     public void onClickListener_back_button(View view)
     {
-        Intent intent = new Intent(this, Straight_to_labor_activity.class);
-        startActivity(intent);
+        finish();
     }
 
     public void onClick_next_phase(View view)
 
     {
-        if (arvo == 5 )
+        if (mikaSynnytysTapahtuma == 5 )    // Jos synnytystapahtuma 5 eli ensimmäinen vaihe, niin mennään tilaan 1 eli toisen vaiheen normaalitilaan.
         {
             int tila = 1;
             int diojenMaara = 5;
@@ -187,8 +236,7 @@ public class SliderActivity extends AppCompatActivity {
             startActivity(intent);
         }
 
-        if (arvo ==1 ||arvo == 2 || arvo == 3 || arvo == 4 )
-
+        if (mikaSynnytysTapahtuma == 1 || mikaSynnytysTapahtuma == 2 || mikaSynnytysTapahtuma == 3 || mikaSynnytysTapahtuma == 4 )  // jos synnytystapahtuma on jokin toisen vaiheen tiloista niin siirrytään jälkeisvaiheeseen.
         {
             int tila = 6;
             int diojenMaara = 5;
@@ -197,26 +245,25 @@ public class SliderActivity extends AppCompatActivity {
             intent.putExtra("sivujenmaara", diojenMaara);
             startActivity(intent);
         }
-        if (arvo == 6)
+        if (mikaSynnytysTapahtuma == 6)     // jos ollaan jälkeisvaiheessa niin suljetaan activity ja siirrytään straight-to-laboriin
         {
-
-            Intent intent = new Intent(this, MainActivity.class);
-            startActivity(intent);
-
-
-           /* final AlertDialog.Builder otw = new AlertDialog.Builder(SliderActivity.this);
-            LayoutInflater inflater = getLayoutInflater();
-            view = inflater.inflate(R.layout.toolbar_layout, null);
-            otw.setCustomTitle(view);
-            otw.setMessage(getString(R.string.OTW_or_IL_HEADER));
-            otw.setView(R.layout.alertbox_otw_or_il_layout);
-            otw.setNegativeButton("Poistu", (dialog, which) -> dialog.cancel());
-            otw.show():*/
-
-
+            finish();
         }
-
     }
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event)  {
+        if (keyCode == KeyEvent.KEYCODE_BACK ) {
+
+            finish();
+
+            return true;
+        }
+        finish();
+        return super.onKeyDown(keyCode, event);
+    }
+
+
 }
 
 

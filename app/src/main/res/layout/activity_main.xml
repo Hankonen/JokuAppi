@@ -4,55 +4,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/app_background"
+    android:background="@drawable/etusivutausta"
+
     tools:context=".MainActivity">
 
     <include
         android:id="@+id/toolbar"
-        layout="@layout/toolbar_layout"/>
-
-    <TextView
-        android:id="@+id/first_page_header"
-        android:layout_width="371dp"
-        android:layout_height="185dp"
-        android:text="@string/header_first_page"
-        android:textColor="@color/button_text_color"
-        android:textSize="@dimen/dim_ekasivu_otsikko"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.125"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar"
-        app:layout_constraintVertical_bias="0.058" />
-
-    <Button
-        android:id="@+id/button_straight_to_labor"
-        style="@style/button_style"
-        android:layout_marginBottom="52dp"
-        android:onClick="onClickListener_StraightToLabor"
-        android:text="@string/button_straight_to_labor"
-        app:layout_constraintBottom_toTopOf="@+id/button_onTheWay_to_location"
-        app:layout_constraintEnd_toEndOf="@+id/first_page_header"
-        app:layout_constraintHorizontal_bias="0.61"
-        app:layout_constraintStart_toStartOf="@+id/first_page_header" />
-
-    <Button
-        android:id="@+id/button_onTheWay_to_location"
-        style="@style/button_style"
-        android:layout_marginEnd="36dp"
-        android:layout_marginBottom="60dp"
-        android:onClick="onClickListener_to_location"
-        android:text="@string/button_on_the_way"
-        app:layout_constraintBottom_toTopOf="@+id/button_how_to_act"
-        app:layout_constraintEnd_toEndOf="@+id/button_straight_to_labor"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/button_straight_to_labor" />
+        layout="@layout/toolbar_layout" />
 
     <Button
         android:id="@+id/button_how_to_act"
         style="@style/button_style"
-        android:layout_marginBottom="60dp"
-        android:onClick="onClickListener_how_to_act"
+        android:layout_marginBottom="30dp"
+        android:onClick="onClickListener_Third_Button"
         android:text="@string/button_how_to_act"
         app:layout_constraintBottom_toTopOf="@+id/button_onTheWay_or_in_location"
         app:layout_constraintEnd_toEndOf="@+id/button_onTheWay_to_location"
@@ -60,10 +24,35 @@
         app:layout_constraintStart_toStartOf="@+id/button_onTheWay_to_location" />
 
     <Button
+        android:id="@+id/button_straight_to_labor"
+        style="@style/button_style"
+        android:layout_marginBottom="30dp"
+        android:onClick="onClickListener_StraightToLabor"
+        android:text="@string/button_straight_to_labor"
+        app:layout_constraintBottom_toTopOf="@+id/button_onTheWay_to_location"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <Button
+        android:id="@+id/button_onTheWay_to_location"
+        style="@style/button_style"
+        android:layout_marginEnd="36dp"
+        android:layout_marginBottom="30dp"
+        android:onClick="onClickListener_Second_button"
+        android:text="@string/button_on_the_way"
+        app:layout_constraintBottom_toTopOf="@+id/button_how_to_act"
+        app:layout_constraintEnd_toEndOf="@+id/button_straight_to_labor"
+        app:layout_constraintHorizontal_bias="0.027"
+        app:layout_constraintStart_toStartOf="@+id/button_straight_to_labor" />
+
+    <Button
         android:id="@+id/button_onTheWay_or_in_location"
         style="@style/button_style"
-        android:layout_marginBottom="112dp"
-        android:onClick="onClickListener_onTheWay_or_in_location"
+        android:layout_marginBottom="100dp"
+        android:onClick="onClickListener_Fourth_Button"
         android:text="@string/button_onTheWay_or_inLocation"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/button_how_to_act"

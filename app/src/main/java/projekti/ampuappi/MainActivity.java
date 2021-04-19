@@ -7,8 +7,11 @@ import android.app.ActivityOptions;
 import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -23,8 +26,12 @@ import android.widget.Toolbar;
 
 import com.google.android.material.navigation.NavigationView;
 
+import java.util.ArrayList;
+
 public class MainActivity extends AppCompatActivity {
 
+    private JSON json;
+    private ArrayList<String> arrayListTokaNappiTitle, arrayListTokaNappiTeksti, arrayListKolmasNappiTitle, arrayListKolmasNappiTeksti, arrayListNeljasNappiTitle, arrayListNeljasNappiTeksti;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,8 +41,58 @@ public class MainActivity extends AppCompatActivity {
         toolbar.inflateMenu(R.menu.menu);
         setActionBar(toolbar);
 
+        SharedPreferences prefs = getSharedPreferences("prefs", MODE_PRIVATE);
+        boolean firstStart = prefs.getBoolean("firstStart", true);
+
+        if (firstStart){
+            showStartDialog();
+        }
+
+        json = new JSON("dialogitekstit");
+
+        json.setKey("dialogitekstit", this);
+
+        arrayListTokaNappiTitle = json.get_json("first", "title");
+        arrayListTokaNappiTeksti = json.get_json("first", "body");
+
+        arrayListKolmasNappiTitle = json.get_json("second", "title");
+        arrayListKolmasNappiTeksti = json.get_json("second", "body");
+
+        arrayListNeljasNappiTitle = json.get_json("third", "title");
+        arrayListNeljasNappiTeksti = json.get_json("third", "body");
     }
 
+    private void showStartDialog()
+    {
+        SharedPreferences prefs = getSharedPreferences("prefs", MODE_PRIVATE);
+        SharedPreferences.Editor editor = prefs.edit();
+
+        new AlertDialog.Builder(this)
+                .setTitle("Vastuuvapauslauseke")
+                .setMessage("Tämä on vain ohjeeksi, emme ota vastuuta kaikista ohjeista")
+                .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        editor.putBoolean("firstStart", false);
+                        editor.apply();
+                        dialog.dismiss();
+                    }
+                })
+                .setNegativeButton("EN Hyväksy", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        editor.putBoolean("firstStart", true);
+                        editor.apply();
+                        finish();
+                        System.exit(0);
+
+
+                    }
+                })
+                .create().show();
+
+
+    }
 
     @Override public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
@@ -59,41 +116,132 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void onClickListener_to_location(View view)
+    public void onClickListener_Second_button(View view)
     {
         final AlertDialog.Builder tl = new AlertDialog.Builder(MainActivity.this);
+
+        final View view1;
+
+
+
         LayoutInflater inflater = getLayoutInflater();
+
+
+        view1 = inflater.inflate(R.layout.alertbox_to_location_layout, null);
+        TextView textView = (TextView) view1.findViewById(R.id.id_textViewToLocation);
+        textView.setText(arrayListTokaNappiTeksti.toString());
+
         view = inflater.inflate(R.layout.toolbar_layout, null);
+        Toolbar toolbar = (Toolbar) view.findViewById(R.id.toolbar);
+        toolbar.setTitle(arrayListTokaNappiTitle.toString());
+
         tl.setCustomTitle(view);
-        tl.setMessage(getString(R.string.to_location_HEADER));
-        tl.setView(R.layout.alertbox_to_location_layout);
+
+        tl.setMessage(arrayListTokaNappiTitle.toString());
+        Log.d("Apua", arrayListTokaNappiTitle.toString());
+        Log.d("Apua", arrayListTokaNappiTeksti.toString());
+        //tl.setMessage(arrayListSynnytysTehtavaanTullessaTeksti);
+        tl.setView(view1);
+
+
+
         tl.setNegativeButton("Poistu", (dialog, which) -> dialog.cancel());
         tl.show();
     }
 
-    public void onClickListener_how_to_act(View view)
+    public void onClickListener_Third_Button(View view)
     {
-        final AlertDialog.Builder htw = new AlertDialog.Builder(MainActivity.this);
+        final AlertDialog.Builder tl = new AlertDialog.Builder(MainActivity.this);
+
+        final View view1;
+
+
+
         LayoutInflater inflater = getLayoutInflater();
+
+
+        view1 = inflater.inflate(R.layout.alertbox_to_location_layout, null);
+        TextView textView = (TextView) view1.findViewById(R.id.id_textViewToLocation);
+        textView.setText(arrayListKolmasNappiTeksti.toString());
+
         view = inflater.inflate(R.layout.toolbar_layout, null);
-        htw.setCustomTitle(view);
-        htw.setMessage(getString(R.string.how_to_act_HEADER));
-        htw.setView(R.layout.alertbox_how_to_act_layout);
-        htw.setNegativeButton("Poistu", (dialog, which) -> dialog.cancel());
-        htw.show();
+        Toolbar toolbar = (Toolbar) view.findViewById(R.id.toolbar);
+        toolbar.setTitle(arrayListKolmasNappiTitle.toString());
+
+        tl.setCustomTitle(view);
+
+        tl.setMessage(arrayListKolmasNappiTitle.toString());
+        Log.d("Apua", arrayListKolmasNappiTitle.toString());
+        Log.d("Apua", arrayListKolmasNappiTeksti.toString());
+        //tl.setMessage(arrayListSynnytysTehtavaanTullessaTeksti);
+        tl.setView(view1);
+
+
+
+        tl.setNegativeButton("Poistu", (dialog, which) -> dialog.cancel());
+        tl.show();
     };
 
-    public void onClickListener_onTheWay_or_in_location(View view) {
+    public void onClickListener_Fourth_Button(View view) {
 
-        final AlertDialog.Builder otw = new AlertDialog.Builder(MainActivity.this);
+        final AlertDialog.Builder tl = new AlertDialog.Builder(MainActivity.this);
+
+        final View view1;
+
+
+
         LayoutInflater inflater = getLayoutInflater();
+
+
+        view1 = inflater.inflate(R.layout.alertbox_to_location_layout, null);
+        TextView textView = (TextView) view1.findViewById(R.id.id_textViewToLocation);
+        textView.setText(arrayListNeljasNappiTeksti.toString());
+
         view = inflater.inflate(R.layout.toolbar_layout, null);
-        otw.setCustomTitle(view);
-        otw.setMessage(getString(R.string.OTW_or_IL_HEADER));
-        otw.setView(R.layout.alertbox_otw_or_il_layout);
-        otw.setNegativeButton("Poistu", (dialog, which) -> dialog.cancel());
-        otw.show();
+        Toolbar toolbar = (Toolbar) view.findViewById(R.id.toolbar);
+        toolbar.setTitle(arrayListKolmasNappiTitle.toString());
+
+        tl.setCustomTitle(view);
+
+        tl.setMessage(arrayListNeljasNappiTitle.toString());
+        Log.d("Apua", arrayListNeljasNappiTitle.toString());
+        Log.d("Apua", arrayListNeljasNappiTeksti.toString());
+        //tl.setMessage(arrayListSynnytysTehtavaanTullessaTeksti);
+        tl.setView(view1);
+
+
+
+        tl.setNegativeButton("Poistu", (dialog, which) -> dialog.cancel());
+        tl.show();
     }
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event)  {
+        if (keyCode == KeyEvent.KEYCODE_BACK ) {
+
+            // Tehdään intentti jolla hypätään puhelimen valikkoon, System.exit(0) sulkee vain nykyisen activityn ja hyppää restartin kautta edelliseen activityyn.
+
+            Intent intent = new Intent(Intent.ACTION_MAIN);
+            intent.addCategory(Intent.CATEGORY_HOME);
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+
+            View view;
+            final AlertDialog.Builder otw = new AlertDialog.Builder(MainActivity.this);
+            LayoutInflater inflater = getLayoutInflater();
+            view = inflater.inflate(R.layout.toolbar_layout, null);
+            otw.setTitle("Lopetus");
+            otw.setMessage("Haluatko varmasti lopettaa");
+
+            otw.setNegativeButton("Poistu", (dialog, which) -> startActivity(intent));
+            otw.setPositiveButton("Jatka", ((dialog, which) -> dialog.dismiss()));
+            otw.show();
+
+            return true;
+        }
+
+        return super.onKeyDown(keyCode, event);
+    }
+
 
 }
 

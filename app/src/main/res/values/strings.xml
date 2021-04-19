@@ -1,34 +1,22 @@
 <resources>
-    <string name="app_name">AmpuAppi</string>
-    <string name="toolbar_header">     AmpuAppi </string>
-    <string name="header_first_page">#¤%/(()AmpuAppi </string>
-    <string name="button_straight_to_labor">Suoraan Synnytykseen</string>
-    <string name="button_on_the_way">Synnytystehtävälle lähdettäessä</string>
-    <string name="button_how_to_act">Miten Toimitaan</string>
-    <string name="button_onTheWay_or_inLocation">Matkalle vai kohteessa?</string>
-    <string name="button_eka_vaihe">1. Vaihe, Avautumisvaihe</string>
-    <string name="button_toka_vaihe">2. Vaihe, Ponnistusvaihe</string>
-    <string name="button_kolmas_vaihe">3. Vaihe, Jälkeisvaihe</string>
-    <string name="button_normal_labor">Normaali Synnytys</string>
-    <string name="button_peratilan_labor">Perätilan Synnytys</string>
-    <string name="button_hartiadystokia">Hartiadystokia</string>
-    <string name="button_napanuoran_esiinluiskahdus">Napanuoran Esiinluiskahdus</string>
+    <string name="app_name">JokuAppi</string>
+    <string name="toolbar_header">     JokuAppi </string>
+    <string name="button_straight_to_labor">Lisää Nappeja</string>
+    <string name="button_on_the_way">Toka Nappi</string>
+    <string name="button_how_to_act">kolmas nappi</string>
+    <string name="button_onTheWay_or_inLocation">neljäs nappi</string>
+    <string name="button_eka_vaihe">1. Dia sarja</string>
+    <string name="button_toka_vaihe">2. Dia sarja</string>
+    <string name="button_kolmas_vaihe">3. Dia sarja</string>
+    <string name="button_normal_labor">Normaali\nSynnytys</string>
+    <string name="button_peratilan_labor">5. Dia sarja</string>
+    <string name="button_hartiadystokia">4. Dia Sarja</string>
+    <string name="button_napanuoran_esiinluiskahdus">6. dia sarja</string>
+    <string name="Erikoistilanteet">Lisää Dia Sarjoja</string>
+    <string name="Lisaa_dioja_ohjeet">Tänne voit luoda diasarjoja nappien taakse </string>
 
-    <string name="to_location_HEADER">Synnytystehtävään (791 A-D) tullessa huomioi seuraavat asiat: </string>
-    <string name="to_location_REST">"
-•\tKirjaa ylös synnyttäjän perustiedot (sairaudet, allergiat, monesko raskaus ja synnytys jne.)\n
-•\tRaskausviikot, selvitä miten raskaus on edennyt ja onko sikiö perä- vai raivotarjonnassa\n
-•\tKohteeseen päästyäsi tarkista
-  mikä on synnytyksen tilanne:\n
-     •   Onko lapsivesi mennyt?
-     •   Koska se on mennyt?
-     •   Lapsiveden väri?
-     •   Kirkas vai vihreä/kellertävää?
-     •   Hajuton/pahanhajuista?
-     •   Onko supistuksia?
-     •   Milloin ne ovat alkaneet?
-     •   Kuinka tiheään supistuksia tulee?
-     •   Onko synnytys oikeasti käynnissä?</string>
+    <string name="to_location_HEADER"></string>
+    <string name="to_location_REST"></string>
 
     <string name="OTW_or_IL_HEADER">Matkalle vai Kohteessa?</string>
     <string name="OTW_or_IL_REST">"Hoidetaan kohteessa jos:\n
@@ -51,74 +39,54 @@
 </string>
 
     <string name="how_to_act_HEADER">Miten toimitaan:</string>
-    <string name="how_to_act_REST">
+    <string name="how_to_act_REST">• Valmistaudu ottamalla synnytyssetit esille\n•	Paarien yläosa käännetään toisinpäin\n•	Synnyttäjä asetetaan vasemmalle kyljelleen\n•	Avaa i.v. -yhteys\n•	Seuraa supistusten väliä\n•	Jos synnyttäjällä tulee paineen tunne tai ponnistamisen pakko matkalla, pysäytä auto\n •	Lääkkeettömiä kivunlievitys keinoja voi kokeilla kuten hierontaa tai lämpöpussia kipukohtiin</string>
 
-•	Valmistaudu ottamalla synnytyssetit
-    esille\n
-•	Paarien yläosa käännettään toisin
-    päin\n
-•	Synnyttäjä asetetaan vasemmalle
-    kyljelleen\n
-•	Avaa i.v. -yhteys\n
-•	Seuraa supistusten väliä\n
-•	Jos synnyttäjällä tulee paineen
-    tunne tai
-    ponnistamisen pakko
-    matkalla, pysäytä auto\n
-•	Lääkkeettömiä kivunlievitys keinoja
-    voi kokeilla kuten hierontaa
-    tai lämpöpussia kipukohtiin</string>
+    <string name="eka_Dia_Peratila">• Perätilasynnytyksen aikana vältetään sikiön koskettelua, ennen kuin hän on syntynyt spontaanisti napavarttansa myöten\n• Sikiön lantiosta tartutaan siten, että peukalot ovat selän puolella ja sikiön vartaloa kierretään 90–180 astetta painaen samalla alaspäin</string>
+    <string name="toka_Dia_Peratila">• Etummainen hartia vapautuu, minkä jälkeen vartaloa kierretään 180 astetta vastakkaiseen suuntaan samalla painaen alaspäin, jolloin toinenkin hartia vapautuu</string>
+    <string name="kolmas_Dia_Peratila">• On huomattava, että sikiön kiertämisen tulee tapahtua niin, että selkä säilyy kohti äidin häpyliitosta, jotta pää ei joudu avosuiseen tarjontaan ja sikiön leuka lukkiudu symfyysiin\n• Käsien syntymistä voidaan auttaa kevyesti sormin huomioiden nivelten normaalit liikesuunnat\n• Kun hartiat ovat syntyneet, sikiön vartaloa voidaan vetää alaspäin, jolloin sikiön pää laskeutuu lantionpohjalle</string>
+    <string name="neljas_Dia_Peratila">• Sikiön ollessa hajareisin avustajan kyynärvarren päällä, laitetaan vartalon alta tukevan käden etusormi ja keskisormi sikiön yläleukaan nenän kummallekin puolelle ja painetaan leukaa fleksioon</string>
+    <string name="viides_Dia_Peratila">• Toisen käden etu- ja keskisormen kevyellä otteella hartioista painaen, autetaan pää kiertymään välilihan yli ja nostetaan sikiön vartalo kohti äidin vatsaa varoen venyttämästä kaularankaa</string>
 
-    <string name="eka_Dia_Peratila">Ekamatsku</string>
-    <string name="toka_Dia_Peratila">Tokamatsku</string>
-    <string name="kolmas_Dia_Peratila">Kolmasmatsku</string>
-    <string name="neljas_Dia_Peratila">Neljasmatsku</string>
-    <string name="viides_Dia_Peratila">Viidesmatsku</string>
-
-    <string name="eka_Dia_Normaali">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"
-
-1914 translation by H. Rackham
-"But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful. Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in which toil and pain can procure him some great pleasure. To take a trivial example, which of us ever undertakes laborious physical exercise, except to obtain some advantage from it? But who has any right to find fault with a man who chooses to enjoy a pleasure that has no annoying consequences, or one who avoids a pain that produces no resultant pleasure?"
-
-Section 1.10.33 of "de Finibus Bonorum et Malorum", written by Cicero in 45 BC
-"At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat."</string>
-    <string name="toka_Dia_Normaali">Tokamatsku</string>
-    <string name="kolmas_Dia_Normaali">Kolmasmatsku</string>
-    <string name="neljas_Dia_Normaali">Neljasmatsku</string>
+    <string name="eka_Dia_Normaali">• Välilihan repeäminen estetään tukemalla sitä toisen kämmenellä, peukalo ja etusormi kurovat välilihaan joustoa \n• Samalla toisella kädellä kontrolloidaan pään syntymistä vat välilihaan ns. joustoa</string>
+    <string name="toka_Dia_Normaali">• Kiiretilanteessa tukeminen on tärkeämpää kuin aseptiset toimenpiteen\n•	 Pään synnyttyä, se tekee tavallisesti käännöksen niin, että kasvot näyttävät sivulle\n</string>
+    <string name="kolmas_Dia_Normaali">• Molemmilla käsillä otetaan lapsen pään sivuista kiinni ja painetaan päätä alaspäin, jolloin ylempi hartia syntyy\n•	Seuraavaksi päätä kohotetaan ylöspäin kohti häpyliitosta alemman hartian synnyttämiseksi</string>
+    <string name="neljas_Dia_Normaali">• Kun pää ja hartiat ovat syntyneet, molempien käsien etusormet viedään lapsen selän kautta kainaloihin ja lapsen vartalo syntyy hellästi nostamalla\n•	Jos hartiat eivät synny helposti, asetetaan jokin koroke tai tyyny tai vastaava äidin pakaroiden alle</string>
     <string name="viides_Dia_Normaali">Viidesmatsku</string>
 
-    <string name="eka_Dia_Hartiadystokia">Ekamatsku</string>
-    <string name="toka_Dia_Hartiadystokia">Tokamatsku</string>
-    <string name="kolmas_Dia_Hartiadystokia">Kolmasmatsku</string>
-    <string name="neljas_Dia_Hartiadystokia">Neljasmatsku</string>
-    <string name="viides_Dia_Hartiadystokia">Viidesmatsku</string>
+    <string name="eka_Dia_Hartiadystokia">• Hartiadystokiassa etummainen hartia kiilautuu häpyliitoksen eli symfyysin taakse\n• Synnyttyään pää vetäytyy näissä tilanteissa tiukasti välilihaa vasten, hartiat kiertyvät huonosti eikä etummainen hartia tule esille tavanomaisin ottein</string>
+    <string name="toka_Dia_Hartiadystokia">• Tällöin synnyttäjä asetetaan välittömästi selälleen ja samalla lonkat viedään maksimaaliseen fleksioasentoon</string>
+    <string name="kolmas_Dia_Hartiadystokia">• Avustaja voi painaa häpyliitoksen yläpuolelta hartiaa alas voimakkaasti, ja näin pyritään saamaan ulos etummainen hartia\n• Ellei tämä toimenpide onnistu, käännetään etummainen hartia viistomittaan painamalla sormin sikiön hartian takaa</string>
+    <string name="neljas_Dia_Hartiadystokia">• Tarvittaessa voi hartioiden kiertoa tehostaa kääntämällä alimmaista hartiaa etupuolelta vastakkaiseen suuntaan, jolloin hartiat useimmiten syntyvät\n• Hartiadystokian komplikaationa vastasyntyneelle voi tulla solisluun murtuma tai hartiahermopunoksen vaurio</string>
+    <string name="viides_Dia_Hartiadystokia">Viidesmatsku</string> <!--TODO HEITÄ Ylimääräisiä dioja helvettii -->
 
-    <string name="eka_Dia_Napanuora">Ekamatsku</string>
-    <string name="toka_Dia_Napanuora">Tokamatsku</string>
-    <string name="kolmas_Dia_Napanuora">Kolmasmatsku</string>
+    <string name="eka_Dia_Napanuora">• Jos sikiökalvot ovat puhjenneet eikä tarjoutuva osa ole kiinnittynyt lantioon, on mahdollista, että napanuora luiskahtaa esiin\n• Synnytyksen edetessä tarjoutuva osa puristaa napanuoran itsensä ja luisen lantion väliin, ja sen seurauksena verenkierto napanuorassa estyy</string>
+    <string name="toka_Dia_Napanuora">• Synnyttäjä asetetaan vasemmalle kyljelle paareille, ei saa itse kävellä ambulanssiin\n • JOS napanuora on luiskahtanut esiin, on ensihoitajan tehtävä steriilien hanskojen kanssa emättimen kautta työntää lasta kohdussa niin paljon eteenpäin, että syke tuntuu napanuorassa varovasti toisella kädellä painamalla</string>
+    <string name="kolmas_Dia_Napanuora">• Synnyttäjä asetetaan polvilleen rintakehä alhaalla ja takapuoli ylhäällä sekä tarjoutuvaa osaa painetaan koko ajan synnytyskanavaa päin\n • Syke on tunnuttava napanuorassa koko kuljetuksen ajan</string>
     <string name="neljas_Dia_Napanuora">Neljasmatsku</string>
     <string name="viides_Dia_Napanuora">Viidesmatsku</string>
 
-    <string name="eka_Dia_Ensimmainenvaihe">\n•	Synnyttäjä kokee voimakasta ponnistamisen tarvetta, kun kohdunsuu on täysin avautunut ja sikiön pää on laskeutunut synnytyskanavan alaosaan \n
-•	Supistuksia tulee 1–2 minuutin välein ja ne kestävät yleensä minuutin ajan \n
-•	Yleensä lapsen pää eli tarjoutuva osa painaa välilihaa, ja emättimen ulkosuu pullottaa ja alkaa avautua, jolloin lapsen pää saattaa näkyä \n
-•	Kun synnytys on edennyt tähän vaiheeseen, niin sitä ei voi enää estää millään tavoin \n
-•	Muista toimia rauhallisesti!
-</string>
+    <string name="eka_Dia_Ensimmainenvaihe">\n•	Synnyttäjä kokee voimakasta ponnistamisen tarvetta, kun kohdunsuu on täysin avautunut ja sikiön pää on laskeutunut synnytyskanavan alaosaan \n•	Supistuksia tulee 1–2 minuutin välein ja ne kestävät yleensä minuutin ajan \n•	Yleensä lapsen pää eli tarjoutuva osa painaa välilihaa, ja emättimen ulkosuu pullottaa ja alkaa avautua, jolloin lapsen pää saattaa näkyä \n•	Kun synnytys on edennyt tähän vaiheeseen, niin sitä ei voi enää estää millään tavoin \n•	Muista toimia rauhallisesti!</string>
     <string name="toka_Dia_Ensimmainenvaihe">Tokamatsku</string>
     <string name="kolmas_Dia_Ensimmainenvaihe">Kolmasmatsku</string>
     <string name="neljas_Dia_Ensimmainenvaihe">Neljasmatsku</string>
     <string name="viides_Dia_Ensimmainenvaihe">Viidesmatsku</string>
 
-    <string name="eka_Dia_Kolmasvaihe">Ekamatsku</string>
-    <string name="toka_Dia_Kolmasvaihe">Tokamatsku</string>
-    <string name="kolmas_Dia_Kolmasvaihe">Kolmasmatsku</string>
-    <string name="neljas_Dia_Kolmasvaihe">Neljasmatsku</string>
-    <string name="viides_Dia_Kolmasvaihe">Viidesmatsku</string>
+    <string name="eka_Dia_Kolmasvaihe">• Lapsen synnyttyä (MUISTA KIRJATA SYNTYMÄAIKA YLÖS)\n• Lapsi kuivataan hyvin ja pidetään lämpimänä\n• Arvioi lapsen vointi / APGAR 1-5-10/15\n• Vauva nostetaan äidin rinnalle iho ihoa vasten ja peitellään huolellisesti\n   HOX vastasyntynyt on liukas, pidettävä tiukasti mutta hellästi kiinni\n• Annetaan äidille syntocinon 8,3 µg/ml yksi ampulla i.v. tai i.m</string>
+    <string name="toka_Dia_Kolmasvaihe">• Tämän jälkeen annetaan napanuoran sykkiä rauhassa tyhjäksi, sulkemisella ei ole kiire\n• Leikataan vasta sitten, kun sykettä ei enää tunnun\n• Napanuoraan asetetaan kaksi klipsiä. Toinen klipsi 10–15 cm lapsesta, vedetään veri sormilla poispäin napanuorasta ja laitetaan toinen klipsi. Tämän jälkeen voidaan napanuora leikata.\n •Jälkeisvaihe eli istukan ja kalvojen irtoamista voi rauhassa odotella, jopa 30</string>
+    <string name="kolmas_Dia_Kolmasvaihe">Tarkkaile näitä merkkejä:\n• Kohdun koon muutos\n• Napanuoran valuminen ulospäin supistuksen aikana\n• Napanuoran veltostuminen ja lorahdusmainen vuoto emättimestä</string>
+    <string name="neljas_Dia_Kolmasvaihe">Toimi näin:\n• Pyydä äidin ponnistaa supistuksen aikana\n• Vedä samalla varovasti napanuorasta ja paina funduksesta\n• HOX ei saa vetää lujasti, irtoamista voi odottaa rauhassa, jos vuotoa ei suuremmin ole\n• Jos istukka ja kalvot irtoaa, ota ne pussiin talteen\n• Merkitse syntymisaika</string>
+    <string name="viides_Dia_Kolmasvaihe">• Tarkkaile vastasyntynyttä ja äidin vointia ja seuraile vuodon määrää painamalla kohtua ja katsomalla emättimestä tulleen veren määrää</string>
 
-    <string name="info_text">me emme ole mistään vastuuussta onko seleveä \n\n
-    Ja mehän tehtiin tää sovellus eikä kukaan muu</string>
-    <string name="feedback_text"> Hellou! \nJos haluat lähettää meille\npalautetta/parannusehdotuksia,\nvoit tehdä sen täältä. \nPaina e-mail ikonia ja siirryt \nautomaattisesti oletussähköpostisovellukseesi</string>
+
+    <string name="info_text">Tämä on koulutyönä tehty kokeellinen sovellus, kaikki ominaisuudet ovat vielä työn alla ja mahdollisesti muuttuvat</string>
+    <string name="feedback_text"> Hei! \nJos haluat lähettää meille\npalautetta/parannusehdotuksia,\nvoit tehdä sen täältä. \nPaina e-mail ikonia ja siirryt \nautomaattisesti oletussähköpostisovellukseesi!\n Huom! sähköpostia ei kannata vielä lähettää tätä kautta</string>
+    <string name="eka_Dia2">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."Section 1.10.32 of "de Finibus Bonorum et Malorum", written by Cicero in 45 BC"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"1914 translation by H. Rackham"But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful. Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in which toil and pain can procure him some great pleasure. To take a trivial example, which of us ever undertakes laborious physical exercise, except to obtain some advantage from it? But who has any right to find fault with a man who chooses to enjoy a pleasure that has no annoying consequences, or one who avoids a pain that produces no resultant pleasure?Section 1.10.33 of "de Finibus Bonorum et Malorum", written by Cicero in 45 BC"At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat."</string>
+    <string name="toka_Dia2">Tokamatsku</string>
+    <string name="kolmas_Dia2">Kolmasmatsku</string>
+    <string name="neljas_Dia2">Neljasmatsku</string>
+    <string name="viides_Dia2">Viidesmatsku</string>
+    <string name="TakaisinButton">Takaisin</string>
+
 
 
 </resources>
