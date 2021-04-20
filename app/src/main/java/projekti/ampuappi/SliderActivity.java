@@ -76,7 +76,7 @@ public class SliderActivity extends AppCompatActivity {
             rightButton.setVisibility(View.GONE);
             rightButton.clearAnimation();
             next_phase.setVisibility(View.VISIBLE);
-            next_phase.setText("Vaihe 2");
+            next_phase.setText("2. Diat");
             next_phase.clearAnimation();
         }
 
@@ -131,6 +131,8 @@ public class SliderActivity extends AppCompatActivity {
                 if(counterPageScroll != 0){
                     isLastPageSwiped=true;
 
+
+                    // TODO ehtolauseet kaikille synnytystapahtumille missä ollaan ja mikä halutaan avattavan
 
                     if (mikaSynnytysTapahtuma == 5)
                     {
@@ -189,7 +191,7 @@ public class SliderActivity extends AppCompatActivity {
                 leftButton.setEnabled(true);
                 rightButton.setVisibility(View.INVISIBLE);
 
-                next_phase.setText("3 Vaihe");
+                next_phase.setText("3. diat");
                 next_phase.setVisibility(View.VISIBLE);
                 next_phase.setEnabled(true);
 

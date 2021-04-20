@@ -31,7 +31,7 @@ import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity {
 
     private JSON json;
-    private ArrayList<String> arrayListSynnytysTehtavaanTullessaTitle, arrayListSynnytysTehtavaanTullessaTeksti;
+    private ArrayList<String> arrayListTokaNappiTitle, arrayListTokaNappiTeksti, arrayListKolmasNappiTitle, arrayListKolmasNappiTeksti, arrayListNeljasNappiTitle, arrayListNeljasNappiTeksti;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,8 +52,14 @@ public class MainActivity extends AppCompatActivity {
 
         json.setKey("dialogitekstit", this);
 
-        arrayListSynnytysTehtavaanTullessaTitle = json.get_json("Synnytystehtävään (791 A-D) tullessa huomioi seuraavat asiat:", "title");
-        arrayListSynnytysTehtavaanTullessaTeksti = json.get_json("Synnytystehtävään (791 A-D) tullessa huomioi seuraavat asiat:", "body");
+        arrayListTokaNappiTitle = json.get_json("first", "title");
+        arrayListTokaNappiTeksti = json.get_json("first", "body");
+
+        arrayListKolmasNappiTitle = json.get_json("second", "title");
+        arrayListKolmasNappiTeksti = json.get_json("second", "body");
+
+        arrayListNeljasNappiTitle = json.get_json("third", "title");
+        arrayListNeljasNappiTeksti = json.get_json("third", "body");
     }
 
     private void showStartDialog()
@@ -110,7 +116,7 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void onClickListener_to_location(View view)
+    public void onClickListener_Second_button(View view)
     {
         final AlertDialog.Builder tl = new AlertDialog.Builder(MainActivity.this);
 
@@ -123,17 +129,17 @@ public class MainActivity extends AppCompatActivity {
 
         view1 = inflater.inflate(R.layout.alertbox_to_location_layout, null);
         TextView textView = (TextView) view1.findViewById(R.id.id_textViewToLocation);
-        textView.setText(arrayListSynnytysTehtavaanTullessaTeksti.toString());
+        textView.setText(arrayListTokaNappiTeksti.toString());
 
         view = inflater.inflate(R.layout.toolbar_layout, null);
         Toolbar toolbar = (Toolbar) view.findViewById(R.id.toolbar);
-        toolbar.setTitle(arrayListSynnytysTehtavaanTullessaTitle.toString());
+        toolbar.setTitle(arrayListTokaNappiTitle.toString());
 
         tl.setCustomTitle(view);
 
-        tl.setMessage(arrayListSynnytysTehtavaanTullessaTitle.toString());
-        Log.d("Apua", arrayListSynnytysTehtavaanTullessaTitle.toString());
-        Log.d("Apua", arrayListSynnytysTehtavaanTullessaTeksti.toString());
+        tl.setMessage(arrayListTokaNappiTitle.toString());
+        Log.d("Apua", arrayListTokaNappiTitle.toString());
+        Log.d("Apua", arrayListTokaNappiTeksti.toString());
         //tl.setMessage(arrayListSynnytysTehtavaanTullessaTeksti);
         tl.setView(view1);
 
@@ -143,32 +149,70 @@ public class MainActivity extends AppCompatActivity {
         tl.show();
     }
 
-    public void onClickListener_how_to_act(View view)
+    public void onClickListener_Third_Button(View view)
     {
-        final AlertDialog.Builder htw = new AlertDialog.Builder(MainActivity.this);
+        final AlertDialog.Builder tl = new AlertDialog.Builder(MainActivity.this);
+
+        final View view1;
+
+
+
         LayoutInflater inflater = getLayoutInflater();
+
+
+        view1 = inflater.inflate(R.layout.alertbox_to_location_layout, null);
+        TextView textView = (TextView) view1.findViewById(R.id.id_textViewToLocation);
+        textView.setText(arrayListKolmasNappiTeksti.toString());
+
         view = inflater.inflate(R.layout.toolbar_layout, null);
-        //view.setBackgroundColor(getResources().getColor(R.color.black));
+        Toolbar toolbar = (Toolbar) view.findViewById(R.id.toolbar);
+        toolbar.setTitle(arrayListKolmasNappiTitle.toString());
 
-        htw.setCustomTitle(view);
-        htw.setMessage(getString(R.string.how_to_act_HEADER));
+        tl.setCustomTitle(view);
+
+        tl.setMessage(arrayListKolmasNappiTitle.toString());
+        Log.d("Apua", arrayListKolmasNappiTitle.toString());
+        Log.d("Apua", arrayListKolmasNappiTeksti.toString());
+        //tl.setMessage(arrayListSynnytysTehtavaanTullessaTeksti);
+        tl.setView(view1);
 
 
-        htw.setView(R.layout.alertbox_how_to_act_layout);
-        htw.setNegativeButton("Poistu", (dialog, which) -> dialog.cancel());
-        htw.show();
+
+        tl.setNegativeButton("Poistu", (dialog, which) -> dialog.cancel());
+        tl.show();
     };
 
-    public void onClickListener_onTheWay_or_in_location(View view) {
+    public void onClickListener_Fourth_Button(View view) {
 
-        final AlertDialog.Builder otw = new AlertDialog.Builder(MainActivity.this);
+        final AlertDialog.Builder tl = new AlertDialog.Builder(MainActivity.this);
+
+        final View view1;
+
+
+
         LayoutInflater inflater = getLayoutInflater();
+
+
+        view1 = inflater.inflate(R.layout.alertbox_to_location_layout, null);
+        TextView textView = (TextView) view1.findViewById(R.id.id_textViewToLocation);
+        textView.setText(arrayListNeljasNappiTeksti.toString());
+
         view = inflater.inflate(R.layout.toolbar_layout, null);
-        otw.setCustomTitle(view);
-        otw.setMessage(getString(R.string.OTW_or_IL_HEADER));
-        otw.setView(R.layout.alertbox_otw_or_il_layout);
-        otw.setNegativeButton("Poistu", (dialog, which) -> dialog.cancel());
-        otw.show();
+        Toolbar toolbar = (Toolbar) view.findViewById(R.id.toolbar);
+        toolbar.setTitle(arrayListKolmasNappiTitle.toString());
+
+        tl.setCustomTitle(view);
+
+        tl.setMessage(arrayListNeljasNappiTitle.toString());
+        Log.d("Apua", arrayListNeljasNappiTitle.toString());
+        Log.d("Apua", arrayListNeljasNappiTeksti.toString());
+        //tl.setMessage(arrayListSynnytysTehtavaanTullessaTeksti);
+        tl.setView(view1);
+
+
+
+        tl.setNegativeButton("Poistu", (dialog, which) -> dialog.cancel());
+        tl.show();
     }
 
     @Override

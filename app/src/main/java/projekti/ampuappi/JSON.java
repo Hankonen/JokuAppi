@@ -66,7 +66,7 @@ public class JSON extends AppCompatActivity {
                     JSONObject object = jsonArray.getJSONObject(i);
                     //Log.d("apua", palautettavaTeksti.toString());
 
-                    if (object.getString("title").equals(pVaihe) )
+                    if (object.getString("tunniste").equals(pVaihe) )
                     {
 
                         palautettavaTeksti.add(object.getString(pHaettavaTieto));
@@ -89,7 +89,7 @@ public class JSON extends AppCompatActivity {
                     JSONObject object = jsonArray.getJSONObject(i);
 
 
-                    if (object.getString("title").equals(pVaihe) )
+                    if (object.getString("tunniste").equals(pVaihe) )
                     {
                         palautettavaTeksti.add(object.getString(pHaettavaTieto));
                     }

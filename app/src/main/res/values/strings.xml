@@ -1,18 +1,19 @@
 <resources>
-    <string name="app_name">AmpuAppi</string>
-    <string name="toolbar_header">     AmpuAppi </string>
-    <string name="button_straight_to_labor">Synnytyksen\n vaiheet</string>
-    <string name="button_on_the_way">Synnytystehtävälle\n saapuessa</string>
-    <string name="button_how_to_act">Toimintatavat\n Kohteessa</string>
-    <string name="button_onTheWay_or_inLocation">Hoidetaanko matkalla \n vai kohteessa?</string>
-    <string name="button_eka_vaihe">1. Vaihe,\n Avautumisvaihe</string>
-    <string name="button_toka_vaihe">2. Vaihe,\n Ponnistusvaihe</string>
-    <string name="button_kolmas_vaihe">3. Vaihe,\n Jälkeisvaihe</string>
+    <string name="app_name">JokuAppi</string>
+    <string name="toolbar_header">     JokuAppi </string>
+    <string name="button_straight_to_labor">Lisää Nappeja</string>
+    <string name="button_on_the_way">Toka Nappi</string>
+    <string name="button_how_to_act">kolmas nappi</string>
+    <string name="button_onTheWay_or_inLocation">neljäs nappi</string>
+    <string name="button_eka_vaihe">1. Dia sarja</string>
+    <string name="button_toka_vaihe">2. Dia sarja</string>
+    <string name="button_kolmas_vaihe">3. Dia sarja</string>
     <string name="button_normal_labor">Normaali\nSynnytys</string>
-    <string name="button_peratilan_labor">Perätila\nSynnytys</string>
-    <string name="button_hartiadystokia">Hartia-\ndystokia</string>
-    <string name="button_napanuoran_esiinluiskahdus">Napanuoran\nEsiinluiskahdus</string>
-    <string name="Erikoistilanteet">Ponnistusvaiheen\nerikoistilanteet</string>
+    <string name="button_peratilan_labor">5. Dia sarja</string>
+    <string name="button_hartiadystokia">4. Dia Sarja</string>
+    <string name="button_napanuoran_esiinluiskahdus">6. dia sarja</string>
+    <string name="Erikoistilanteet">Lisää Dia Sarjoja</string>
+    <string name="Lisaa_dioja_ohjeet">Tänne voit luoda diasarjoja nappien taakse </string>
 
     <string name="to_location_HEADER"></string>
     <string name="to_location_REST"></string>
@@ -85,7 +86,7 @@
     <string name="neljas_Dia2">Neljasmatsku</string>
     <string name="viides_Dia2">Viidesmatsku</string>
     <string name="TakaisinButton">Takaisin</string>
-    <string name="SynnytysTapahtumaOhjeet">Alla synnytystapahtumien vaiheet\nja erikoistilanteet </string>
+
 
 
 </resources>
