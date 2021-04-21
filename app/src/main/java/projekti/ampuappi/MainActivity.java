@@ -60,6 +60,12 @@ public class MainActivity extends AppCompatActivity {
 
         arrayListNeljasNappiTitle = json.get_json("third", "title");
         arrayListNeljasNappiTeksti = json.get_json("third", "body");
+
+
+
+
+        int pituus = arrayListTokaNappiTeksti.size();
+        Log.d("pituus", String.valueOf(pituus));
     }
 
     private void showStartDialog()

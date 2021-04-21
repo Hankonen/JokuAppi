@@ -25,6 +25,8 @@ public class JSON extends AppCompatActivity {
     private JSONArray jsonArray;
     private String json;
 
+    private int pituus;
+
     public JSON(String pAvain)
     {
         avain = pAvain;

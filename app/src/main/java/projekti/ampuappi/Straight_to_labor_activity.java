@@ -2,8 +2,10 @@ package projekti.ampuappi;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.MenuItem;
 import android.view.View;
@@ -11,12 +13,23 @@ import android.view.ViewGroup;
 import android.widget.Toolbar;
 
 import java.io.InputStream;
+import java.util.ArrayList;
 
 public class Straight_to_labor_activity extends AppCompatActivity {
 
     private ViewGroup containerView;
     public int synnytysTapahtuma;
     public int diojenMaara;
+
+    private int firstDiaLength, secondDiaLength, thirdDiaLength;
+
+    private JSON json;
+    Context context;
+
+    private ArrayList<String> arrayListEkavaiheTitle, arrayListEkavaiheTeksti, arrayListPonnistusVaiheTitle, arrayListPonnistusVaiheTeksti, arrayListVikaVaiheTitle, arrayListVikaVaiheTeksti,
+            arrayListPeratilaTitle, arrayListPeratilaTeksti, arrayListNapanuoraTitle, arrayListNapanuoraTeksti, arrayListHartiaTitle, arrayListHartiaTeksti;
+
+
 
 
     @Override
@@ -28,6 +41,43 @@ public class Straight_to_labor_activity extends AppCompatActivity {
         toolbar.setSubtitle(R.string.button_straight_to_labor);
         toolbar.inflateMenu(R.menu.menu);
         setActionBar(toolbar);
+
+    }
+
+    public int getJSONLength(int synnytysTapahtuma) {
+        json = new JSON("pokemon");
+        json.setKey("pokemon", getApplicationContext());
+
+        arrayListEkavaiheTitle = json.get_json("first", "title");
+        arrayListPonnistusVaiheTitle = json.get_json("second", "title");
+        arrayListVikaVaiheTitle = json.get_json("third", "title");
+        arrayListPeratilaTitle = json.get_json("fourth", "title");
+        arrayListNapanuoraTitle = json.get_json("fifth", "title");
+        arrayListHartiaTitle = json.get_json("sixsth", "title");
+
+        firstDiaLength = arrayListEkavaiheTitle.size();
+        Log.d("pituus", String.valueOf(firstDiaLength));
+
+        secondDiaLength = arrayListPonnistusVaiheTitle.size();
+        Log.d("pituus", String.valueOf(secondDiaLength));
+
+        thirdDiaLength = arrayListVikaVaiheTitle.size();
+        Log.d("pituus", String.valueOf(thirdDiaLength));
+
+        if (synnytysTapahtuma == 1)
+        {
+            return firstDiaLength;
+        }
+        else if (synnytysTapahtuma == 2)
+        {
+            return secondDiaLength;
+        }
+        else if (synnytysTapahtuma == 3)
+        {
+            return thirdDiaLength;
+        }
+
+        return 0;
     }
 
     @Override public boolean onOptionsItemSelected(MenuItem item) {
@@ -54,7 +104,7 @@ public class Straight_to_labor_activity extends AppCompatActivity {
         diojenMaara = 4;
         Intent intent = new Intent(this, SliderActivity.class);
         intent.putExtra("key", synnytysTapahtuma);
-        intent.putExtra("sivujenmaara", diojenMaara);
+        intent.putExtra("sivujenmaara", getJSONLength(2));
         startActivity(intent);
     }
 
@@ -88,11 +138,12 @@ public class Straight_to_labor_activity extends AppCompatActivity {
     }
 
     public void onClickListener_ekaVaihe(View view) {
+
         synnytysTapahtuma = 5;
-        diojenMaara = 1;
+
         Intent intent = new Intent(this, SliderActivity.class);
         intent.putExtra("key", synnytysTapahtuma);
-        intent.putExtra("sivujenmaara", diojenMaara);
+        intent.putExtra("sivujenmaara", getJSONLength(1));
         startActivity(intent);
     }
 
@@ -101,7 +152,7 @@ public class Straight_to_labor_activity extends AppCompatActivity {
         diojenMaara = 5;
         Intent intent = new Intent(this, SliderActivity.class);
         intent.putExtra("key", synnytysTapahtuma);
-        intent.putExtra("sivujenmaara", diojenMaara);
+        intent.putExtra("sivujenmaara", getJSONLength(3));
         startActivity(intent);
     }
 
