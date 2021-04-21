@@ -23,7 +23,7 @@ public class Straight_to_labor_activity extends AppCompatActivity {
     public int synnytysTapahtuma;
     public int diojenMaara;
 
-    private int firstDiaLength, secondDiaLength, thirdDiaLength;
+    private int firstDiaLength, secondDiaLength, thirdDiaLength, fourthDiaLenght, fifthDiaLenght, sixthDiaLenght;
 
     private JSON json;
     Context context;
@@ -68,19 +68,18 @@ public class Straight_to_labor_activity extends AppCompatActivity {
         thirdDiaLength = arrayListVikaVaiheTitle.size();
         Log.d("pituus", String.valueOf(thirdDiaLength));
 
-        if (synnytysTapahtuma == 1)
-        {
-            return firstDiaLength;
-        }
-        else if (synnytysTapahtuma == 2)
-        {
-            return secondDiaLength;
-        }
-        else if (synnytysTapahtuma == 3)
-        {
-            return thirdDiaLength;
-        }
+        fourthDiaLenght = arrayListPeratilaTitle.size();
 
+        fifthDiaLenght = arrayListHartiaTitle.size();
+
+        sixthDiaLenght = arrayListNapanuoraTitle.size();
+
+        if (synnytysTapahtuma == 1){ return firstDiaLength;}
+        else if (synnytysTapahtuma == 2){return secondDiaLength;}
+        else if (synnytysTapahtuma == 3){return thirdDiaLength;}
+        else if (synnytysTapahtuma == 4){return fourthDiaLenght;}
+        else if (synnytysTapahtuma == 5){return fifthDiaLenght;}
+        else if (synnytysTapahtuma == 6){return sixthDiaLenght;}
         return 0;
     }
 
@@ -105,46 +104,40 @@ public class Straight_to_labor_activity extends AppCompatActivity {
     public void onClickListener_NormalLabor(View view)
     {
         synnytysTapahtuma = 1;
-        diojenMaara = 4;
         Intent intent = new Intent(this, SliderActivity.class);
         intent.putExtra("key", synnytysTapahtuma);
-        intent.putExtra("sivujenmaara", getJSONLength(2));
+        intent.putExtra("sivujenmaara", getJSONLength(2));      // haetaan JSONISTA montako slidea halutaan totetuttaa ja viedään lukumäärä SliderActivity luokalle
         startActivity(intent);
     }
 
     public void onClickListener_peratilan_synnytys(View view)
     {
         synnytysTapahtuma = 2;   // tilaa käytetään valitsemaan
-        diojenMaara = 3;
         Intent intent = new Intent(this, SliderActivity.class);
         intent.putExtra("key", synnytysTapahtuma);
-        intent.putExtra("sivujenmaara", diojenMaara);
+        intent.putExtra("sivujenmaara", getJSONLength(4));
         startActivity(intent);
     }
 
-
     public void onClickListener_hartiaDystokia(View view) {
         synnytysTapahtuma = 3;
-        diojenMaara =3;
         Intent intent = new Intent(this, SliderActivity.class);
         intent.putExtra("key", synnytysTapahtuma);
-        intent.putExtra("sivujenmaara", diojenMaara);
+        intent.putExtra("sivujenmaara", getJSONLength(5));
         startActivity(intent);
     }
 
     public void onClickListener_napanuoran_esiinluiskahdus(View view) {
         synnytysTapahtuma = 4;
-        diojenMaara = 3;
         Intent intent = new Intent(this, SliderActivity.class);
         intent.putExtra("key", synnytysTapahtuma);
-        intent.putExtra("sivujenmaara", diojenMaara);
+        intent.putExtra("sivujenmaara", getJSONLength(6));
         startActivity(intent);
     }
 
     public void onClickListener_ekaVaihe(View view) {
 
         synnytysTapahtuma = 5;
-
         Intent intent = new Intent(this, SliderActivity.class);
         intent.putExtra("key", synnytysTapahtuma);
         intent.putExtra("sivujenmaara", getJSONLength(1));
@@ -153,7 +146,6 @@ public class Straight_to_labor_activity extends AppCompatActivity {
 
     public void onClickListener_kolmasVaihe(View view) {
         synnytysTapahtuma = 6;
-        diojenMaara = 5;
         Intent intent = new Intent(this, SliderActivity.class);
         intent.putExtra("key", synnytysTapahtuma);
         intent.putExtra("sivujenmaara", getJSONLength(3));

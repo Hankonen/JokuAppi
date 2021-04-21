@@ -1,7 +1,6 @@
 package projekti.ampuappi;
 
 import android.content.Context;
-import android.graphics.drawable.Drawable;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,7 +10,6 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.core.content.ContextCompat;
 import androidx.viewpager.widget.PagerAdapter;
 
 import java.util.ArrayList;
@@ -23,6 +21,19 @@ public class SliderAdapter extends PagerAdapter {
     public int mikaSynnytys;
     public int sivumaara;
     JSON json;
+    private int pituusNormaali;
+    private int pituusPeratila;
+    private int pituusNapanuora;
+    private int pituusHartia;
+    private int pituusEkaVaihe;
+    private int pituusKolmasVaihe;
+    public int[] ensimmainenvaihe_slides;
+    public int[] normaalitila_slides;
+    public int[] peratila_slides;
+    public int[] napanuora_slides;
+    public int[] hartiadystokia_slides;
+    public int[] kolmasvaihe_slides;
+
 
     //public
     // Tuodaan parametrinä MainActivitystä saatu tieto mikä synnytystapahtuma ja montako sivua esityksessä on
@@ -60,84 +71,21 @@ public class SliderAdapter extends PagerAdapter {
         arrayListHartiaTeksti = json.get_json("sixsth", "body");
 
 
-        kuvat();
+        pituusNormaali = arrayListPonnistusVaiheTitle.size();
+        pituusPeratila = arrayListPeratilaTitle.size();
+        pituusNapanuora = arrayListNapanuoraTitle.size();
+        pituusHartia = arrayListHartiaTitle.size();
+        pituusEkaVaihe = arrayListEkavaiheTitle.size();
+        pituusKolmasVaihe = arrayListVikaVaiheTitle.size();
+
+        normaalitila_slides= new int[pituusNormaali];
+        peratila_slides= new int[pituusPeratila];
+        napanuora_slides = new int[pituusNapanuora];
+        hartiadystokia_slides = new int[pituusHartia];
+        ensimmainenvaihe_slides= new int[pituusEkaVaihe];
+        kolmasvaihe_slides = new int[pituusKolmasVaihe];
 
     }
-
-    public void kuvat()
-    {
-        for (int i = 0; i < 10; i++) {
-            int id = context.getResources().getIdentifier("ohje" + i, "drawable", context.getPackageName());
-
-            //Drawable d = ContextCompat.getDrawable(context, id);
-            // your code here
-            Log.d("kuvat", String.valueOf(id));
-
-        }
-    }
-
-    // Arrayt slideri tietoihin!!! Näissä tietona mitkä tiedot mihinki esitykseen. Kuvat, otsikot ja teksti. Tämä on buginen paska, eli arrayn pituus ei vastaa tuotua sivumäärää esityksessä niin mahd. kaatuu
-
-
-
-    public int[] peratila_slides = {
-
-
-            R.drawable.loremipsum,
-            R.drawable.loremipsum,
-            R.drawable.loremipsum,
-            R.drawable.loremipsum,
-            R.drawable.loremipsum
-    };
-
-    public int[] napanuora_slides = {
-
-            R.drawable.loremipsum,
-            R.drawable.loremipsum,
-            R.drawable.loremipsum,
-            R.drawable.loremipsum,
-            R.drawable.loremipsum
-    };
-
-    public int[] hartiadystokia_slides = {
-
-            R.drawable.loremipsum,
-            R.drawable.loremipsum,
-            R.drawable.loremipsum
-    };
-
-    public int[] ensimmainenvaihe_slides = {
-
-            R.drawable.loremipsum,
-            R.drawable.loremipsum
-    };
-
-    public int[] normaalitila_slides = {
-
-            R.drawable.loremipsum,
-            R.drawable.loremipsum,
-            R.drawable.loremipsum,
-            R.drawable.loremipsum,
-            R.drawable.loremipsum,
-            R.drawable.loremipsum,
-            R.drawable.loremipsum,
-            R.drawable.loremipsum,
-            R.drawable.loremipsum,
-            R.drawable.loremipsum,
-            R.drawable.loremipsum,
-            R.drawable.loremipsum,
-            R.drawable.loremipsum
-    };
-
-    public int[] kolmasvaihe_slides = {
-
-            R.drawable.loremipsum,
-            R.drawable.loremipsum,
-            R.drawable.loremipsum,
-            R.drawable.loremipsum,
-            R.drawable.loremipsum,
-            R.drawable.loremipsum
-    };
 
     // luo automaattisesti tehtäessä kun extendaa PageAdapterin
     @Override
@@ -156,12 +104,16 @@ public class SliderAdapter extends PagerAdapter {
     public Object instantiateItem(@NonNull ViewGroup container, int position) {
 
 
+        for(int i=0; i<pituusPeratila; i++) {peratila_slides[i] = R.drawable.loremipsum;}
+        for(int i=0; i<pituusNormaali; i++) {normaalitila_slides[i]=R.drawable.loremipsum;}
+        for(int i=0; i<pituusEkaVaihe; i++) {ensimmainenvaihe_slides[i]=R.drawable.loremipsum;}
+        for(int i=0; i<pituusKolmasVaihe; i++) {kolmasvaihe_slides[i]=R.drawable.loremipsum;}
+        for(int i=0; i<pituusHartia; i++) {hartiadystokia_slides[i]=R.drawable.loremipsum;}
+        for(int i=0; i<pituusPeratila; i++) {peratila_slides[i]=R.drawable.loremipsum;}
+
 
         layoutInflater = (LayoutInflater) context.getSystemService(context.LAYOUT_INFLATER_SERVICE);
         View view = layoutInflater.inflate(R.layout.slide_layout, container, false);
-
-
-
 
         // Asetetaan oikeat tiedot arrayista
         ImageView slideImageView = (ImageView) view.findViewById(R.id.id_ImageView);
@@ -171,11 +123,10 @@ public class SliderAdapter extends PagerAdapter {
         // normaalitila 2 vaihe
         if (mikaSynnytys == 1)
         {
-
             slideImageView.setImageResource(normaalitila_slides[position]);
             slideHeader.setText(arrayListPonnistusVaiheTitle.get(position));
             slideText.setText(arrayListPonnistusVaiheTeksti.get(position));
-            Log.d("apua",arrayListPonnistusVaiheTitle.toString());
+       //     Log.d("apua",arrayListPonnistusVaiheTitle.toString());
         }
 
         // perätila

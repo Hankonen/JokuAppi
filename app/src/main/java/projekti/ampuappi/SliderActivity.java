@@ -107,6 +107,7 @@ public class SliderActivity extends AppCompatActivity {
             next_phase.setVisibility(View.VISIBLE);
             next_phase.setText("2. Diat");
             next_phase.clearAnimation();
+
         }
 
         leftButton.setOnClickListener(new View.OnClickListener() {
