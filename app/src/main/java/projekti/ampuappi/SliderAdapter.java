@@ -37,7 +37,6 @@ public class SliderAdapter extends PagerAdapter {
         sivumaara = pSivumaara;
 
         json = new JSON("pokemon");
-
         json.setKey("pokemon", this.context);
 
         arrayListEkavaiheTitle = json.get_json("first", "title");
@@ -57,6 +56,8 @@ public class SliderAdapter extends PagerAdapter {
 
         arrayListHartiaTitle = json.get_json("sixsth", "title");
         arrayListHartiaTeksti = json.get_json("sixsth", "body");
+
+
 
 
     }
@@ -103,11 +104,20 @@ public class SliderAdapter extends PagerAdapter {
             R.drawable.loremipsum,
             R.drawable.loremipsum,
             R.drawable.loremipsum,
+            R.drawable.loremipsum,
+            R.drawable.loremipsum,
+            R.drawable.loremipsum,
+            R.drawable.loremipsum,
+            R.drawable.loremipsum,
+            R.drawable.loremipsum,
+            R.drawable.loremipsum,
+            R.drawable.loremipsum,
             R.drawable.loremipsum
     };
 
     public int[] kolmasvaihe_slides = {
 
+            R.drawable.loremipsum,
             R.drawable.loremipsum,
             R.drawable.loremipsum,
             R.drawable.loremipsum,
@@ -174,6 +184,8 @@ public class SliderAdapter extends PagerAdapter {
             slideHeader.setText(arrayListNapanuoraTitle.get(position));
             slideText.setText(arrayListNapanuoraTeksti.get(position));
         }
+
+        // EKAVAIHE
         if (mikaSynnytys == 5)
         {
             slideImageView.setImageResource(ensimmainenvaihe_slides[position]);
@@ -182,7 +194,7 @@ public class SliderAdapter extends PagerAdapter {
 
 
         }
-
+        // 3 VAIHE
         if (mikaSynnytys == 6)
         {
             slideImageView.setImageResource(kolmasvaihe_slides[position]);

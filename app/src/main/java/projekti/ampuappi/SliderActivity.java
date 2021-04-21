@@ -16,20 +16,21 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.ArrayList;
+
 public class SliderActivity extends AppCompatActivity {
 
     private ViewPager slideViewPager;
     private LinearLayout linearLayout;
-
-
 
     private TextView[] pageIndikaattori;
     private SliderAdapter sliderAdapter;
 
     private ImageButton leftButton;
 
-
     private ImageButton rightButton;
+    private Button backbutton;
+
     private int currentPage;
     public int mikaSynnytysTapahtuma;
 
@@ -40,7 +41,12 @@ public class SliderActivity extends AppCompatActivity {
     private boolean isLastPageSwiped;
     private int counterPageScroll;
 
+    private Straight_to_labor_activity straight_to_labor_activity;
 
+    private int firstDiaLength, secondDiaLength, thirdDiaLength;
+    private JSON json;
+    private ArrayList<String> arrayListEkavaiheTitle, arrayListEkavaiheTeksti, arrayListPonnistusVaiheTitle, arrayListPonnistusVaiheTeksti, arrayListVikaVaiheTitle, arrayListVikaVaiheTeksti,
+            arrayListPeratilaTitle, arrayListPeratilaTeksti, arrayListNapanuoraTitle, arrayListNapanuoraTeksti, arrayListHartiaTitle, arrayListHartiaTeksti;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,6 +54,8 @@ public class SliderActivity extends AppCompatActivity {
         setContentView(R.layout.activity_slider);
 
         // Haetaan Straight to laborista tuodut tiedot eri esityksiin
+
+        straight_to_labor_activity = new Straight_to_labor_activity();
 
         Intent i = getIntent();
         mikaSynnytysTapahtuma = i.getIntExtra("key", 1);
@@ -64,6 +72,25 @@ public class SliderActivity extends AppCompatActivity {
         slideViewPager.setAdapter(sliderAdapter);
         addDotsIndikaattori(0);
 
+        json = new JSON("pokemon");
+        json.setKey("pokemon", getApplicationContext());
+
+        arrayListEkavaiheTitle = json.get_json("first", "title");
+        arrayListPonnistusVaiheTitle = json.get_json("second", "title");
+        arrayListVikaVaiheTitle = json.get_json("third", "title");
+        arrayListPeratilaTitle = json.get_json("fourth", "title");
+        arrayListNapanuoraTitle = json.get_json("fifth", "title");
+        arrayListHartiaTitle = json.get_json("sixsth", "title");
+
+        firstDiaLength = arrayListEkavaiheTitle.size();
+        Log.d("pituus", String.valueOf(firstDiaLength));
+
+        secondDiaLength = arrayListPonnistusVaiheTitle.size();
+        Log.d("pituus", String.valueOf(secondDiaLength));
+
+        thirdDiaLength = arrayListVikaVaiheTitle.size();
+        Log.d("pituus", String.valueOf(thirdDiaLength));
+
 
 
         slideViewPager.addOnPageChangeListener(viewListener);
@@ -71,6 +98,8 @@ public class SliderActivity extends AppCompatActivity {
         leftButton.setVisibility(View.GONE);
         leftButton.clearAnimation();
         Button next_phase = (Button)findViewById(R.id.button_next_phase);
+        backbutton = (Button)findViewById(R.id.button_takaisin);
+
         if ( mikaSynnytysTapahtuma == 5)
         {
             rightButton.setVisibility(View.GONE);
@@ -94,13 +123,13 @@ public class SliderActivity extends AppCompatActivity {
             }
         });
 
-
+        next_phase.clearAnimation();
 
     }
 
     public void addDotsIndikaattori(int pPosition)
     {
-        pageIndikaattori = new TextView[5];
+        pageIndikaattori = new TextView[sivujenMaara];
         linearLayout.removeAllViews();
 
         for (int i = 0; i < sivujenMaara; i++)
@@ -138,11 +167,11 @@ public class SliderActivity extends AppCompatActivity {
                     {
                         int synnytysTapahtuma = 1;
                         int diojenMaara = 4;
-                        Intent intent = new Intent(getApplicationContext(), SliderActivity.class);
+                        Intent intent = new Intent( getApplicationContext(), SliderActivity.class);
                         intent.putExtra("key", synnytysTapahtuma);
-                        intent.putExtra("sivujenmaara", diojenMaara);
+                        intent.putExtra("sivujenmaara", secondDiaLength);
                         startActivity(intent);
-                        finish();
+                        //finish();
                     }
                     if (mikaSynnytysTapahtuma == 1 || mikaSynnytysTapahtuma == 2 || mikaSynnytysTapahtuma == 3 || mikaSynnytysTapahtuma == 4)
                     {
@@ -150,15 +179,15 @@ public class SliderActivity extends AppCompatActivity {
                         int diojenMaara = 5;
                         Intent intent = new Intent(getApplicationContext(), SliderActivity.class);
                         intent.putExtra("key", synnytysTapahtuma);
-                        intent.putExtra("sivujenmaara", diojenMaara);
+                        intent.putExtra("sivujenmaara", thirdDiaLength);
                         startActivity(intent);
-                        finish();
+                        //finish();
                     }
                     if (mikaSynnytysTapahtuma == 6)
                     {
                         Intent intent = new Intent(getApplicationContext(), Straight_to_labor_activity.class);
                         startActivity(intent);
-                        finish();
+                        //finish();
                     }
                 }
 
@@ -179,7 +208,7 @@ public class SliderActivity extends AppCompatActivity {
 
             if (position == 0)
             {
-
+                backbutton.setText("Edelliseen diahan");
                 rightButton.setEnabled(true);
                 leftButton.setEnabled(false);
                 leftButton.setVisibility(View.INVISIBLE);
@@ -220,7 +249,16 @@ public class SliderActivity extends AppCompatActivity {
     };
     public void onClickListener_back_button(View view)
     {
-        finish();
+        if (currentPage == 0)
+        {
+            finish();   // TODO back napin jälkeen swaippaus ei toimi kunnolla
+        }
+        else
+        {
+            Intent intent = new Intent(getApplicationContext(), Straight_to_labor_activity.class);
+            startActivity(intent);
+            finish();
+        }
     }
 
     public void onClick_next_phase(View view)
@@ -232,8 +270,9 @@ public class SliderActivity extends AppCompatActivity {
             int diojenMaara = 5;
             Intent intent = new Intent(this, SliderActivity.class);
             intent.putExtra("key",tila);
-            intent.putExtra("sivujenmaara", diojenMaara);
+            intent.putExtra("sivujenmaara", secondDiaLength);
             startActivity(intent);
+            //finish();
         }
 
         if (mikaSynnytysTapahtuma == 1 || mikaSynnytysTapahtuma == 2 || mikaSynnytysTapahtuma == 3 || mikaSynnytysTapahtuma == 4 )  // jos synnytystapahtuma on jokin toisen vaiheen tiloista niin siirrytään jälkeisvaiheeseen.
@@ -242,12 +281,15 @@ public class SliderActivity extends AppCompatActivity {
             int diojenMaara = 5;
             Intent intent = new Intent(this, SliderActivity.class);
             intent.putExtra("key",tila);
-            intent.putExtra("sivujenmaara", diojenMaara);
+            intent.putExtra("sivujenmaara", thirdDiaLength);
             startActivity(intent);
+            //finish();
         }
         if (mikaSynnytysTapahtuma == 6)     // jos ollaan jälkeisvaiheessa niin suljetaan activity ja siirrytään straight-to-laboriin
         {
-            finish();
+            Intent intent = new Intent(getApplicationContext(), Straight_to_labor_activity.class);
+            startActivity(intent);
+            //finish();
         }
     }
 
@@ -263,6 +305,13 @@ public class SliderActivity extends AppCompatActivity {
         return super.onKeyDown(keyCode, event);
     }
 
+    @Override
+    public void onRestart()
+    {
+        super.onRestart();
+        finish();
+        startActivity(getIntent());
+    }
 
 }
 
