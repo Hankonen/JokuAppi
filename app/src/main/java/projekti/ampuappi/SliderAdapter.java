@@ -104,12 +104,12 @@ public class SliderAdapter extends PagerAdapter {
     public Object instantiateItem(@NonNull ViewGroup container, int position) {
 
 
-        for(int i=0; i<pituusPeratila-1; i++) {peratila_slides[i] = R.drawable.loremipsum;}
-        for(int i=0; i<pituusNormaali-1; i++) {normaalitila_slides[i]=R.drawable.loremipsum;}
-        for(int i=0; i<pituusEkaVaihe-1; i++) {ensimmainenvaihe_slides[i]=R.drawable.loremipsum;}
-        for(int i=0; i<pituusKolmasVaihe-1; i++) {kolmasvaihe_slides[i]=R.drawable.loremipsum;}
-        for(int i=0; i<pituusHartia-1; i++) {hartiadystokia_slides[i]=R.drawable.loremipsum;}
-        for(int i=0; i<pituusPeratila-1; i++) {peratila_slides[i]=R.drawable.loremipsum;}
+        for(int i=0; i<pituusPeratila; i++) {peratila_slides[i] = R.drawable.loremipsum;}
+        for(int i=0; i<pituusNormaali; i++) {normaalitila_slides[i]=R.drawable.loremipsum;}
+        for(int i=0; i<pituusEkaVaihe; i++) {ensimmainenvaihe_slides[i]=R.drawable.loremipsum;}
+        for(int i=0; i<pituusKolmasVaihe; i++) {kolmasvaihe_slides[i]=R.drawable.loremipsum;}
+        for(int i=0; i<pituusHartia; i++) {hartiadystokia_slides[i]=R.drawable.loremipsum;}
+        for(int i=0; i<pituusPeratila; i++) {peratila_slides[i]=R.drawable.loremipsum;}
 
 
         layoutInflater = (LayoutInflater) context.getSystemService(context.LAYOUT_INFLATER_SERVICE);
@@ -132,7 +132,6 @@ public class SliderAdapter extends PagerAdapter {
         // perätila
         if (mikaSynnytys == 2)
         {
-         //   Log.d("peratilan pituus", String.valueOf(peratila_slides));
             slideImageView.setImageResource(peratila_slides[position]);
             slideHeader.setText(arrayListPeratilaTitle.get(position));
             slideText.setText(arrayListPeratilaTeksti.get(position));
