@@ -58,15 +58,11 @@ public class SliderAdapter extends PagerAdapter {
         arrayListHartiaTitle = json.get_json("sixsth", "title");
         arrayListHartiaTeksti = json.get_json("sixsth", "body");
 
-
     }
-
-
 
     // Arrayt slideri tietoihin!!! Näissä tietona mitkä tiedot mihinki esitykseen. Kuvat, otsikot ja teksti. Tämä on buginen paska, eli arrayn pituus ei vastaa tuotua sivumäärää esityksessä niin mahd. kaatuu
 
     public int[] peratila_slides = {
-
 
             R.drawable.loremipsum,
             R.drawable.loremipsum,
@@ -131,12 +127,8 @@ public class SliderAdapter extends PagerAdapter {
     @Override
     public Object instantiateItem(@NonNull ViewGroup container, int position) {
 
-
-
         layoutInflater = (LayoutInflater) context.getSystemService(context.LAYOUT_INFLATER_SERVICE);
         View view = layoutInflater.inflate(R.layout.slide_layout, container, false);
-
-
 
 
         // Asetetaan oikeat tiedot arrayista
