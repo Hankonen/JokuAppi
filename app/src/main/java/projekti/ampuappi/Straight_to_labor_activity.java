@@ -21,7 +21,7 @@ public class Straight_to_labor_activity extends AppCompatActivity {
     public int synnytysTapahtuma;
     public int diojenMaara;
 
-    private int firstDiaLength, secondDiaLength, thirdDiaLength;
+    private int firstDiaLength, secondDiaLength, thirdDiaLength, fourthDiaLenght, fifthDiaLenght, sixthDiaLenght;
 
     private JSON json;
     Context context;
@@ -64,6 +64,12 @@ public class Straight_to_labor_activity extends AppCompatActivity {
         thirdDiaLength = arrayListVikaVaiheTitle.size();
         Log.d("pituus", String.valueOf(thirdDiaLength));
 
+        fourthDiaLenght = arrayListPeratilaTitle.size();
+
+        fifthDiaLenght = arrayListHartiaTitle.size();
+
+        sixthDiaLenght = arrayListNapanuoraTitle.size();
+
         if (synnytysTapahtuma == 1)
         {
             return firstDiaLength;
@@ -75,6 +81,18 @@ public class Straight_to_labor_activity extends AppCompatActivity {
         else if (synnytysTapahtuma == 3)
         {
             return thirdDiaLength;
+        }
+        else if (synnytysTapahtuma == 4)
+        {
+            return fourthDiaLenght;
+        }
+        else if (synnytysTapahtuma == 5)
+        {
+            return fifthDiaLenght;
+        }
+        else if (synnytysTapahtuma == 6)
+        {
+            return sixthDiaLenght;
         }
 
         return 0;
@@ -114,7 +132,7 @@ public class Straight_to_labor_activity extends AppCompatActivity {
         diojenMaara = 3;
         Intent intent = new Intent(this, SliderActivity.class);
         intent.putExtra("key", synnytysTapahtuma);
-        intent.putExtra("sivujenmaara", diojenMaara);
+        intent.putExtra("sivujenmaara", getJSONLength(4));
         startActivity(intent);
     }
 
@@ -124,7 +142,7 @@ public class Straight_to_labor_activity extends AppCompatActivity {
         diojenMaara =3;
         Intent intent = new Intent(this, SliderActivity.class);
         intent.putExtra("key", synnytysTapahtuma);
-        intent.putExtra("sivujenmaara", diojenMaara);
+        intent.putExtra("sivujenmaara", getJSONLength(5));
         startActivity(intent);
     }
 
@@ -133,7 +151,7 @@ public class Straight_to_labor_activity extends AppCompatActivity {
         diojenMaara = 3;
         Intent intent = new Intent(this, SliderActivity.class);
         intent.putExtra("key", synnytysTapahtuma);
-        intent.putExtra("sivujenmaara", diojenMaara);
+        intent.putExtra("sivujenmaara", getJSONLength(6));
         startActivity(intent);
     }
 
