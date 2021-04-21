@@ -1,6 +1,7 @@
 package projekti.ampuappi;
 
 import android.content.Context;
+import android.graphics.drawable.Drawable;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,6 +11,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.core.content.ContextCompat;
 import androidx.viewpager.widget.PagerAdapter;
 
 import java.util.ArrayList;
@@ -58,13 +60,25 @@ public class SliderAdapter extends PagerAdapter {
         arrayListHartiaTeksti = json.get_json("sixsth", "body");
 
 
-
+        kuvat();
 
     }
 
+    public void kuvat()
+    {
+        for (int i = 0; i < 10; i++) {
+            int id = context.getResources().getIdentifier("ohje" + i, "drawable", context.getPackageName());
 
+            //Drawable d = ContextCompat.getDrawable(context, id);
+            // your code here
+            Log.d("kuvat", String.valueOf(id));
+
+        }
+    }
 
     // Arrayt slideri tietoihin!!! Näissä tietona mitkä tiedot mihinki esitykseen. Kuvat, otsikot ja teksti. Tämä on buginen paska, eli arrayn pituus ei vastaa tuotua sivumäärää esityksessä niin mahd. kaatuu
+
+
 
     public int[] peratila_slides = {
 

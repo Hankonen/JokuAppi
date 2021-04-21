@@ -1,9 +1,11 @@
 package projekti.ampuappi;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.KeyEvent;
@@ -41,6 +43,8 @@ public class Straight_to_labor_activity extends AppCompatActivity {
         toolbar.setSubtitle(R.string.button_straight_to_labor);
         toolbar.inflateMenu(R.menu.menu);
         setActionBar(toolbar);
+
+
 
     }
 
