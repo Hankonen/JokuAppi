@@ -5,9 +5,29 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:animateLayoutChanges="true"
-    android:background="@color/app_background"
+    android:background="@drawable/bgreverse"
     app:layoutDescription="@xml/activity_straight_to_labor_activity_scene"
-    tools:context=".Straight_to_labor_activity">
+    tools:context=".Straight_to_labor_activity"
+    >
+
+    <Button
+        android:id="@+id/button_takaisin3"
+        style="@style/button_style"
+        android:layout_width="150dp"
+        android:layout_height="60dp"
+        android:layout_marginBottom="16dp"
+        android:onClick="onClick_exit"
+        android:text="@string/TakaisinButton"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/slideViewPager"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar_layout" />
 
 
     <Button
@@ -45,15 +65,15 @@
         android:layout_width="220dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
-        android:text="@string/Erikoistilanteet"
+        android:text="Lisää Dioja"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/button_kolmas_vaihe2"
-        app:layout_constraintStart_toStartOf="@+id/button_kolmas_vaihe2"
-        app:layout_constraintTop_toBottomOf="@+id/button_kolmas_vaihe2"
+        app:layout_constraintEnd_toEndOf="@+id/button_kolmas_vaihe"
+        app:layout_constraintStart_toStartOf="@+id/button_kolmas_vaihe"
+        app:layout_constraintTop_toBottomOf="@+id/button_kolmas_vaihe"
         app:layout_constraintVertical_bias="0.0" />
 
     <Button
-        android:id="@+id/button_kolmas_vaihe2"
+        android:id="@+id/button_kolmas_vaihe"
         style="@style/button_style"
         android:layout_width="220dp"
         android:layout_height="wrap_content"
@@ -119,10 +139,25 @@
         android:onClick="onClick_exit"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.723"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0"
+        app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@android:drawable/ic_delete" />
+
+    <TextView
+        android:id="@+id/textView_ohjeet"
+        android:layout_width="337dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="177dp"
+        android:layout_marginTop="37dp"
+        android:layout_marginEnd="176dp"
+        android:layout_marginBottom="38dp"
+        android:text="@string/Lisaa_dioja_ohjeet"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toTopOf="@+id/button_eka_vaihe"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
 
 </androidx.constraintlayout.motion.widget.MotionLayout>
