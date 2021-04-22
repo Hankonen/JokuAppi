@@ -45,8 +45,8 @@ public class SliderActivity extends AppCompatActivity {
 
     private int firstDiaLength, secondDiaLength, thirdDiaLength;
     private JSON json;
-    private ArrayList<String> arrayListEkavaiheTitle, arrayListEkavaiheTeksti, arrayListPonnistusVaiheTitle, arrayListPonnistusVaiheTeksti, arrayListVikaVaiheTitle, arrayListVikaVaiheTeksti,
-            arrayListPeratilaTitle, arrayListPeratilaTeksti, arrayListNapanuoraTitle, arrayListNapanuoraTeksti, arrayListHartiaTitle, arrayListHartiaTeksti;
+    private ArrayList<String> arrayListEkavaiheTitle, arrayListPonnistusVaiheTitle, arrayListVikaVaiheTitle,
+            arrayListPeratilaTitle, arrayListNapanuoraTitle, arrayListHartiaTitle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -100,14 +100,14 @@ public class SliderActivity extends AppCompatActivity {
         Button next_phase = (Button)findViewById(R.id.button_next_phase);
         backbutton = (Button)findViewById(R.id.button_takaisin);
 
-        if ( mikaSynnytysTapahtuma == 5)
+
+        if ( mikaSynnytysTapahtuma == 1)        // ilman tätä ekan vaiheen 1 dian toiminnot ei näy kunnolla
         {
             rightButton.setVisibility(View.GONE);
             rightButton.clearAnimation();
             next_phase.setVisibility(View.VISIBLE);
             next_phase.setText("2. Diat");
             next_phase.clearAnimation();
-
         }
 
         leftButton.setOnClickListener(new View.OnClickListener() {
@@ -164,27 +164,25 @@ public class SliderActivity extends AppCompatActivity {
 
                     // TODO ehtolauseet kaikille synnytystapahtumille missä ollaan ja mikä halutaan avattavan
 
-                    if (mikaSynnytysTapahtuma == 5)
+                    if (mikaSynnytysTapahtuma == 1)
                     {
-                        int synnytysTapahtuma = 1;
-                        int diojenMaara = 4;
+                        int synnytysTapahtuma = 2;
                         Intent intent = new Intent( getApplicationContext(), SliderActivity.class);
                         intent.putExtra("key", synnytysTapahtuma);
                         intent.putExtra("sivujenmaara", secondDiaLength);
                         startActivity(intent);
                         //finish();
                     }
-                    if (mikaSynnytysTapahtuma == 1 || mikaSynnytysTapahtuma == 2 || mikaSynnytysTapahtuma == 3 || mikaSynnytysTapahtuma == 4)
+                    if (mikaSynnytysTapahtuma == 2 || mikaSynnytysTapahtuma == 4 || mikaSynnytysTapahtuma == 5 || mikaSynnytysTapahtuma == 6)
                     {
-                        int synnytysTapahtuma = 6;
-                        int diojenMaara = 5;
+                        int synnytysTapahtuma = 3;
                         Intent intent = new Intent(getApplicationContext(), SliderActivity.class);
                         intent.putExtra("key", synnytysTapahtuma);
                         intent.putExtra("sivujenmaara", thirdDiaLength);
                         startActivity(intent);
                         //finish();
                     }
-                    if (mikaSynnytysTapahtuma == 6)
+                    if (mikaSynnytysTapahtuma == 3)
                     {
                         Intent intent = new Intent(getApplicationContext(), Straight_to_labor_activity.class);
                         startActivity(intent);
@@ -225,7 +223,7 @@ public class SliderActivity extends AppCompatActivity {
                 next_phase.setVisibility(View.VISIBLE);
                 next_phase.setEnabled(true);
 
-                if (mikaSynnytysTapahtuma == 6)
+                if (mikaSynnytysTapahtuma == 3)
                 {
                     next_phase.setText("Esitys päättyy");
                 }
@@ -265,10 +263,9 @@ public class SliderActivity extends AppCompatActivity {
     public void onClick_next_phase(View view)
 
     {
-        if (mikaSynnytysTapahtuma == 5 )    // Jos synnytystapahtuma 5 eli ensimmäinen vaihe, niin mennään tilaan 1 eli toisen vaiheen normaalitilaan.
+        if (mikaSynnytysTapahtuma == 1 )    // Jos synnytystapahtuma 1 eli ensimmäinen vaihe, niin mennään tilaan 2 eli toisen vaiheen normaalitilaan.
         {
-            int tila = 1;
-            int diojenMaara = 5;
+            int tila = 2;
             Intent intent = new Intent(this, SliderActivity.class);
             intent.putExtra("key",tila);
             intent.putExtra("sivujenmaara", secondDiaLength);
@@ -276,9 +273,9 @@ public class SliderActivity extends AppCompatActivity {
             //finish();
         }
 
-        if (mikaSynnytysTapahtuma == 1 || mikaSynnytysTapahtuma == 2 || mikaSynnytysTapahtuma == 3 || mikaSynnytysTapahtuma == 4 )  // jos synnytystapahtuma on jokin toisen vaiheen tiloista niin siirrytään jälkeisvaiheeseen.
+        if (mikaSynnytysTapahtuma == 2 || mikaSynnytysTapahtuma == 4 || mikaSynnytysTapahtuma == 5 || mikaSynnytysTapahtuma == 6)  // jos synnytystapahtuma on jokin toisen vaiheen tiloista niin siirrytään jälkeisvaiheeseen.
         {
-            int tila = 6;
+            int tila = 3;
             int diojenMaara = 5;
             Intent intent = new Intent(this, SliderActivity.class);
             intent.putExtra("key",tila);
@@ -286,7 +283,7 @@ public class SliderActivity extends AppCompatActivity {
             startActivity(intent);
             //finish();
         }
-        if (mikaSynnytysTapahtuma == 6)     // jos ollaan jälkeisvaiheessa niin suljetaan activity ja siirrytään straight-to-laboriin
+        if (mikaSynnytysTapahtuma == 3)     // jos ollaan jälkeisvaiheessa niin suljetaan activity ja siirrytään straight-to-laboriin
         {
             Intent intent = new Intent(getApplicationContext(), Straight_to_labor_activity.class);
             startActivity(intent);

@@ -38,7 +38,7 @@ public class SliderAdapter extends PagerAdapter {
     //public
     // Tuodaan parametrinä MainActivitystä saatu tieto mikä synnytystapahtuma ja montako sivua esityksessä on
 
-    // TODO tee kaikille slaideriinfoille sama homma!!!, tsekkaa myös diojen määrät oikeaksi
+
     private ArrayList<String> arrayListEkavaiheTitle, arrayListEkavaiheTeksti, arrayListPonnistusVaiheTitle, arrayListPonnistusVaiheTeksti, arrayListVikaVaiheTitle, arrayListVikaVaiheTeksti,
             arrayListPeratilaTitle, arrayListPeratilaTeksti, arrayListNapanuoraTitle, arrayListNapanuoraTeksti, arrayListHartiaTitle, arrayListHartiaTeksti;
 
@@ -109,7 +109,7 @@ public class SliderAdapter extends PagerAdapter {
         for(int i=0; i<pituusEkaVaihe; i++) {ensimmainenvaihe_slides[i]=R.drawable.loremipsum;}
         for(int i=0; i<pituusKolmasVaihe; i++) {kolmasvaihe_slides[i]=R.drawable.loremipsum;}
         for(int i=0; i<pituusHartia; i++) {hartiadystokia_slides[i]=R.drawable.loremipsum;}
-        for(int i=0; i<pituusPeratila; i++) {peratila_slides[i]=R.drawable.loremipsum;}
+        for(int i=0; i<pituusNapanuora; i++) {napanuora_slides[i]=R.drawable.loremipsum;}
 
 
         layoutInflater = (LayoutInflater) context.getSystemService(context.LAYOUT_INFLATER_SERVICE);
@@ -123,48 +123,48 @@ public class SliderAdapter extends PagerAdapter {
         // normaalitila 2 vaihe
         if (mikaSynnytys == 1)
         {
-            slideImageView.setImageResource(normaalitila_slides[position]);
-            slideHeader.setText(arrayListPonnistusVaiheTitle.get(position));
-            slideText.setText(arrayListPonnistusVaiheTeksti.get(position));
+            slideImageView.setImageResource(ensimmainenvaihe_slides[position]);
+            slideHeader.setText(arrayListEkavaiheTitle.get(position));
+            slideText.setText(arrayListEkavaiheTeksti.get(position));
        //     Log.d("apua",arrayListPonnistusVaiheTitle.toString());
         }
 
         // perätila
         if (mikaSynnytys == 2)
         {
-            slideImageView.setImageResource(peratila_slides[position]);
-            slideHeader.setText(arrayListPeratilaTitle.get(position));
-            slideText.setText(arrayListPeratilaTeksti.get(position));
+            slideImageView.setImageResource(normaalitila_slides[position]);
+            slideHeader.setText(arrayListPonnistusVaiheTitle.get(position));
+            slideText.setText(arrayListPonnistusVaiheTeksti.get(position));
         }
         if (mikaSynnytys == 3)
         {
-            slideImageView.setImageResource(hartiadystokia_slides[position]);
-            slideHeader.setText(arrayListHartiaTitle.get(position));
-            slideText.setText(arrayListHartiaTeksti.get(position));
+            slideImageView.setImageResource(kolmasvaihe_slides[position]);
+            slideHeader.setText(arrayListVikaVaiheTitle.get(position));
+            slideText.setText(arrayListVikaVaiheTeksti.get(position));
         }
 
         if (mikaSynnytys == 4)
         {
-            slideImageView.setImageResource(napanuora_slides[position]);
-            slideHeader.setText(arrayListNapanuoraTitle.get(position));
-            slideText.setText(arrayListNapanuoraTeksti.get(position));
+            slideImageView.setImageResource(peratila_slides[position]);
+            slideHeader.setText(arrayListPeratilaTitle.get(position));
+            slideText.setText(arrayListPeratilaTeksti.get(position));
         }
 
         // EKAVAIHE
         if (mikaSynnytys == 5)
         {
-            slideImageView.setImageResource(ensimmainenvaihe_slides[position]);
-            slideHeader.setText(arrayListEkavaiheTitle.get(position));
-            slideText.setText(arrayListEkavaiheTeksti.get(position));
+            slideImageView.setImageResource(hartiadystokia_slides[position]);
+            slideHeader.setText(arrayListHartiaTitle.get(position));
+            slideText.setText(arrayListHartiaTeksti.get(position));
 
 
         }
         // 3 VAIHE
         if (mikaSynnytys == 6)
         {
-            slideImageView.setImageResource(kolmasvaihe_slides[position]);
-            slideHeader.setText(arrayListVikaVaiheTitle.get(position));
-            slideText.setText(arrayListVikaVaiheTeksti.get(position));
+            slideImageView.setImageResource(napanuora_slides[position]);
+            slideHeader.setText(arrayListNapanuoraTitle.get(position));
+            slideText.setText(arrayListNapanuoraTeksti.get(position));
         }
 
         container.addView(view);

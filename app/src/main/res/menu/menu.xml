@@ -17,5 +17,12 @@
             android:icon="@drawable/ic_baseline_menu_24"
             android:title="Info"
             app:showAsAction="always" />
+        <item
+            android:id="@+id/exit_MenuItem"
+            android:actionLayout="@layout/activity_main"
+            android:clickable="true"
+            android:icon="@drawable/ic_baseline_menu_24"
+            android:title="Exit"
+            app:showAsAction="always" />
 
 </menu>
