@@ -215,7 +215,7 @@ public class SliderActivity extends AppCompatActivity {
             currentPage = position;
             Button next_phase = (Button)findViewById(R.id.button_next_phase);
 
-            if (position == 0 && mikaSynnytysTapahtuma != 1)
+            if (position == 0 )
             {
                 backbutton.setText("Edelliseen");
                 rightButton.setEnabled(true);
