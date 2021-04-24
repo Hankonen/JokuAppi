@@ -60,13 +60,9 @@
         app:layout_constraintStart_toStartOf="@+id/button_how_to_act" />
 
     <ImageView
-        android:id="@+id/id_imageView"
+        android:id="@+id/imageViewAWSTESTI"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="138dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="145dp"
-        android:layout_marginBottom="45dp"
         app:layout_constraintBottom_toTopOf="@+id/button_straight_to_labor"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

@@ -35,8 +35,10 @@ public class JSON extends AppCompatActivity {
     public void setKey(String pAvain, Context context)
     {
 
-        try {
+        try { ///data/user/0/projekti.ampuappi/files
             is = context.getAssets().open("db.json");
+
+            //is = context.openFileInput("db.json"); //tää on se oikee sitte joskus :DDDD
 
             int size = is.available();
             byte[] buffer = new byte[size];
@@ -55,7 +57,7 @@ public class JSON extends AppCompatActivity {
         }
     }
 
-    public ArrayList<String> get_json(String pVaihe, String pHaettavaTieto)
+    public ArrayList<String> get_json(String tag, String pHaettavaTieto)
     {
         palautettavaTeksti = new ArrayList<String>();
 
@@ -68,7 +70,7 @@ public class JSON extends AppCompatActivity {
                     JSONObject object = jsonArray.getJSONObject(i);
                     //Log.d("apua", palautettavaTeksti.toString());
 
-                    if (object.getString("tunniste").equals(pVaihe) )
+                    if (object.getString("tag").equals(tag) )
                     {
 
                         palautettavaTeksti.add(object.getString(pHaettavaTieto));
@@ -91,7 +93,7 @@ public class JSON extends AppCompatActivity {
                     JSONObject object = jsonArray.getJSONObject(i);
 
 
-                    if (object.getString("tunniste").equals(pVaihe) )
+                    if (object.getString("tag").equals(tag) )
                     {
                         palautettavaTeksti.add(object.getString(pHaettavaTieto));
                     }
