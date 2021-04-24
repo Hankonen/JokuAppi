@@ -20,16 +20,16 @@ import java.util.ArrayList;
 public class Straight_to_labor_activity extends AppCompatActivity {
 
     private ViewGroup containerView;
-    public int synnytysTapahtuma;
-    public int diojenMaara;
+    private int synnytysTapahtuma;
+    private int diojenMaara;
 
     private int firstDiaLength, secondDiaLength, thirdDiaLength, fourthDiaLenght, fifthDiaLenght, sixthDiaLenght;
 
     private JSON json;
     Context context;
 
-    private ArrayList<String> arrayListEkavaiheTitle, arrayListEkavaiheTeksti, arrayListPonnistusVaiheTitle, arrayListPonnistusVaiheTeksti, arrayListVikaVaiheTitle, arrayListVikaVaiheTeksti,
-            arrayListPeratilaTitle, arrayListPeratilaTeksti, arrayListNapanuoraTitle, arrayListNapanuoraTeksti, arrayListHartiaTitle, arrayListHartiaTeksti;
+    private ArrayList<String> arrayListEkavaiheTitle, arrayListPonnistusVaiheTitle,  arrayListVikaVaiheTitle,
+            arrayListPeratilaTitle, arrayListNapanuoraTitle, arrayListHartiaTitle;
 
 
 
@@ -96,6 +96,16 @@ public class Straight_to_labor_activity extends AppCompatActivity {
                 Intent intent_feedback = new Intent(Straight_to_labor_activity.this,feedback_Activity.class);
                 startActivity(intent_feedback);
 
+                return super.onOptionsItemSelected(item);
+
+            case R.id.exit_MenuItem:
+                Intent intent = new Intent(Intent.ACTION_MAIN);
+                intent.addCategory(Intent.CATEGORY_HOME);
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                startActivity(intent);
+
+                return super.onOptionsItemSelected(item);
+
             default:
                 return super.onOptionsItemSelected(item); }
     }
@@ -160,7 +170,8 @@ public class Straight_to_labor_activity extends AppCompatActivity {
 
     public void onClick_exit (View view)
     {
-        finish();
+        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+        startActivity(intent);
     }
 
     @Override
@@ -169,7 +180,8 @@ public class Straight_to_labor_activity extends AppCompatActivity {
 
             // finish sulkee current activityn ja palaa edelliseen activityyn stackissä. Käytä mieluummin kuin tekemällä aina uusi activity koska nopeampi ja jos ei tarvetta palata vanhaan activityyn.
 
-            finish();
+            Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+            startActivity(intent);
 
             return true;
         }

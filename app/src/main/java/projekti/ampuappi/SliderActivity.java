@@ -32,9 +32,9 @@ public class SliderActivity extends AppCompatActivity {
     private Button backbutton;
 
     private int currentPage;
-    public int mikaSynnytysTapahtuma;
+    private int mikaSynnytysTapahtuma;
 
-    public int sivujenMaara;
+    private int sivujenMaara;
 
     Context context;
 
@@ -47,6 +47,7 @@ public class SliderActivity extends AppCompatActivity {
     private JSON json;
     private ArrayList<String> arrayListEkavaiheTitle, arrayListPonnistusVaiheTitle, arrayListVikaVaiheTitle,
             arrayListPeratilaTitle, arrayListNapanuoraTitle, arrayListHartiaTitle;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -102,14 +103,21 @@ public class SliderActivity extends AppCompatActivity {
         backbutton = (Button)findViewById(R.id.button_takaisin);
 
 
-        if ( mikaSynnytysTapahtuma == 1)        // ilman tätä ekan vaiheen 1 dian toiminnot ei näy kunnolla
+        if (currentPage == 0 && firstDiaLength == 1)        // ilman tätä ekan vaiheen 1 dian toiminnot ei näy kunnolla
         {
+
+
             rightButton.setVisibility(View.GONE);
             rightButton.clearAnimation();
             next_phase.setVisibility(View.VISIBLE);
             next_phase.setText("2. Diat");
             next_phase.clearAnimation();
         }
+        if (mikaSynnytysTapahtuma == 1)
+        {
+            backbutton.setText("Takaisin");
+        }
+        //else backbutton.setText("Edelliseen");
 
         leftButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -126,6 +134,7 @@ public class SliderActivity extends AppCompatActivity {
         });
 
         next_phase.clearAnimation();
+
 
     }
 
@@ -206,9 +215,9 @@ public class SliderActivity extends AppCompatActivity {
             currentPage = position;
             Button next_phase = (Button)findViewById(R.id.button_next_phase);
 
-            if (position == 0)
+            if (position == 0 && mikaSynnytysTapahtuma != 1)
             {
-                backbutton.setText("Edelliseen diahan");
+                backbutton.setText("Edelliseen");
                 rightButton.setEnabled(true);
                 leftButton.setEnabled(false);
                 leftButton.setVisibility(View.INVISIBLE);
@@ -216,11 +225,12 @@ public class SliderActivity extends AppCompatActivity {
             }
             else if (position == sivujenMaara - 1)
             {
+                backbutton.setText("Takaisin");
                 rightButton.setEnabled(false);
                 leftButton.setEnabled(true);
                 rightButton.setVisibility(View.INVISIBLE);
 
-                next_phase.setText("3. diat");
+                next_phase.setText("Seuraavat diat");
                 next_phase.setVisibility(View.VISIBLE);
                 next_phase.setEnabled(true);
 
@@ -232,6 +242,7 @@ public class SliderActivity extends AppCompatActivity {
             }
             else
             {
+                backbutton.setText("Takaisin");
                 rightButton.setEnabled(true);
                 leftButton.setEnabled(true);
                 leftButton.setVisibility(View.VISIBLE);
@@ -244,14 +255,13 @@ public class SliderActivity extends AppCompatActivity {
         public void onPageScrollStateChanged(int state) {
 
 
-
         }
     };
     public void onClickListener_back_button(View view)
     {
         if (currentPage == 0)
         {
-            finish();   // TODO back napin jälkeen swaippaus ei toimi kunnolla
+            finish();   // TODO back napin jälkeen swaippaus ei toimi kunnolla, tämä bugi ilmestyy välistä. Backnapin jälkeen tulee vanha tila (activity/diashow) esiin, mutta swaippaus ei heitä seuraavaan.
         }
         else
         {
@@ -296,20 +306,13 @@ public class SliderActivity extends AppCompatActivity {
     public boolean onKeyDown(int keyCode, KeyEvent event)  {
         if (keyCode == KeyEvent.KEYCODE_BACK ) {
 
-            finish();
+            Intent intent = new Intent(getApplicationContext(), Straight_to_labor_activity.class);
+            startActivity(intent);
 
             return true;
         }
         finish();
         return super.onKeyDown(keyCode, event);
-    }
-
-    @Override
-    public void onRestart()
-    {
-        super.onRestart();
-        finish();
-        startActivity(getIntent());
     }
 
 }
