@@ -5,9 +5,12 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.ActivityOptions;
 import android.app.Dialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
@@ -20,22 +23,71 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.FrameLayout;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.Toolbar;
 
 import com.google.android.material.navigation.NavigationView;
 
+import java.io.File;
+import java.io.InputStream;
+import java.net.HttpURLConnection;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
     private JSON json;
     private ArrayList<String> arrayListTokaNappiTitle, arrayListTokaNappiTeksti, arrayListKolmasNappiTitle, arrayListKolmasNappiTeksti, arrayListNeljasNappiTitle, arrayListNeljasNappiTeksti;
+
+    private DownloadResources downloadResources;
+    private ImageView imageViewTesti;
+    private ArrayList<Bitmap> bitmaps;
+
+
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        bitmaps = new ArrayList<>();
+        downloadResources = new DownloadResources();
+        imageViewTesti = findViewById(R.id.imageViewAWSTESTI);
+        final Context context = this;
+        Thread downLoadImages = new Thread(new Runnable() {
+
+            @Override
+            public void run() {
+                try  {
+                    //Your code goes here
+
+                    //bitmaps.add(downloadResources.getBitMaps("https://.cloudfront.net/diat1/0.jpg"));
+                    //downloadResources.downloadFiles("diat1", "diat1", ".jpg", context);
+                    //downloadResources.downloadFiles("diat2", "diat2", ".jpg", context);
+                    //downloadResources.downloadFiles("resources", "db", ".json", context);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+
+        //downLoadImages.start();
+
+        //final File imgFile = new File(context.getFilesDir(), "diat10.jpg");
+        //final Uri uri = Uri.parse(context.getFilesDir().toString() + "/diat10.jpg");
+
+        //Log.d("apua", uri.toString());
+        //imageViewTesti.setImageBitmap(bitmaps.get(0));
+        //imageViewTesti.setImageURI(uri);
+
+
+
+
+
+
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         toolbar.inflateMenu(R.menu.menu);
@@ -48,9 +100,9 @@ public class MainActivity extends AppCompatActivity {
             showStartDialog();
         }
 
-        json = new JSON("dialogitekstit");
+        json = new JSON("dialogs");
 
-        json.setKey("dialogitekstit", this);
+        json.setKey("dialogs", this);
 
         arrayListTokaNappiTitle = json.get_json("first", "title");
         arrayListTokaNappiTeksti = json.get_json("first", "body");

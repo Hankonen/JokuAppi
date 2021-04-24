@@ -19,11 +19,11 @@ public class feedback_Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_feedback_);
 
-        json = new JSON("feedbacktekstit");
+        json = new JSON("feedback");
 
-        json.setKey("feedbacktekstit", this);
+        json.setKey("feedback", this);
 
-        arrayListFeedbackTeksti = json.get_json("first", "body");
+        arrayListFeedbackTeksti = json.get_json("feedback", "body");
 
         TextView tv = findViewById(R.id.feedback_textview);
         tv.setText(arrayListFeedbackTeksti.toString());

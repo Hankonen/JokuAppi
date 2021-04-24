@@ -49,26 +49,28 @@ public class SliderAdapter extends PagerAdapter {
         mikaSynnytys = pArvo;
         sivumaara = pSivumaara;
 
-        json = new JSON("pokemon");
-        json.setKey("pokemon", this.context);
+        json = new JSON("diat1");
+        json.setKey("diat1", this.context);
 
-        arrayListEkavaiheTitle = json.get_json("first", "title");
-        arrayListEkavaiheTeksti = json.get_json("first", "body");
+        arrayListEkavaiheTitle = json.get_json("diat1", "title");
+        arrayListEkavaiheTeksti = json.get_json("diat1", "body");
 
-        arrayListPonnistusVaiheTitle = json.get_json("second", "title");
-        arrayListPonnistusVaiheTeksti = json.get_json("second", "body");
+        json.setKey("diat2", this.context);
 
-        arrayListVikaVaiheTitle = json.get_json("third", "title");
-        arrayListVikaVaiheTeksti = json.get_json("third", "body");
+        arrayListPonnistusVaiheTitle = json.get_json("diat2", "title");
+        arrayListPonnistusVaiheTeksti = json.get_json("diat2", "body");
 
-        arrayListPeratilaTitle = json.get_json("fourth", "title");
-        arrayListPeratilaTeksti = json.get_json("fourth", "body");
+        arrayListVikaVaiheTitle = json.get_json("diat2", "title");
+        arrayListVikaVaiheTeksti = json.get_json("diat2", "body");
 
-        arrayListNapanuoraTitle = json.get_json("fifth", "title");
-        arrayListNapanuoraTeksti = json.get_json("fifth", "body");
+        arrayListPeratilaTitle = json.get_json("diat2", "title");
+        arrayListPeratilaTeksti = json.get_json("diat2", "body");
 
-        arrayListHartiaTitle = json.get_json("sixsth", "title");
-        arrayListHartiaTeksti = json.get_json("sixsth", "body");
+        arrayListNapanuoraTitle = json.get_json("diat2", "title");
+        arrayListNapanuoraTeksti = json.get_json("diat2", "body");
+
+        arrayListHartiaTitle = json.get_json("diat2", "title");
+        arrayListHartiaTeksti = json.get_json("diat2", "body");
 
 
         pituusNormaali = arrayListPonnistusVaiheTitle.size();

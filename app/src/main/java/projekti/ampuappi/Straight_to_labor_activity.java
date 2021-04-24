@@ -49,15 +49,16 @@ public class Straight_to_labor_activity extends AppCompatActivity {
     }
 
     public int getJSONLength(int synnytysTapahtuma) {
-        json = new JSON("pokemon");
-        json.setKey("pokemon", getApplicationContext());
+        json = new JSON("diat1");
+        json.setKey("diat1", getApplicationContext());
 
-        arrayListEkavaiheTitle = json.get_json("first", "title");
-        arrayListPonnistusVaiheTitle = json.get_json("second", "title");
-        arrayListVikaVaiheTitle = json.get_json("third", "title");
-        arrayListPeratilaTitle = json.get_json("fourth", "title");
-        arrayListNapanuoraTitle = json.get_json("fifth", "title");
-        arrayListHartiaTitle = json.get_json("sixsth", "title");
+        arrayListEkavaiheTitle = json.get_json("diat1", "title");
+        json.setKey("diat2", getApplicationContext());
+        arrayListPonnistusVaiheTitle = json.get_json("diat2", "title");
+        arrayListVikaVaiheTitle = json.get_json("diat2", "title");
+        arrayListPeratilaTitle = json.get_json("diat2", "title");
+        arrayListNapanuoraTitle = json.get_json("diat2", "title");
+        arrayListHartiaTitle = json.get_json("diat2", "title");
 
         firstDiaLength = arrayListEkavaiheTitle.size();
         Log.d("pituus", String.valueOf(firstDiaLength));

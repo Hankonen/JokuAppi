@@ -20,12 +20,12 @@ public class info_Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_info_);
 
-        json = new JSON("infotekstit");
+        json = new JSON("infopage");
 
-        json.setKey("infotekstit", this);
+        json.setKey("infopage", this);
 
 
-        arrayListINFOTeksti = json.get_json("first", "body");
+        arrayListINFOTeksti = json.get_json("info", "body");
 
         TextView tv = findViewById(R.id.info_textview);
         tv.setText(arrayListINFOTeksti.toString());
