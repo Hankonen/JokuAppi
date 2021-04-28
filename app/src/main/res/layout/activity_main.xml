@@ -37,6 +37,20 @@
         app:layout_constraintVertical_bias="1.0" />
 
     <Button
+        android:id="@+id/button_f5"
+        style="@style/button_style"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="onClickListener_StraightToLabor"
+        android:text="Päivitä"
+        app:layout_constraintBottom_toTopOf="@+id/button_straight_to_labor"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        app:layout_constraintVertical_bias="0.466" />
+
+    <Button
         android:id="@+id/button_onTheWay_to_location"
         style="@style/button_style"
         android:layout_marginEnd="36dp"
@@ -58,16 +72,6 @@
         app:layout_constraintEnd_toEndOf="@+id/button_how_to_act"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/button_how_to_act" />
-
-    <ImageView
-        android:id="@+id/imageViewAWSTESTI"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toTopOf="@+id/button_straight_to_labor"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar"
-        tools:srcCompat="@tools:sample/avatars" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

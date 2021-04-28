@@ -1,6 +1,7 @@
 package projekti.ampuappi;
 
 import android.content.Context;
+import android.net.Uri;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -34,6 +35,11 @@ public class SliderAdapter extends PagerAdapter {
     public int[] hartiadystokia_slides;
     public int[] kolmasvaihe_slides;
 
+    //Pictures
+    private ArrayList<Uri> picUris1;
+    private ArrayList<Uri> picUris2;
+    ImagesReturnus imagesReturnus;
+
 
     //public
     // Tuodaan parametrinä MainActivitystä saatu tieto mikä synnytystapahtuma ja montako sivua esityksessä on
@@ -45,6 +51,13 @@ public class SliderAdapter extends PagerAdapter {
 
     public SliderAdapter(Context context, int pArvo, int pSivumaara)
     {
+
+        //Getting picture uris from ImagesReturnus
+        imagesReturnus = new ImagesReturnus();
+        picUris1 = imagesReturnus.getUris(context, "diat1");
+        picUris2 = imagesReturnus.getUris(context, "diat2");
+
+
         this.context = context;
         mikaSynnytys = pArvo;
         sivumaara = pSivumaara;
@@ -125,7 +138,12 @@ public class SliderAdapter extends PagerAdapter {
         // normaalitila 2 vaihe
         if (mikaSynnytys == 1)
         {
-            slideImageView.setImageResource(ensimmainenvaihe_slides[position]);
+            Log.d("apua", String.valueOf(position));
+            //slideImageView.setImageResource(ensimmainenvaihe_slides[position]);
+
+            if (picUris1.size() < pituusEkaVaihe) slideImageView.setImageResource(ensimmainenvaihe_slides[position]);
+            else slideImageView.setImageURI(picUris1.get(position));
+
             slideHeader.setText(arrayListEkavaiheTitle.get(position));
             slideText.setText(arrayListEkavaiheTeksti.get(position));
        //     Log.d("apua",arrayListPonnistusVaiheTitle.toString());
@@ -134,12 +152,16 @@ public class SliderAdapter extends PagerAdapter {
         // perätila
         if (mikaSynnytys == 2)
         {
-            slideImageView.setImageResource(normaalitila_slides[position]);
+            Log.d("apua", String.valueOf(position));
+            if (picUris2.size() < pituusNormaali) slideImageView.setImageResource(normaalitila_slides[position]);
+            else slideImageView.setImageURI(picUris2.get(position));
+
             slideHeader.setText(arrayListPonnistusVaiheTitle.get(position));
             slideText.setText(arrayListPonnistusVaiheTeksti.get(position));
         }
         if (mikaSynnytys == 3)
         {
+            Log.d("apua", String.valueOf(position));
             slideImageView.setImageResource(kolmasvaihe_slides[position]);
             slideHeader.setText(arrayListVikaVaiheTitle.get(position));
             slideText.setText(arrayListVikaVaiheTeksti.get(position));
