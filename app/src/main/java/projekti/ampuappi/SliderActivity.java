@@ -56,6 +56,7 @@ public class SliderActivity extends AppCompatActivity {
 
         // Haetaan Straight to laborista tuodut tiedot eri esityksiin
 
+
         straight_to_labor_activity = new Straight_to_labor_activity();
 
         Intent i = getIntent();
