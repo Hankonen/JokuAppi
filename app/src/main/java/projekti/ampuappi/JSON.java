@@ -1,6 +1,7 @@
 package projekti.ampuappi;
 
 import android.content.Context;
+import android.net.Uri;
 import android.util.Log;
 import android.widget.Toast;
 
@@ -38,7 +39,14 @@ public class JSON extends AppCompatActivity {
         try { ///data/user/0/projekti.ampuappi/files
             is = context.getAssets().open("db.json");
 
-            //is = context.openFileInput("db.json"); //tää on se oikee sitte joskus :DDDD
+            String[] files = context.fileList();
+            for(int i = 0; i < files.length; i++){
+                if(files[i].contains("db.json")){
+                    is = context.openFileInput("db.json");
+                    break;
+                }
+            }
+
 
             int size = is.available();
             byte[] buffer = new byte[size];

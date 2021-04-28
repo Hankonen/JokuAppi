@@ -211,6 +211,7 @@ public class SliderActivity extends AppCompatActivity {
         @Override
         public void onPageSelected(int position) {  // positio == sivu
 
+            //Log.d("apua", String.valueOf(position));
             addDotsIndikaattori(position);
             currentPage = position;
             Button next_phase = (Button)findViewById(R.id.button_next_phase);

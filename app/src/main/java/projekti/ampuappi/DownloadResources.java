@@ -15,7 +15,7 @@ import java.util.ArrayList;
 public class DownloadResources {
 
     private Bitmap bitmap;
-    private String url = "https://.cloudfront.net/";//diat1/0.jpg
+    private String url = "";//diat1/0.jpg
     private ArrayList<Bitmap> bitmaps = new ArrayList<>();
     private ArrayList<String> urls = new ArrayList<>();
 

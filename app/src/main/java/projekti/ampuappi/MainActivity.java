@@ -41,9 +41,11 @@ public class MainActivity extends AppCompatActivity {
     private ArrayList<String> arrayListTokaNappiTitle, arrayListTokaNappiTeksti, arrayListKolmasNappiTitle, arrayListKolmasNappiTeksti, arrayListNeljasNappiTitle, arrayListNeljasNappiTeksti;
 
     private DownloadResources downloadResources;
+    private ImagesReturnus imagesReturnus;
     private ImageView imageViewTesti;
     private ArrayList<Bitmap> bitmaps;
-
+    private ArrayList<Uri> uris;
+    private Button btnF5;
 
 
 
@@ -55,39 +57,31 @@ public class MainActivity extends AppCompatActivity {
 
         bitmaps = new ArrayList<>();
         downloadResources = new DownloadResources();
-        imageViewTesti = findViewById(R.id.imageViewAWSTESTI);
+        btnF5 = findViewById(R.id.button_f5);
+        imagesReturnus = new ImagesReturnus();
+
         final Context context = this;
         Thread downLoadImages = new Thread(new Runnable() {
 
             @Override
             public void run() {
                 try  {
-                    //Your code goes here
-
-                    //bitmaps.add(downloadResources.getBitMaps("https://.cloudfront.net/diat1/0.jpg"));
-                    //downloadResources.downloadFiles("diat1", "diat1", ".jpg", context);
-                    //downloadResources.downloadFiles("diat2", "diat2", ".jpg", context);
-                    //downloadResources.downloadFiles("resources", "db", ".json", context);
+                    downloadResources.downloadFiles("diat1", "diat1", ".jpg", context);
+                    downloadResources.downloadFiles("diat2", "diat2", ".jpg", context);
+                    downloadResources.downloadFiles("resources", "db", ".json", context);
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
             }
         });
 
-        //downLoadImages.start();
 
-        //final File imgFile = new File(context.getFilesDir(), "diat10.jpg");
-        //final Uri uri = Uri.parse(context.getFilesDir().toString() + "/diat10.jpg");
-
-        //Log.d("apua", uri.toString());
-        //imageViewTesti.setImageBitmap(bitmaps.get(0));
-        //imageViewTesti.setImageURI(uri);
-
-
-
-
-
-
+        btnF5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                downLoadImages.start();
+            }
+        });
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         toolbar.inflateMenu(R.menu.menu);
