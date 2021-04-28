@@ -13,7 +13,8 @@
 
 
             android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"></TextView>
+            android:layout_marginRight="20dp"
+            android:fontFamily="@font/ubuntu_bold"></TextView>
 
 
 </androidx.appcompat.widget.LinearLayoutCompat>

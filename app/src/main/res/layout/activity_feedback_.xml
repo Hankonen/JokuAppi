@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".feedback_Activity"
-    android:background="@drawable/amputausta2">
+    android:background="@color/bg">
 
     <Button
         android:id="@+id/button_takaisin2"
@@ -27,6 +27,8 @@
         android:layout_width="317dp"
         android:layout_height="309dp"
 
+        android:fontFamily="@font/ubuntu_bold"
+        android:textColor="@color/white"
         android:textSize="@dimen/dim_FB_header_TS"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

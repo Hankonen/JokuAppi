@@ -9,11 +9,16 @@
     <color name="white">#FFFFFFFF</color>
     <color name="toolbar_tausta">#FFFFFF</color>
     <color name="app_background">#f9f3f3</color>
-    <color name="button_color">#a6e2eb</color>
-    <color name="button_text_color">#FF5126</color>
+
+    <color name="button_color">#ee6c4d</color>
+
+    <color name="button_text_color">#2e2e2e</color>
+
     <color name="alertbox_background_color">#F79F81</color>
     <color name="toka_vaihe_color">#68cedd</color>
     <color name="alertBox_text_color">#393e46</color>
     <color name="white_dots_color">#cccccc</color>
+
+    <color name="bg">#1b263b</color>
 
 </resources>

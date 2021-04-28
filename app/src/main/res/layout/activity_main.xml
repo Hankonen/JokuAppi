@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/etusivutausta"
+    android:background="@color/bg"
 
     tools:context=".MainActivity">
 
@@ -16,6 +16,7 @@
         android:id="@+id/button_how_to_act"
         style="@style/button_style"
         android:layout_marginBottom="30dp"
+        android:fontFamily="@font/ubuntu_bold"
         android:onClick="onClickListener_Third_Button"
         android:text="@string/button_how_to_act"
         app:layout_constraintBottom_toTopOf="@+id/button_onTheWay_or_in_location"
@@ -27,6 +28,7 @@
         android:id="@+id/button_straight_to_labor"
         style="@style/button_style"
         android:layout_marginBottom="30dp"
+        android:fontFamily="@font/ubuntu_bold"
         android:onClick="onClickListener_StraightToLabor"
         android:text="@string/button_straight_to_labor"
         app:layout_constraintBottom_toTopOf="@+id/button_onTheWay_to_location"
@@ -38,9 +40,10 @@
 
     <Button
         android:id="@+id/button_f5"
-        style="@style/button_style"
+        style="@style/button_style_update"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/ubuntu_bold"
         android:onClick="onClickListener_StraightToLabor"
         android:text="Päivitä"
         app:layout_constraintBottom_toTopOf="@+id/button_straight_to_labor"
@@ -55,6 +58,7 @@
         style="@style/button_style"
         android:layout_marginEnd="36dp"
         android:layout_marginBottom="30dp"
+        android:fontFamily="@font/ubuntu_bold"
         android:onClick="onClickListener_Second_button"
         android:text="@string/button_on_the_way"
         app:layout_constraintBottom_toTopOf="@+id/button_how_to_act"
@@ -66,6 +70,7 @@
         android:id="@+id/button_onTheWay_or_in_location"
         style="@style/button_style"
         android:layout_marginBottom="100dp"
+        android:fontFamily="@font/ubuntu_bold"
         android:onClick="onClickListener_Fourth_Button"
         android:text="@string/button_onTheWay_or_inLocation"
         app:layout_constraintBottom_toBottomOf="parent"

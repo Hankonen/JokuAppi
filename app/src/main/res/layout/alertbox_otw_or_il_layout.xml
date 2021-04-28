@@ -9,8 +9,7 @@
         style="@style/OTW_or_IL_style"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"></TextView>
+        android:fontFamily="@font/ubuntu_bold"></TextView>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

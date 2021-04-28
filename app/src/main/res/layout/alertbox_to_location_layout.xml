@@ -12,6 +12,7 @@
         style="@style/to_location_style"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:fontFamily="@font/ubuntu_bold"
         tools:layout_editor_absoluteX="20dp"></TextView>
 
 
